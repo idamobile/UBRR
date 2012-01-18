@@ -1,0 +1,32 @@
+#{if _type == 'LOB'}
+<li class="item type2">
+	<div class="labels">
+		<span class="title">${_name}</span>
+		<span class="hint">${_id}</span>
+	</div>
+	#{if _edit == 'true'}
+		<textarea class="value" name="${_id}">${_input_value}</textarea>
+	#{/if}
+	#{else}
+		<span class="value">${_input_value}</span>
+	#{/else}
+	<div class="clear"></div>
+</li>
+
+#{/if}
+#{else}
+<li class="item type1">
+	<div class="labels">
+		<span class="title">${_name}</span>
+		<span class="hint">${_id}</span>
+	</div>
+	#{if _edit == 'true'}
+		<input type="text" class="value input-text" name="${_id}" value="${_input_value}"/>
+	#{/if}
+	#{else}
+		<span class="value">${_input_value}</span>
+	#{/else}
+	<div class="clear"></div>
+</li>
+
+#{/else}		

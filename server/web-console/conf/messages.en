@@ -1,0 +1,8 @@
+# You can specialize this file for each language.
+# For example, for French create a messages.fr file
+#
+contacts.phone.number=Phone number
+contacts.facebook.url=Facebook Page
+contacts.vkontakte.url=Vkontakte Page
+contacts.twitter.url=Twitter Page
+contacts.odnoklassniki.url=Odnoklassniki Page

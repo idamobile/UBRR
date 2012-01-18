@@ -1,0 +1,55 @@
+#{form @ProductStatuses.save(), enctype:'multipart/form-data', name: 'add_status_form'}
+
+<input type="hidden" name="mapping.id" value="${mapping?.id}"/>
+
+
+<div class="popup" id="status-add-popup">
+	<ul class="item-list">
+		<li class="item type1">
+			<div class="labels">
+				<span class="title">Product Kind</span>
+			</div> 
+			
+			#{select 'mapping.productKind', value:"${mapping?.productKind}"}
+				#{option 1}Credit Card#{/option}
+				#{option 2}Credit#{/option}
+				#{option 3}Debit Card#{/option}
+				#{option 4}Deposit#{/option}
+			#{/select}
+			<div class="clear"></div>
+		</li>
+		<li class="item type1">
+			<div class="labels">
+				<span class="title">Status Key</span> 
+			</div> <input type="text" class="value input-text" name="mapping.statusKey" value="${mapping?.statusKey}" />
+			<div class="clear"></div>
+		</li>
+		<li class="item type1">
+			<div class="labels">
+				<span class="title">Value [EN]</span> 
+			</div> <input type="text" class="value input-text" name="mapping.statusValue_EN" value="${mapping?.statusValue_EN}" />
+			<div class="clear"></div>
+		</li>
+		<li class="item type1">
+			<div class="labels">
+				<span class="title">Value [RU]</span> 
+			</div> <input type="text" class="value input-text" name="mapping.statusValue_RU" value="${mapping?.statusValue_RU}" />
+			<div class="clear"></div>
+		</li>		
+	</ul>
+
+	<div class="buttons-set">
+		<button type="button" class="button btn-green"
+			onclick="document.add_status_form.submit();">
+			<span><span>Save</span></span>
+		</button>
+		<button type="button" class="button btn-grey"
+			onclick="$j.fancybox.close()">
+			<span><span>Cancel</span>
+			</span>
+		</button>
+		<div class="clear"></div>
+	</div>
+</div>
+
+#{/form}

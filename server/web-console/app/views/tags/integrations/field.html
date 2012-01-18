@@ -1,0 +1,12 @@
+<li class="item type1">
+	<div class="labels">
+		<span class="title">${_title}</span>
+	</div>
+	#{if _edit == 'true'}
+		<input type="text" class="value input-text" name="${_field_name}" value="${_input_value}"/>
+	#{/if}
+	#{else}
+		<span class="value">${_input_value}</span>
+	#{/else}
+	<div class="clear"></div>
+</li>

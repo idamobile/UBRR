@@ -1,0 +1,38 @@
+#{form @PaymentCategories.save(), enctype:'multipart/form-data', name: 'add_cat_form'}
+
+<input type="hidden" name="category.id" value="${category?.id}"/>
+
+<div class="popup" id="status-add-popup">
+	<ul class="item-list">
+		<li class="item type1">
+			<div class="labels">
+				<span class="title">Catgeory ID</span>
+			</div> <input type="text" class="value input-text" name="category.categoryId" value="${category?.categoryId}" />
+			<div class="clear"></div>
+		</li>
+		
+		#{dialogs.image-field title: 'HDPI Image', field_name: 'iosHdpi'}
+			@{PaymentCategories.getImage(category, models.core.Image.Platform.iOS, models.core.Image.Resolution.hdpi)}
+		#{/ dialogs.image-field}
+
+		#{dialogs.image-field title: 'MDPI Image', field_name: 'iosMdpi'}
+			@{PaymentCategories.getImage(category, models.core.Image.Platform.iOS, models.core.Image.Resolution.mdpi)}
+		#{/ dialogs.image-field}
+		
+	</ul>
+
+	<div class="buttons-set">
+		<button type="button" class="button btn-green"
+			onclick="document.add_cat_form.submit();">
+			<span><span>Save</span></span>
+		</button>
+		<button type="button" class="button btn-grey"
+			onclick="$j.fancybox.close()">
+			<span><span>Cancel</span>
+			</span>
+		</button>
+		<div class="clear"></div>
+	</div>
+</div>
+
+#{/form}

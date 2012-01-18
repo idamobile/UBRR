@@ -1,0 +1,62 @@
+#{set 'moreScripts'}
+	<script type="text/javascript" src="@{'/public/js/popup.scripts.js'}"></script>
+#{/set}
+#{extends 'main.html' /}
+#{set title:'Home' /}
+
+#{sidebar active:'prod_stats'/}
+
+<div class="col-main">
+	<div class="page-title title-buttons">
+		<h1>HCB Administrative Console</h1>
+		<div class="buttons">		
+			<a type="button" class="button btn-edit status-popup-button" href="@{ProductStatuses.statusPopup}"><span><span>Add Mapping</span></span></a>
+		</div>
+	</div>
+
+#{if mappings.isEmpty()}
+	<div>No mappings</div>
+#{/if}
+#{else}
+	<table class="data-table pst">
+		<thead>
+			<tr>
+				<td class="name">Product Kind</td>
+				<td class="status">Status</td>
+				<td class="value">Value [EN]</td>
+				<td class="value">Value [RU]</td>
+				<td class="btns">&nbsp;</td>
+			</tr>		
+		</thead>
+		<tbody>
+	#{list items:mappings, as:'mapping'}
+		    <tr>
+		    	<td class="name">
+		    	#{if mapping.productKind == 1}
+		    		Credit Card
+		    	#{/ if} #{elseif mapping.productKind == 2}
+		    		Credit
+		    	#{/ elseif} #{elseif mapping.productKind == 3}
+		    		Debit Card
+		    	#{/ elseif} #{else}
+		    		Deposit
+		    	#{/ else}
+		    	</td>
+		    	<td class="status">${mapping.statusKey}</td>
+				<td class="value">${mapping.statusValue_EN}</td>
+				<td class="value">${mapping.statusValue_RU}</td>
+				<td class="btns">
+		            <a class="button btn-small-grey" href="@{ProductStatuses.delete(mapping.id)}"><span><span>Delete</span></span></a>
+		            <a class="button btn-small-blue banner-popup-button" href="@{ProductStatuses.statusPopup(mapping.id)}"><span><span>Edit</span></span></a>
+				</td>    	
+		    </tr>
+	#{/list}
+		</tbody>
+	</table>
+#{/else}
+
+	<div class="buttons-set">
+		<a type="button" class="button btn-edit status-popup-button" href="@{ProductStatuses.statusPopup}"><span><span>Add Mapping</span></span></a>
+	</div>
+
+</div>

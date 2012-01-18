@@ -1,0 +1,33 @@
+#{extends 'main.html' /}
+#{set title:'Home' /}
+
+#{sidebar active:'contacts'/}
+
+<div class="col-main">
+
+	<form name="contactsForm" action="@{Application.saveContacts}" method="GET">
+
+		<div class="page-title title-buttons">
+			<h1>HCB Administrative Console</h1>
+			<span class="meta">Last updated on <span class="date">%{out.print(new java.util.Date(models.Contacts.getLastUpdateTime()))}%</span></span>
+			<div class="buttons">
+				<a class="button btn-green" href="javascript: document.contactsForm.submit()"><span><span>Save</span></span></a>
+				<a class="button btn-grey" href="@{Application.index}"><span><span>Cancel</span></span></a>
+			</div>
+		</div>
+		
+		<ul class="item-list">
+			#{list items: models.Contacts.getContacts(), as: 'contact'}	
+			#{contacts.field name: "${contact.localizedName}", id: "${contact.contactId}", type: "${contact.type}", input_value: "${contact.value}", edit: "true"/}
+			#{/list}
+			<div class="buttons-set">
+				<a class="button btn-green" href="javascript: document.contactsForm.submit()"><span><span>Save</span></span></a>
+				<a class="button btn-grey" href="@{Application.index}"><span><span>Cancel</span></span></a>
+			</div>
+		</ul>
+	
+	</form>
+
+</div>
+
+

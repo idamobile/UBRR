@@ -1,0 +1,9 @@
+server/web-console/data/attachments/
+server/web-console/precompiled/
+server/web-console/tmp/
+
+server/dispatcher-test/target/
+server/mobile-dispatcher/target/
+server/web-console/db/
+server/web-console/eclipse/classes/
+

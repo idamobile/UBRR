@@ -1,0 +1,54 @@
+#{set 'moreScripts'}
+	<script type="text/javascript" src="@{'/public/js/popup.scripts.js'}"></script>
+#{/set}
+#{extends 'main.html' /}
+#{set title:'Home' /}
+
+#{sidebar active:'discount_categories'/}
+
+<div class="col-main">
+	<div class="page-title title-buttons">
+		<h1>HCB Administrative Console</h1>
+		<div class="buttons">		
+			<a type="button" class="button btn-edit status-popup-button" href="@{DiscountCategories.categoryPopup}"><span><span>Add Category</span></span></a>
+		</div>
+	</div>
+
+#{if categories.isEmpty()}
+	<div>No categories</div>
+#{/if}
+#{else}
+	<table class="data-table pst">
+		<thead>
+			<tr>
+				<td class="name">Category ID</td>
+				<td class="img">Image Preview</td>				
+				<td class="name">Name</td>				
+				<td class="btns">&nbsp;</td>
+			</tr>		
+		</thead>
+		<tbody>
+	#{list items:categories, as:'category'}
+		    <tr>
+		    <td class="name">${category.categoryId}</td>
+			<td class="img">
+				<div class="item-img">
+					<img src="@{DiscountCategories.getPreview(category)}" alt="image placeholder" width="61px" height="59px"/>
+				</div>
+			</td>
+			<td class="name">${category.name}</td>
+			<td class="btns">
+	            <a class="button btn-small-grey" href="@{DiscountCategories.delete(category.id)}"><span><span>Delete</span></span></a>
+	            <a class="button btn-small-blue banner-popup-button" href="@{DiscountCategories.categoryPopup(category.id)}"><span><span>Edit</span></span></a>
+			</td>    	
+		    </tr>
+	#{/list}
+		</tbody>
+	</table>
+#{/else}
+
+	<div class="buttons-set">
+		<a type="button" class="button btn-edit status-popup-button" href="@{DiscountCategories.categoryPopup}"><span><span>Add Category</span></span></a>
+	</div>
+
+</div>

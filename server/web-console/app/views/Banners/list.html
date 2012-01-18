@@ -1,0 +1,59 @@
+#{set 'moreScripts'}
+	<script type="text/javascript" src="@{'/public/js/popup.scripts.js'}"></script>
+#{/set}
+#{extends 'main.html' /}
+#{set title:'Home' /}
+
+#{sidebar active:'banners'/}
+
+<div class="col-main">
+	<div class="page-title">
+		<h1>HCB Administrative Console</h1>
+		<span class="meta">Last updated <span class="date">18 august 2011</span></span>
+		<div class="buttons">		
+			<a type="button" class="button btn-edit banner-popup-button" href="@{Banners.add}"><span><span>Add Banner</span></span></a>
+		</div>
+		
+	</div>
+#{if banners.isEmpty()}
+	<div>No banners</div>
+#{/if}
+#{else}
+<ul class="item-list banner-list">
+#{list items:banners, as:'banner'}
+	<li class="item">
+	    <div class="item-img">
+	    	<img src="@{Banners.getPreview(banner)}" alt="banner preview" width="61px" height="59px"/>
+	    </div>
+	    <div class="item-top">
+	    	<div class="labels">
+	    		<span class="title">${banner.title}</span>
+	    		<span class="title">${banner.text}</span>
+	    		<span class="hint">${banner.url}</span>
+	    	</div>
+	    	<div class="buttons">
+	            <a class="button btn-small-grey" href="@{Banners.delete(banner.id)}"><span><span>Delete</span></span></a>
+	            <a class="button btn-small-blue banner-popup-button" href="@{Banners.edit(banner.id)}"><span><span>Edit</span></span></a>
+	    	</div>
+	    	<div class="clear"></div>
+	    </div>
+	    <div class="item-bottom">
+	    	<ul class="tags">
+	    		<li><a href="#" title="title"><span>iPhone HDPI</span></a></li>
+	    		<li><a href="#" title="title"><span>iPad</span></a></li>
+	    	</ul>
+	    	<div class="arrows">
+	    		<a href="@{Banners.moveDown(banner.id)}" class="down">&nbsp;</a>						
+	    		<a href="@{Banners.moveUp(banner.id)}" class="up">&nbsp;</a>
+	    	</div>
+	    	<div class="clear"></div>
+	    </div>
+	    <div class="clear"></div>
+	</li>
+#{/list}
+</ul>
+#{/else}
+	<div class="buttons-set">
+		<a type="button" class="button btn-edit banner-popup-button" href="@{Banners.add}"><span><span>Add Banner</span></span></a>
+	</div>
+</div>

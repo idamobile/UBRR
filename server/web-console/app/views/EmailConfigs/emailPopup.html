@@ -1,0 +1,55 @@
+#{form @EmailConfigs.save(), enctype:'multipart/form-data', name: 'add_email_form'}
+
+<input type="hidden" name="config.id" value="${config?.id}"/>
+
+
+<div class="popup" id="status-add-popup">
+	<ul class="item-list">
+		<li class="item type1">
+			<div class="labels">
+				<span class="title">Email Type</span>
+			</div> 
+			
+			#{select 'config.emailType', value:"${config?.emailType}"}
+				#{option 0}FEEDBACK#{/option}
+				#{option 1}ORDER_CALL#{/option}
+				#{option 2}BECOME_CLIENT#{/option}
+				#{option 3}MANAGE_DOCUMENTS#{/option}
+			#{/select}
+			<div class="clear"></div>
+		</li>
+		<li class="item type1">
+			<div class="labels">
+				<span class="title">Recipients</span> 
+			</div> <input type="text" class="value input-text" name="config.recipients" value="${config?.recipients}" />
+			<div class="clear"></div>
+		</li>
+		<li class="item type1">
+			<div class="labels">
+				<span class="title">Subject</span> 
+			</div> <input type="text" class="value input-text" name="config.subject" value="${config?.subject}" />
+			<div class="clear"></div>
+		</li>
+		<li class="item type1">
+			<div class="labels">
+				<span class="title">XSLT Path</span> 
+			</div> <input type="text" class="value input-text" name="config.xsltPath" value="${config?.xsltPath}" />
+			<div class="clear"></div>
+		</li>		
+	</ul>
+
+	<div class="buttons-set">
+		<button type="button" class="button btn-green"
+			onclick="document.add_email_form.submit();">
+			<span><span>Save</span></span>
+		</button>
+		<button type="button" class="button btn-grey"
+			onclick="$j.fancybox.close()">
+			<span><span>Cancel</span>
+			</span>
+		</button>
+		<div class="clear"></div>
+	</div>
+</div>
+
+#{/form}

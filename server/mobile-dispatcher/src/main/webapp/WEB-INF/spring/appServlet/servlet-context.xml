@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans default-lazy-init="false"
+	xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util" xmlns:security="http://www.springframework.org/schema/security"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:task="http://www.springframework.org/schema/task"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:jee="http://www.springframework.org/schema/jee"
+	xsi:schemaLocation="http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.0.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+		http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-3.0.xsd
+		http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.0.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	<!-- DispatcherServlet Context: defines this servlet's request-processing 
+		infrastructure -->
+	<!-- Enables the Spring MVC @Controller programming model -->
+	<mvc:annotation-driven />
+
+	<jee:jndi-lookup id="dataSource" jndi-name="idamobile.jdbc.datasource" />
+
+	<!-- context -->
+	<context:component-scan base-package="com.idamobile.server"
+		name-generator="com.idamobile.server.util.WithoutTrailingImplBeanNameGenerator"/>
+	
+	<!-- properties configuration -->
+	<context:property-placeholder		
+		properties-ref="commonsConfigurationFactoryBean"/>
+	
+	<bean id="commonsConfigurationFactoryBean" class="org.springmodules.commons.configuration.CommonsConfigurationFactoryBean">
+    	<constructor-arg ref="databaseConfiguration"/>
+	</bean>
+
+	<bean id="databaseConfiguration" class="org.apache.commons.configuration.DatabaseConfiguration">
+	    <constructor-arg type="javax.sql.DataSource" ref="dataSource"/>
+	    <constructor-arg name="table" value="IDA_PROPERTIES"/>
+	    <constructor-arg name="keyColumn" value="NAME"/>
+	    <constructor-arg name="valueColumn" value="VALUE"/>
+	</bean>
+	
+	<!-- Localization -->
+
+	<util:list id="localizationFiles">
+		<!-- main resources -->
+		<value>classpath:idaserver</value>
+	</util:list>
+
+	<bean id="messageSource"
+		class="org.springframework.context.support.ReloadableResourceBundleMessageSource"
+		p:fallbackToSystemLocale="false" p:useCodeAsDefaultMessage="true"
+		p:defaultEncoding="UTF-8" p:basenames-ref="localizationFiles">
+		<description>Base message source to handle internationalization
+		</description>
+	</bean>
+
+	<!-- transaction -->
+	<tx:annotation-driven />
+
+	<!-- A transaction manager for a single JDBC connection -->
+	<bean id="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource">
+			<ref local="dataSource" />
+		</property>
+	</bean>
+
+	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+		<constructor-arg ref="dataSource" />
+	</bean>
+
+	<!-- Handles HTTP GET requests for /resources/** by efficiently serving 
+		up static resources in the ${webappRoot}/resources directory -->
+	<mvc:resources mapping="/resources/**" location="/resources/" />
+
+	<!-- Resolves views selected for rendering by @Controllers to .jsp resources 
+		in the /WEB-INF/views directory -->
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/views/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+
+	<!-- NativeJdbcExtractor -->
+	<bean id="nativeJdbcExtractor"
+		class="org.springframework.jdbc.support.nativejdbc.CommonsDbcpNativeJdbcExtractor"
+		lazy-init="true" />
+
+	<!-- LobHandler for Oracle JDBC drivers -->
+	<bean id="oracleLobHandler" class="org.springframework.jdbc.support.lob.OracleLobHandler"
+		lazy-init="true">
+		<property name="nativeJdbcExtractor">
+			<ref local="nativeJdbcExtractor" />
+		</property>
+	</bean>
+
+	<bean id="secureRandom" class="java.security.SecureRandom">
+		<description>SecureRandom for sessionId generation</description>
+	</bean>
+
+	<!-- Imports user-defined @Controller beans that process client requests -->
+	<import resource="controllers.xml" />
+
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/views/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+
+	<bean
+		id="quartzManager"
+		class="com.idamobile.server.quartz.QuartzManager"
+		scope="singleton"
+		lazy-init="false"
+		init-method="start"
+		destroy-method="stop"/>
+
+	<bean class="org.springframework.web.servlet.view.json.MappingJacksonJsonView" />
+					
+	<!-- AOP -->
+	<aop:aspectj-autoproxy />
+
+</beans>

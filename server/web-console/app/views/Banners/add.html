@@ -1,0 +1,50 @@
+#{form @Banners.save(), enctype:'multipart/form-data', name: 'add_banner_form'}
+
+<input type="hidden" name="banner.id" value="${banner?.id}"/>
+<input type="hidden" name="banner.imageId" value="${banner?.imageId}"/>
+
+<div class="popup" id="banner-add-popup">
+	<ul class="item-list">
+		<li class="item type1">
+			<div class="labels">
+				<span class="title">Title</span>
+			</div> <input type="text" class="value input-text" name="banner.title" value="${banner?.title}"/>
+			<div class="clear"></div>
+		</li>
+		<li class="item type1">
+			<div class="labels">
+				<span class="title">Text</span> 
+			</div> <input type="text" class="value  input-text" name="banner.text" value="${banner?.text}"/>
+			<div class="clear"></div>
+		</li>
+		<li class="item type1">
+			<div class="labels">
+				<span class="title">URL</span> 
+			</div> <input type="text" class="value  input-text" name="banner.url" value="${banner?.url}"/>
+			<div class="clear"></div>
+		</li>
+		
+		#{dialogs.image-field title: 'HDPI Image', field_name: 'iosHdpi'}
+			@{Banners.getImage(banner, models.core.Image.Platform.iOS, models.core.Image.Resolution.hdpi)}
+		#{/ dialogs.image-field}
+
+		#{dialogs.image-field title: 'MDPI Image', field_name: 'iosMdpi'}
+			@{Banners.getImage(banner, models.core.Image.Platform.iOS, models.core.Image.Resolution.mdpi)}
+		#{/ dialogs.image-field}
+		
+	</ul>
+
+	<div class="buttons-set">
+		<button type="button" class="button btn-green"
+			onclick="document.add_banner_form.submit();">
+			<span><span>Save</span></span>
+		</button>
+		<button type="button" class="button btn-grey"
+			onclick="$j.fancybox.close()">
+			<span><span>Cancel</span>
+			</span>
+		</button>
+		<div class="clear"></div>
+	</div>
+</div>
+#{/form}

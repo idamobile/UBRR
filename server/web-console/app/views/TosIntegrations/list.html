@@ -1,0 +1,55 @@
+#{set 'moreScripts'}
+	<script type="text/javascript" src="@{'/public/js/popup.scripts.js'}"></script>
+#{/set}
+#{extends 'main.html' /}
+#{set title:'Home' /}
+
+#{sidebar active:'tos_int'/}
+
+#{if response == 'true'}
+	<div>Integration schedule was updated</div>
+#{/if}
+
+<div class="col-main">
+	<div class="page-title title-buttons">
+		<h1>HCB Administrative Console</h1>
+		<div class="buttons">		
+			<a type="button" class="button btn-edit status-popup-button" href="@{TosIntegrations.intPopup}"><span><span>Add Integration</span></span></a>
+		</div>
+	</div>
+
+#{if integrations.isEmpty()}
+	<div>No integrations</div>
+#{/if}
+#{else}
+	<table class="data-table pst">
+		<thead>
+			<tr>
+				<td class="name">Integration</td>
+				<td class="name">URL</td>				
+				<td class="name">Schedule</td>				
+				<td class="btns">&nbsp;</td>
+			</tr>		
+		</thead>
+		<tbody>
+	#{list items:integrations, as:'i'}
+		    <tr>
+		    <td class="name">${i.integration}</td>
+			<td class="name">${i.url}</td>
+			<td class="name">${i.cronSchedule}</td>
+			<td class="btns">
+	            <a class="button btn-small-grey" href="@{TosIntegrations.delete(i.id)}"><span><span>Delete</span></span></a>
+	            <a class="button btn-small-blue banner-popup-button" href="@{TosIntegrations.intPopup(i.id)}"><span><span>Edit</span></span></a>
+	            <a class="button btn-small-blue banner-popup-button" href="@{TosIntegrations.executeIntegration(i.id)}"><span><span>Execute</span></span></a>
+			</td>    	
+		    </tr>
+	#{/list}
+		</tbody>
+	</table>
+#{/else}
+
+	<div class="buttons-set">
+		<a type="button" class="button btn-edit status-popup-button" href="@{TosIntegrations.intPopup}"><span><span>Add Integration</span></span></a>
+	</div>
+
+</div>

@@ -1,0 +1,44 @@
+#{form @TosIntegrations.save(), enctype:'multipart/form-data', name: 'add_int_form'}
+
+<input type="hidden" name="i.id" value="${i?.id}"/>
+
+<div class="popup" id="status-add-popup">
+	<ul class="item-list">
+		<li class="item type1">
+			<div class="labels">
+				<span class="title">Integration</span>
+			</div> <input type="text" class="value input-text" name="i.integration" value="${i?.integration}" />
+			<div class="clear"></div>
+		</li>
+
+		<li class="item type1">
+			<div class="labels">
+				<span class="title">URL</span>
+			</div> <input type="text" class="value input-text" name="i.url" value="${i?.url}" />
+			<div class="clear"></div>
+		</li>
+
+		<li class="item type1">
+			<div class="labels">
+				<span class="title">Cron Schedule</span>
+			</div> <input type="text" class="value input-text" name="i.cronSchedule" value="${i?.cronSchedule}" />
+			<div class="clear"></div>
+		</li>
+				
+	</ul>
+
+	<div class="buttons-set">
+		<button type="button" class="button btn-green"
+			onclick="document.add_int_form.submit();">
+			<span><span>Save</span></span>
+		</button>
+		<button type="button" class="button btn-grey"
+			onclick="$j.fancybox.close()">
+			<span><span>Cancel</span>
+			</span>
+		</button>
+		<div class="clear"></div>
+	</div>
+</div>
+
+#{/form}

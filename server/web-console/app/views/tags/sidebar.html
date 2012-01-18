@@ -1,0 +1,46 @@
+<div class="col-left sidebar">
+	<ul class="left-menu">
+		#{sidebar-item active: "${_active == 'contacts'}", title: 'Contacts'}
+			@{Application.index}
+		#{/ sidebar-item}
+
+		#{sidebar-item active: "${_active == 'banners'}", title: 'Banners'}
+			@{Banners.list}
+		#{/ sidebar-item}
+		
+		#{sidebar-item active: "${_active == 'prod_stats'}", title: 'Product Status Mapping'}
+			@{ProductStatuses.list}
+		#{/ sidebar-item}
+
+		#{sidebar-item active: "${_active == 'prod_types'}", title: 'Product Types Mapping'}
+			@{ProductTypes.list}
+		#{/ sidebar-item}
+
+		#{sidebar-item active: "${_active == 'payment_categories'}", title: 'Payment Categories'}
+			@{PaymentCategories.list}
+		#{/ sidebar-item}
+
+		#{sidebar-item active: "${_active == 'beneficiaries'}", title: 'Beneficiaries'}
+			@{Beneficiaries.list}
+		#{/ sidebar-item}
+
+		#{sidebar-item active: "${_active == 'discount_categories'}", title: 'Discount Categories'}
+			@{DiscountCategories.list}
+		#{/ sidebar-item}
+
+		#{sidebar-item active: "${_active == 'email_conf'}", title: 'Email Settings'}
+			@{EmailConfigs.list}
+		#{/ sidebar-item}
+
+		#{sidebar-item active: "${_active == 'tos_int'}", title: 'Integrations'}
+			@{TosIntegrations.list}
+		#{/ sidebar-item}
+
+				
+		#{sidebar-item active: "${_active == 'settings'}", title: 'Settings'}
+			@{Settings.index}
+		#{/ sidebar-item}
+		
+		
+	</ul>
+</div>

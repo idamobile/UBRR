@@ -1,0 +1,81 @@
+import org.apache.tools.ant.filters.*
+
+apply plugin: 'war'
+
+loadConfiguration()
+
+repositories {
+	mavenCentral()
+}
+
+
+war {
+	eachFile {file ->
+		if (file.name == 'context.xml') {
+			println "Processing $file.name"
+			expand(jdbcUrl: 'test jdbc url')
+		}
+		filter(ReplaceTokens, tokens: [webAppRootKey: config.general.webAppRootKey])		
+	}
+}
+
+dependencies {
+	compile (
+		['com.google.protobuf:protobuf-java:2.4.0a'],
+	//	['javax.validation:validation-api:1.0.0.GA'],
+	//	['org.hibernate:hibernate-validator:4.0.2.GA'],
+	//	['log4j:log4j:1.2.15'],
+	//	['org.apache.velocity:velocity:1.6.2'],
+	//	['junit:junit:4.8.1'],
+	//	['org.mockito:mockito-all:1.8.1'],
+	//	['org.codehaus.jackson:jackson-mapper-asl:1.7.1'],
+	//	['cglib:cglib-nodep:2.1_3'],
+	//	['org.aspectj:aspectjrt:1.6.10'],
+	//	['org.aspectj:aspectjweaver:1.6.10'],
+	//	['javax.annotation:jsr250-api:1.0'],
+
+		['org.slf4j:slf4j-api:1.5.10'],
+		['org.slf4j:slf4j-log4j12:1.5.10'],
+		['org.springframework:spring-expression:3.0.5.RELEASE'],
+		['org.springframework:spring-jdbc:3.0.5.RELEASE'],
+		['org.springframework:spring-orm:3.0.5.RELEASE'],
+		['org.springframework:spring-oxm:3.0.5.RELEASE'],
+		['org.springframework:spring-aspects:3.0.5.RELEASE'],
+		['org.springframework:spring-aop:3.0.5.RELEASE'],
+		['org.springframework.security:spring-security-core:3.0.5.RELEASE'],
+		['org.springframework.security:spring-security-acl:3.0.5.RELEASE'],
+		['org.springframework.security:spring-security-config:3.0.5.RELEASE'],
+		['org.springframework.security:spring-security-taglibs:3.0.5.RELEASE'],
+		['org.springframework:spring-context:3.0.5.RELEASE'],
+		['org.springframework:spring-context-support:3.0.5.RELEASE'],
+		['org.springframework:spring-web:3.0.5.RELEASE'],
+		['org.springframework:spring-webmvc:3.0.5.RELEASE'],
+		['org.quartz-scheduler:quartz:2.1.0'],
+
+		['org.springmodules:spring-modules-jakarta-commons:0.8'],
+		['org.apache.httpcomponents:httpclient:4.1.2'],
+	//	['org.apache.ws.commons.axiom:axiom-api:1.2.11'],
+	//	['org.apache.ws.commons.axiom:axiom-impl:1.2.11'],
+	//	['org.apache.axis2:axis2:1.5.4'],
+	//	['org.apache.axis2:axis2-transport-http:1.5.4'],
+	//	['org.apache.axis2:axis2-transport-local:1.5.4'],
+	//	['org.apache.ws.commons.schema:XmlSchema:1.4.7'],
+	//	['javax.servlet:servlet-api:2.5'],
+	//	['javax.servlet.jsp:jsp-api:2.1'],
+	//	['javax.servlet:jstl:1.2'],
+		['org.apache.neethi:neethi:2.0.4'],
+		['org.apache.commons:commons-email:1.2'],
+		['net.sf.opencsv:opencsv:2.0'],
+		['com.jamesmurty.utils:java-xmlbuilder:0.3']
+	)
+}
+
+def loadConfiguration() {
+	def environment = hasProperty('env') ? env : 'dev'
+	setProperty 'environment', environment
+	println "Environment is set to $environment"
+	
+	def configFile = file('config.groovy')
+	def config = new ConfigSlurper(environment).parse(configFile.toURL())
+	setProperty 'config', config
+}

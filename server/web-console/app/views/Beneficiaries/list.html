@@ -1,0 +1,52 @@
+#{set 'moreScripts'}
+	<script type="text/javascript" src="@{'/public/js/popup.scripts.js'}"></script>
+#{/set}
+#{extends 'main.html' /}
+#{set title:'Home' /}
+
+#{sidebar active:'beneficiaries'/}
+
+<div class="col-main">
+	<div class="page-title title-buttons">
+		<h1>HCB Administrative Console</h1>
+		<div class="buttons">		
+			<a type="button" class="button btn-edit status-popup-button" href="@{Beneficiaries.benPopup}"><span><span>Add Beneficiary</span></span></a>
+		</div>
+	</div>
+
+#{if bs.isEmpty()}
+	<div>No beneficiaries</div>
+#{/if}
+#{else}
+	<table class="data-table pst">
+		<thead>
+			<tr>
+				<td class="name">Beneficiary ID</td>
+				<td class="img">Image Preview</td>
+				<td class="btns">&nbsp;</td>
+			</tr>		
+		</thead>
+		<tbody>
+	#{list items:bs, as:'bf'}
+		    <tr>
+		    <td class="name">${bf.beneficiaryId}</td>
+			<td class="img">
+				<div class="item-img">
+					<img src="@{Beneficiaries.getPreview(bf)}" alt="image placeholder" width="61px" height="59px"/>
+				</div>
+			</td>
+			<td class="btns">
+	            <a class="button btn-small-grey" href="@{Beneficiaries.delete(bf.id)}"><span><span>Delete</span></span></a>
+	            <a class="button btn-small-blue banner-popup-button" href="@{Beneficiaries.benPopup(bf.id)}"><span><span>Edit</span></span></a>
+			</td>    	
+		    </tr>
+	#{/list}
+		</tbody>
+	</table>
+#{/else}
+
+	<div class="buttons-set">
+		<a type="button" class="button btn-edit status-popup-button" href="@{Beneficiaries.benPopup}"><span><span>Add Beneficiary</span></span></a>
+	</div>
+
+</div>

@@ -1,0 +1,62 @@
+#{set 'moreScripts'}
+	<script type="text/javascript" src="@{'/public/js/popup.scripts.js'}"></script>
+#{/set}
+#{extends 'main.html' /}
+#{set title:'Home' /}
+
+#{sidebar active:'email_conf'/}
+
+<div class="col-main">
+	<div class="page-title title-buttons">
+		<h1>HCB Administrative Console</h1>
+		<div class="buttons">		
+			<a type="button" class="button btn-edit status-popup-button" href="@{EmailConfigs.emailPopup}"><span><span>Add Email Config</span></span></a>
+		</div>
+	</div>
+
+#{if ecs.isEmpty()}
+	<div>No configurations</div>
+#{/if}
+#{else}
+	<table class="data-table pst">
+		<thead>
+			<tr>
+				<td class="name">Email Type</td>
+				<td class="status">Recipients</td>
+				<td class="value">Subject</td>
+				<td class="value">XSLT Path</td>
+				<td class="btns">&nbsp;</td>
+			</tr>		
+		</thead>
+		<tbody>
+	#{list items:ecs, as:'conf'}
+		    <tr>
+		    	<td class="name">
+		    	#{if conf.emailType == 0}
+		    		FEEDBACK
+		    	#{/ if} #{elseif conf.emailType == 1}
+		    		ORDER_CALL
+		    	#{/ elseif} #{elseif conf.emailType == 2}
+		    		BECOME_CLIENT
+		    	#{/ elseif} #{else}
+		    		MANAGE_DOCUMENTS
+		    	#{/ else}
+		    	</td>
+		    	<td class="status">${conf.recipients}</td>
+				<td class="value">${conf.subject}</td>
+				<td class="value">${conf.xsltPath}</td>
+				<td class="btns">
+		            <a class="button btn-small-grey" href="@{EmailConfigs.delete(conf.id)}"><span><span>Delete</span></span></a>
+		            <a class="button btn-small-blue banner-popup-button" href="@{EmailConfigs.emailPopup(conf.id)}"><span><span>Edit</span></span></a>
+				</td>    	
+		    </tr>
+	#{/list}
+		</tbody>
+	</table>
+#{/else}
+
+	<div class="buttons-set">
+		<a type="button" class="button btn-edit status-popup-button" href="@{EmailConfigs.emailPopup}"><span><span>Add Email Config</span></span></a>
+	</div>
+
+</div>
