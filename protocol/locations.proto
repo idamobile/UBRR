@@ -1,0 +1,122 @@
+package messaging;
+
+option java_package = "com.idamobile.protocol.ubrr";
+//option optimize_for = LITE_RUNTIME;
+
+import "commons.proto";
+
+enum LocationService {
+	HAS_RUR					= 0;
+	HAS_USD					= 1;
+	HAS_EUR					= 2;
+	HAS_ATM					= 3;
+	HAS_WESTERN_UNION		= 4;
+	SUPPORTS_DEPOSITS		= 5;
+	ACCEPTS_TOP_UP_MOBILE	= 6;
+	ACCEPTS_UTITLITIES		= 7;
+	ACCEPTS_CASH			= 8;
+	SHOWS_BALANCE			= 9;	
+}
+
+// --Locations: Offices--
+message	OfficeMessage {
+	required int32 officeId				= 1;
+	optional string zipCode				= 2;
+	optional string city				= 3;
+	optional string address				= 4;
+	optional string subwayStation		= 5;
+	optional double latitude			= 6;
+	optional double longitude			= 7;
+	optional string phone				= 8;
+	optional string operationTime		= 9;
+	optional string name				= 10;
+	repeated string services			= 11;
+}
+
+message	OfficesRequest {
+	optional int64 lastUpdateTime		= 1;
+	optional int32 page					= 2;
+	optional double latitude			= 3;
+	optional double longitude			= 4;	
+}
+
+message	OfficesResponse {
+	required int64 lastUpdateTime		= 1;
+	optional int32 totalPages			= 2;
+	optional int32 page					= 3;
+	repeated OfficeMessage offices		= 4;
+}
+
+// --Locations: ATMs--
+message AtmMessage {
+	required int32 atmId				= 1;	
+	optional string city				= 2;
+	optional string subwayStation		= 3;
+	optional string address				= 4;
+	optional double latitude			= 5;
+	optional double longitude			= 6;
+	optional string operationTime		= 7;
+	optional string name				= 8;
+	repeated string services			= 9;
+}
+
+message	AtmsRequest {
+	optional int64 lastUpdateTime		= 1;
+	optional int32 page					= 2;
+	optional double latitude			= 3;
+	optional double longitude			= 4;
+}
+
+message AtmsResponse {
+	required int64 lastUpdateTime		= 1;
+	optional int32 totalPages			= 2;
+	optional int32 page					= 3;
+	repeated AtmMessage atms			= 4;
+}
+
+message CreditPointMessage {
+	required int32 creditPointId        = 1;	
+	optional string city				= 2;
+	optional string subwayStation		= 3;
+	optional string address				= 4;
+	optional double latitude			= 5;
+	optional double longitude			= 6;
+	optional string operationTime		= 7;
+	optional string name				= 8;
+	optional string zipCode				= 9;
+	optional string phone				= 10;
+	repeated string services			= 11;
+}
+
+message	CreditPointsRequest {
+	optional int64 lastUpdateTime		= 1;
+	optional int32 page					= 2;
+	optional double latitude			= 3;
+	optional double longitude			= 4;
+}
+
+message CreditPointsResponse {
+	required int64 lastUpdateTime		     = 1;
+	optional int32 totalPages			     = 2;
+	optional int32 page					     = 3;
+	repeated CreditPointMessage creditPoints = 4;
+}
+
+enum LocationType {
+	ATM		     = 0;
+	OFFICE 	     = 1;
+	CREDIT_POINT = 2;
+	ALL          = 3;
+	NEAREST	     = 4;
+}
+
+message NearestLocationRequest {
+	required LocationType type 			= 1;
+	required GeoPointMessage location	= 2;
+}
+
+message NearestLocationResponse {
+	optional AtmMessage nearestAtm					= 1;
+	optional OfficeMessage	nearestOffice			= 2;
+	optional CreditPointMessage	nearestCreditPoint	= 3;
+}

@@ -1,0 +1,104 @@
+package messaging;
+
+option java_package = "com.idamobile.protocol.ubrr";
+//option optimize_for = LITE_RUNTIME;
+
+import "banners.proto";
+import "commons.proto";
+import "currency.proto";
+import "locations.proto";
+import "partners.proto";
+import "news.proto";
+
+// Bank contacts messages
+enum ContactType {
+	UNKNOWN	= 0;
+	PHONE	= 1;
+	EMAIL	= 2;
+	URL		= 3;
+	LOB		= 4;
+}
+
+message ContactMessage {
+	required string key			= 1;
+	required ContactType type	= 2;
+	required string value		= 3;
+}
+
+message BankContactsRequest {
+	optional int64 lastUpdateTime	= 1;
+}
+
+message BankContactsResponse {
+	optional int64 lastUpdateTime		= 1;
+	repeated ContactMessage contacts	= 2;
+}
+
+// Image retrieval messages
+message ImageMessage {
+	required string imageId		= 1;
+	required bytes image		= 2;
+}
+
+message ImageRequest {
+	optional Platform platform		= 1;
+	optional Resolution resolution	= 2;
+	repeated string imageIds		= 3;
+}
+
+message ImageResponse {
+	repeated ImageMessage images 	= 1;
+}
+
+// -- Email-related messages
+enum EmailType {
+     FEEDBACK			= 0;
+     ORDER_CALL			= 1;
+     BECOME_CLIENT		= 2;
+     MANAGE_DOCUMENTS	= 3;
+     GET_CREDIT			= 4;
+}
+
+message SendEmailRequest {
+	required EmailType emailType	= 1;
+	repeated PairMessage items	= 2;
+}
+
+message SendEmailResponse {
+	required ResultCode code	= 1;
+	optional string errorMessage	= 2;
+}
+
+//Outer wrapper
+message MBSRequest {
+	optional BankContactsRequest bankContactsRequest				= 1;
+	optional BannersRequest bannersRequest							= 2;
+	optional ImageRequest imageRequest								= 3;
+	optional OfficesRequest	officesRequest							= 4;
+	optional AtmsRequest atmsRequest								= 5;
+	optional NearestLocationRequest nearestLocationRequest			= 6;
+	optional SendEmailRequest sendEmailRequest						= 7;
+	optional CurrencyRateRequest currencyRequest					= 8;
+	optional NewsRequest newsRequest								= 9;
+	optional CreditPointsRequest creditPointsRequest            	= 10;
+	optional NearestPartnerRequest nearestPartnerRequest		   	= 11;
+	optional PartnersRequest partnersRequest						= 12;
+	optional MapPartnersRequest mapPartnersRequest					= 13;
+	
+}
+
+message MBSResponse {
+	optional BankContactsResponse bankContactsResponse				= 1;
+	optional BannersResponse bannersResponse						= 2;
+	optional ImageResponse imageResponse							= 3;
+	optional OfficesResponse officesResponse						= 4;
+	optional AtmsResponse atmsResponse								= 5;
+	optional NearestLocationResponse nearestLocationResponse		= 6;
+	optional SendEmailResponse sendEmailResponse					= 7;
+	optional CurrencyRateResponse currencyResponse					= 8;
+	optional NewsResponse newsResponse								= 9;
+	optional CreditPointsResponse creditPointsResponse              = 10;
+	optional NearestPartnerResponse nearestPartnerResponse		   	= 11;
+	optional PartnersResponse partnersResponse						= 12;
+	optional MapPartnersResponse mapPartnersResponse				= 13;
+}

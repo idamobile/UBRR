@@ -1,0 +1,56 @@
+package messaging;
+
+option java_package = "com.idamobile.protocol.ubrr";
+//option optimize_for = LITE_RUNTIME;
+
+import "commons.proto";
+
+message PartnerMessage {
+	required int32 partnerId    	    = 1;	
+	optional string city				= 2;
+	optional string subwayStation		= 3;
+	optional string address				= 4;
+	optional double latitude			= 5;
+	optional double longitude			= 6;
+	optional string operationTime		= 7;
+	optional string name				= 8;
+	optional string zipCode				= 9;
+	optional string phone				= 10;
+	repeated string services			= 11;
+}
+
+message ClusterMessage {
+	required GeoPointMessage center			= 1;
+	required GeoPointMessage topLeft		= 2;
+	required GeoPointMessage bottomRight	= 3;
+	required int32 itemsCount				= 4;
+}
+
+message NearestPartnerRequest {
+	required GeoPointMessage location	= 1;
+}
+
+message NearestPartnerResponse {
+	optional PartnerMessage partner		= 1;
+}
+
+message PartnersRequest {
+	optional GeoPointMessage location	= 1;
+	optional int32 page					= 2;
+}
+
+message PartnersResponse {
+	required int32 pagesCount			= 1;
+	required int32 page					= 2;
+	repeated PartnerMessage partners	= 3;
+}
+
+message MapPartnersRequest {
+	required GeoPointMessage topLeft		= 1;
+	required GeoPointMessage bottomRight	= 2;
+}
+
+message MapPartnersResponse {
+	repeated PartnerMessage partners		= 1;
+	repeated ClusterMessage clusters		= 2;
+}

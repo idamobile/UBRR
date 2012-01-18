@@ -1,0 +1,23 @@
+package messaging;
+
+option java_package = "com.idamobile.protocol.ubrr";
+//option optimize_for = LITE_RUNTIME;
+
+import "commons.proto";
+
+message BannerMessage {
+	required int32 orderNumber	= 1;
+	optional string imageId		= 2;
+	optional string title		= 3;
+	optional string text		= 4;
+	optional string url			= 5;
+}
+
+message	BannersRequest {
+	optional int64 lastUpdateTime	= 1;
+}
+
+message BannersResponse {
+	required int64 lastUpdateTime	= 1;
+	repeated BannerMessage banners	= 2;
+}

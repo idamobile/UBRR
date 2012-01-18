@@ -1,0 +1,22 @@
+package messaging;
+
+option java_package = "com.idamobile.protocol.ubrr";
+//option optimize_for = LITE_RUNTIME;
+
+message NewsMessage {
+	required int32 id				= 1;
+	required string title			= 2;
+	optional string preview			= 3;
+	optional string url				= 4;
+	optional string htmlBody		= 5;
+	optional int64 creationDate		= 6;
+}
+
+message NewsRequest {
+	repeated int32 newsIds			= 1;
+}
+
+message NewsResponse {
+	repeated NewsMessage news		= 1;
+	repeated int32 deletedIds		= 2;
+}

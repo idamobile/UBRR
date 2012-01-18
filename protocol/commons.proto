@@ -1,0 +1,34 @@
+package messaging;
+
+option java_package = "com.idamobile.protocol.ubrr";
+//option optimize_for = LITE_RUNTIME;
+
+enum	ResultCode {
+	SUCCESS	= 0;
+	FAILURE = 1;
+}
+
+enum	Platform {
+	iOS	= 0;
+	Android	= 1;
+}
+
+enum	Resolution {
+	MDPI	= 0;
+	HDPI	= 1;
+}
+
+enum	Locale {
+	en_EN	= 0;
+	ru_RU	= 1;
+}
+
+message	PairMessage {
+	required string key		= 1;
+	repeated string values	= 2;
+}
+
+message GeoPointMessage {
+	required double latitude	= 1;
+	required double longitude	= 2;
+}
