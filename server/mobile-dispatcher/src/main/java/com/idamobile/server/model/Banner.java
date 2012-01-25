@@ -1,6 +1,5 @@
 package com.idamobile.server.model;
 
-import com.google.protobuf.ByteString;
 import com.idamobile.protocol.ubrr.Banners.BannerMessage;
 
 public class Banner {

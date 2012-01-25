@@ -42,7 +42,7 @@ public interface PartnerDao {
 	 * @param bottomRight
 	 * @return
 	 */
-	List<Partner> getViewportPartners(GeoPoint topLeft, GeoPoint bottomRight);
+	List<Partner> getViewportPartners(GeoPoint topLeft, GeoPoint bottomRight, List<String> products);
 	
 	/**
 	 * Returns number of partners

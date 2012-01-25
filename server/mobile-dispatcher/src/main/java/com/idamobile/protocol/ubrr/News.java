@@ -76,12 +76,12 @@ public final class News {
     
     // required string title = 2;
     public static final int TITLE_FIELD_NUMBER = 2;
-    private Object title_;
+    private java.lang.Object title_;
     public boolean hasTitle() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     public String getTitle() {
-      Object ref = title_;
+      java.lang.Object ref = title_;
       if (ref instanceof String) {
         return (String) ref;
       } else {
@@ -95,7 +95,7 @@ public final class News {
       }
     }
     private com.google.protobuf.ByteString getTitleBytes() {
-      Object ref = title_;
+      java.lang.Object ref = title_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8((String) ref);
@@ -108,12 +108,12 @@ public final class News {
     
     // optional string preview = 3;
     public static final int PREVIEW_FIELD_NUMBER = 3;
-    private Object preview_;
+    private java.lang.Object preview_;
     public boolean hasPreview() {
       return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     public String getPreview() {
-      Object ref = preview_;
+      java.lang.Object ref = preview_;
       if (ref instanceof String) {
         return (String) ref;
       } else {
@@ -127,7 +127,7 @@ public final class News {
       }
     }
     private com.google.protobuf.ByteString getPreviewBytes() {
-      Object ref = preview_;
+      java.lang.Object ref = preview_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8((String) ref);
@@ -140,12 +140,12 @@ public final class News {
     
     // optional string url = 4;
     public static final int URL_FIELD_NUMBER = 4;
-    private Object url_;
+    private java.lang.Object url_;
     public boolean hasUrl() {
       return ((bitField0_ & 0x00000008) == 0x00000008);
     }
     public String getUrl() {
-      Object ref = url_;
+      java.lang.Object ref = url_;
       if (ref instanceof String) {
         return (String) ref;
       } else {
@@ -159,7 +159,7 @@ public final class News {
       }
     }
     private com.google.protobuf.ByteString getUrlBytes() {
-      Object ref = url_;
+      java.lang.Object ref = url_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8((String) ref);
@@ -172,12 +172,12 @@ public final class News {
     
     // optional string htmlBody = 5;
     public static final int HTMLBODY_FIELD_NUMBER = 5;
-    private Object htmlBody_;
+    private java.lang.Object htmlBody_;
     public boolean hasHtmlBody() {
       return ((bitField0_ & 0x00000010) == 0x00000010);
     }
     public String getHtmlBody() {
-      Object ref = htmlBody_;
+      java.lang.Object ref = htmlBody_;
       if (ref instanceof String) {
         return (String) ref;
       } else {
@@ -191,7 +191,7 @@ public final class News {
       }
     }
     private com.google.protobuf.ByteString getHtmlBodyBytes() {
-      Object ref = htmlBody_;
+      java.lang.Object ref = htmlBody_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8((String) ref);
@@ -296,8 +296,10 @@ public final class News {
       return size;
     }
     
+    private static final long serialVersionUID = 0L;
     @java.lang.Override
-    protected Object writeReplace() throws java.io.ObjectStreamException {
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
     
@@ -618,12 +620,12 @@ public final class News {
       }
       
       // required string title = 2;
-      private Object title_ = "";
+      private java.lang.Object title_ = "";
       public boolean hasTitle() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       public String getTitle() {
-        Object ref = title_;
+        java.lang.Object ref = title_;
         if (!(ref instanceof String)) {
           String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
           title_ = s;
@@ -654,12 +656,12 @@ public final class News {
       }
       
       // optional string preview = 3;
-      private Object preview_ = "";
+      private java.lang.Object preview_ = "";
       public boolean hasPreview() {
         return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       public String getPreview() {
-        Object ref = preview_;
+        java.lang.Object ref = preview_;
         if (!(ref instanceof String)) {
           String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
           preview_ = s;
@@ -690,12 +692,12 @@ public final class News {
       }
       
       // optional string url = 4;
-      private Object url_ = "";
+      private java.lang.Object url_ = "";
       public boolean hasUrl() {
         return ((bitField0_ & 0x00000008) == 0x00000008);
       }
       public String getUrl() {
-        Object ref = url_;
+        java.lang.Object ref = url_;
         if (!(ref instanceof String)) {
           String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
           url_ = s;
@@ -726,12 +728,12 @@ public final class News {
       }
       
       // optional string htmlBody = 5;
-      private Object htmlBody_ = "";
+      private java.lang.Object htmlBody_ = "";
       public boolean hasHtmlBody() {
         return ((bitField0_ & 0x00000010) == 0x00000010);
       }
       public String getHtmlBody() {
-        Object ref = htmlBody_;
+        java.lang.Object ref = htmlBody_;
         if (!(ref instanceof String)) {
           String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
           htmlBody_ = s;
@@ -884,8 +886,10 @@ public final class News {
       return size;
     }
     
+    private static final long serialVersionUID = 0L;
     @java.lang.Override
-    protected Object writeReplace() throws java.io.ObjectStreamException {
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
     
@@ -1313,8 +1317,10 @@ public final class News {
       return size;
     }
     
+    private static final long serialVersionUID = 0L;
     @java.lang.Override
-    protected Object writeReplace() throws java.io.ObjectStreamException {
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
     

@@ -84,7 +84,7 @@ message MBSRequest {
 	optional NearestPartnerRequest nearestPartnerRequest		   	= 11;
 	optional PartnersRequest partnersRequest						= 12;
 	optional MapPartnersRequest mapPartnersRequest					= 13;
-	
+	optional ProductRequest productsRequest							= 14;
 }
 
 message MBSResponse {
@@ -101,4 +101,5 @@ message MBSResponse {
 	optional NearestPartnerResponse nearestPartnerResponse		   	= 11;
 	optional PartnersResponse partnersResponse						= 12;
 	optional MapPartnersResponse mapPartnersResponse				= 13;
+	optional ProductResponse productsResponse						= 14;
 }

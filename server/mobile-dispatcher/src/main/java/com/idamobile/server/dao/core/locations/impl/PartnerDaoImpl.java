@@ -3,6 +3,7 @@ package com.idamobile.server.dao.core.locations.impl;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import org.apache.commons.lang.ArrayUtils;
@@ -11,6 +12,7 @@ import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.ResultSetExtractor;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -37,8 +39,11 @@ public class PartnerDaoImpl implements PartnerDao{
 			"SELECT " + FIELDS +
 			"FROM " + TableNames.PARTNERS + 
 			" WHERE " +
-			"	latitude >= ? AND longitude >= ? " +
-			"AND latitude <= ? AND longitude <= ? ";
+			"	latitude >= :topLeftLat AND longitude >= :topLeftLng " +
+			"AND latitude <= :btmRightLat AND longitude <= :btmRightLng " +
+			"AND partner_id in (" +
+			"   SELECT partner_id FROM ida_partner_card WHERE card in (:list)" +
+			")";
 	
 	private static final String SQL_COUNT = 
 			"SELECT COUNT(*) FROM "+TableNames.PARTNERS;
@@ -137,15 +142,23 @@ public class PartnerDaoImpl implements PartnerDao{
 
 	@Transactional(readOnly = true)
 	@Override
-	public List<Partner> getViewportPartners(GeoPoint topLeft, GeoPoint bottomRight) {		
-		return jdbcTemplate.query(SQL_SELECT_VIEWPORT, ArrayUtils.addAll(topLeft.asArray(), bottomRight.asArray()), new RowMapper<Partner>() {
-
-			@Override
-			public Partner mapRow(ResultSet rs, int row) throws SQLException {
-				return extract(rs);
-			}
+	public List<Partner> getViewportPartners(final GeoPoint topLeft, final GeoPoint bottomRight, final List<String> products) {
+//			SimpleJdbcTemplate simpleJdbcTemplate = new SimpleJdbcTemplate(jdbcTemplate);
+			return jdbcTemplate.query(SQL_SELECT_VIEWPORT, /*ArrayUtils.addAll(topLeft.asArray(), bottomRight.asArray()), */new RowMapper<Partner>() {
+				@Override
+				public Partner mapRow(ResultSet rs, int row) throws SQLException {
+					return extract(rs);
+				}
 			
-		});
+			}, 
+				new HashMap<String, Object>() {{
+					put(":topLeftLat", topLeft.latitude);
+					put(":topLeftLng", topLeft.longitude);
+					put(":btmRightLat", bottomRight.latitude);
+					put(":btmRightLng", bottomRight.longitude);
+					put(":list", products);
+				}}
+			);
 	}
 
 	@Transactional(readOnly = true)
