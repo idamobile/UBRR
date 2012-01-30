@@ -4,11 +4,15 @@ import com.idamobile.protocol.ubrr.Partners.PartnerMessage;
 
 public class Partner extends AbstractBranch {
 
+	protected String discounts;
+	
 	public Partner(int id, String name, String city, String address, String zipCode,
 			String subwayStation, double latitude, double longitude, String phone,
-			String operationTime, String services) {
+			String operationTime, String services, String discounts) {
 		super(id, name, city, address, zipCode, subwayStation, latitude, longitude, phone, operationTime,
 				services);
+		
+		this.discounts = discounts;
 	}
 	
 	public PartnerMessage createMessage() {
@@ -34,8 +38,9 @@ public class Partner extends AbstractBranch {
 		
 		builder.addAllServices(getServicesList());
 		
+		if (discounts != null) 
+			builder.setShortServices(discounts);
+		
 		return builder.build();
 	}
-
-
 }

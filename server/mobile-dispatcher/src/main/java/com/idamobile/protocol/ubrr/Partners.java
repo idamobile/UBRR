@@ -55,6 +55,10 @@ public final class Partners {
     java.util.List<String> getServicesList();
     int getServicesCount();
     String getServices(int index);
+    
+    // optional string shortServices = 12;
+    boolean hasShortServices();
+    String getShortServices();
   }
   public static final class PartnerMessage extends
       com.google.protobuf.GeneratedMessage
@@ -97,12 +101,12 @@ public final class Partners {
     
     // optional string city = 2;
     public static final int CITY_FIELD_NUMBER = 2;
-    private Object city_;
+    private java.lang.Object city_;
     public boolean hasCity() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     public String getCity() {
-      Object ref = city_;
+      java.lang.Object ref = city_;
       if (ref instanceof String) {
         return (String) ref;
       } else {
@@ -116,7 +120,7 @@ public final class Partners {
       }
     }
     private com.google.protobuf.ByteString getCityBytes() {
-      Object ref = city_;
+      java.lang.Object ref = city_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8((String) ref);
@@ -129,12 +133,12 @@ public final class Partners {
     
     // optional string subwayStation = 3;
     public static final int SUBWAYSTATION_FIELD_NUMBER = 3;
-    private Object subwayStation_;
+    private java.lang.Object subwayStation_;
     public boolean hasSubwayStation() {
       return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     public String getSubwayStation() {
-      Object ref = subwayStation_;
+      java.lang.Object ref = subwayStation_;
       if (ref instanceof String) {
         return (String) ref;
       } else {
@@ -148,7 +152,7 @@ public final class Partners {
       }
     }
     private com.google.protobuf.ByteString getSubwayStationBytes() {
-      Object ref = subwayStation_;
+      java.lang.Object ref = subwayStation_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8((String) ref);
@@ -161,12 +165,12 @@ public final class Partners {
     
     // optional string address = 4;
     public static final int ADDRESS_FIELD_NUMBER = 4;
-    private Object address_;
+    private java.lang.Object address_;
     public boolean hasAddress() {
       return ((bitField0_ & 0x00000008) == 0x00000008);
     }
     public String getAddress() {
-      Object ref = address_;
+      java.lang.Object ref = address_;
       if (ref instanceof String) {
         return (String) ref;
       } else {
@@ -180,7 +184,7 @@ public final class Partners {
       }
     }
     private com.google.protobuf.ByteString getAddressBytes() {
-      Object ref = address_;
+      java.lang.Object ref = address_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8((String) ref);
@@ -213,12 +217,12 @@ public final class Partners {
     
     // optional string operationTime = 7;
     public static final int OPERATIONTIME_FIELD_NUMBER = 7;
-    private Object operationTime_;
+    private java.lang.Object operationTime_;
     public boolean hasOperationTime() {
       return ((bitField0_ & 0x00000040) == 0x00000040);
     }
     public String getOperationTime() {
-      Object ref = operationTime_;
+      java.lang.Object ref = operationTime_;
       if (ref instanceof String) {
         return (String) ref;
       } else {
@@ -232,7 +236,7 @@ public final class Partners {
       }
     }
     private com.google.protobuf.ByteString getOperationTimeBytes() {
-      Object ref = operationTime_;
+      java.lang.Object ref = operationTime_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8((String) ref);
@@ -245,12 +249,12 @@ public final class Partners {
     
     // optional string name = 8;
     public static final int NAME_FIELD_NUMBER = 8;
-    private Object name_;
+    private java.lang.Object name_;
     public boolean hasName() {
       return ((bitField0_ & 0x00000080) == 0x00000080);
     }
     public String getName() {
-      Object ref = name_;
+      java.lang.Object ref = name_;
       if (ref instanceof String) {
         return (String) ref;
       } else {
@@ -264,7 +268,7 @@ public final class Partners {
       }
     }
     private com.google.protobuf.ByteString getNameBytes() {
-      Object ref = name_;
+      java.lang.Object ref = name_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8((String) ref);
@@ -277,12 +281,12 @@ public final class Partners {
     
     // optional string zipCode = 9;
     public static final int ZIPCODE_FIELD_NUMBER = 9;
-    private Object zipCode_;
+    private java.lang.Object zipCode_;
     public boolean hasZipCode() {
       return ((bitField0_ & 0x00000100) == 0x00000100);
     }
     public String getZipCode() {
-      Object ref = zipCode_;
+      java.lang.Object ref = zipCode_;
       if (ref instanceof String) {
         return (String) ref;
       } else {
@@ -296,7 +300,7 @@ public final class Partners {
       }
     }
     private com.google.protobuf.ByteString getZipCodeBytes() {
-      Object ref = zipCode_;
+      java.lang.Object ref = zipCode_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8((String) ref);
@@ -309,12 +313,12 @@ public final class Partners {
     
     // optional string phone = 10;
     public static final int PHONE_FIELD_NUMBER = 10;
-    private Object phone_;
+    private java.lang.Object phone_;
     public boolean hasPhone() {
       return ((bitField0_ & 0x00000200) == 0x00000200);
     }
     public String getPhone() {
-      Object ref = phone_;
+      java.lang.Object ref = phone_;
       if (ref instanceof String) {
         return (String) ref;
       } else {
@@ -328,7 +332,7 @@ public final class Partners {
       }
     }
     private com.google.protobuf.ByteString getPhoneBytes() {
-      Object ref = phone_;
+      java.lang.Object ref = phone_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8((String) ref);
@@ -353,6 +357,38 @@ public final class Partners {
       return services_.get(index);
     }
     
+    // optional string shortServices = 12;
+    public static final int SHORTSERVICES_FIELD_NUMBER = 12;
+    private java.lang.Object shortServices_;
+    public boolean hasShortServices() {
+      return ((bitField0_ & 0x00000400) == 0x00000400);
+    }
+    public String getShortServices() {
+      java.lang.Object ref = shortServices_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+          shortServices_ = s;
+        }
+        return s;
+      }
+    }
+    private com.google.protobuf.ByteString getShortServicesBytes() {
+      java.lang.Object ref = shortServices_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+        shortServices_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    
     private void initFields() {
       partnerId_ = 0;
       city_ = "";
@@ -365,6 +401,7 @@ public final class Partners {
       zipCode_ = "";
       phone_ = "";
       services_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      shortServices_ = "";
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -414,6 +451,9 @@ public final class Partners {
       }
       for (int i = 0; i < services_.size(); i++) {
         output.writeBytes(11, services_.getByteString(i));
+      }
+      if (((bitField0_ & 0x00000400) == 0x00000400)) {
+        output.writeBytes(12, getShortServicesBytes());
       }
       getUnknownFields().writeTo(output);
     }
@@ -473,13 +513,19 @@ public final class Partners {
         size += dataSize;
         size += 1 * getServicesList().size();
       }
+      if (((bitField0_ & 0x00000400) == 0x00000400)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(12, getShortServicesBytes());
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
       return size;
     }
     
+    private static final long serialVersionUID = 0L;
     @java.lang.Override
-    protected Object writeReplace() throws java.io.ObjectStreamException {
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
     
@@ -617,6 +663,8 @@ public final class Partners {
         bitField0_ = (bitField0_ & ~0x00000200);
         services_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000400);
+        shortServices_ = "";
+        bitField0_ = (bitField0_ & ~0x00000800);
         return this;
       }
       
@@ -701,6 +749,10 @@ public final class Partners {
           bitField0_ = (bitField0_ & ~0x00000400);
         }
         result.services_ = services_;
+        if (((from_bitField0_ & 0x00000800) == 0x00000800)) {
+          to_bitField0_ |= 0x00000400;
+        }
+        result.shortServices_ = shortServices_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -756,6 +808,9 @@ public final class Partners {
             services_.addAll(other.services_);
           }
           onChanged();
+        }
+        if (other.hasShortServices()) {
+          setShortServices(other.getShortServices());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
@@ -847,6 +902,11 @@ public final class Partners {
               services_.add(input.readBytes());
               break;
             }
+            case 98: {
+              bitField0_ |= 0x00000800;
+              shortServices_ = input.readBytes();
+              break;
+            }
           }
         }
       }
@@ -875,12 +935,12 @@ public final class Partners {
       }
       
       // optional string city = 2;
-      private Object city_ = "";
+      private java.lang.Object city_ = "";
       public boolean hasCity() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       public String getCity() {
-        Object ref = city_;
+        java.lang.Object ref = city_;
         if (!(ref instanceof String)) {
           String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
           city_ = s;
@@ -911,12 +971,12 @@ public final class Partners {
       }
       
       // optional string subwayStation = 3;
-      private Object subwayStation_ = "";
+      private java.lang.Object subwayStation_ = "";
       public boolean hasSubwayStation() {
         return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       public String getSubwayStation() {
-        Object ref = subwayStation_;
+        java.lang.Object ref = subwayStation_;
         if (!(ref instanceof String)) {
           String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
           subwayStation_ = s;
@@ -947,12 +1007,12 @@ public final class Partners {
       }
       
       // optional string address = 4;
-      private Object address_ = "";
+      private java.lang.Object address_ = "";
       public boolean hasAddress() {
         return ((bitField0_ & 0x00000008) == 0x00000008);
       }
       public String getAddress() {
-        Object ref = address_;
+        java.lang.Object ref = address_;
         if (!(ref instanceof String)) {
           String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
           address_ = s;
@@ -1025,12 +1085,12 @@ public final class Partners {
       }
       
       // optional string operationTime = 7;
-      private Object operationTime_ = "";
+      private java.lang.Object operationTime_ = "";
       public boolean hasOperationTime() {
         return ((bitField0_ & 0x00000040) == 0x00000040);
       }
       public String getOperationTime() {
-        Object ref = operationTime_;
+        java.lang.Object ref = operationTime_;
         if (!(ref instanceof String)) {
           String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
           operationTime_ = s;
@@ -1061,12 +1121,12 @@ public final class Partners {
       }
       
       // optional string name = 8;
-      private Object name_ = "";
+      private java.lang.Object name_ = "";
       public boolean hasName() {
         return ((bitField0_ & 0x00000080) == 0x00000080);
       }
       public String getName() {
-        Object ref = name_;
+        java.lang.Object ref = name_;
         if (!(ref instanceof String)) {
           String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
           name_ = s;
@@ -1097,12 +1157,12 @@ public final class Partners {
       }
       
       // optional string zipCode = 9;
-      private Object zipCode_ = "";
+      private java.lang.Object zipCode_ = "";
       public boolean hasZipCode() {
         return ((bitField0_ & 0x00000100) == 0x00000100);
       }
       public String getZipCode() {
-        Object ref = zipCode_;
+        java.lang.Object ref = zipCode_;
         if (!(ref instanceof String)) {
           String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
           zipCode_ = s;
@@ -1133,12 +1193,12 @@ public final class Partners {
       }
       
       // optional string phone = 10;
-      private Object phone_ = "";
+      private java.lang.Object phone_ = "";
       public boolean hasPhone() {
         return ((bitField0_ & 0x00000200) == 0x00000200);
       }
       public String getPhone() {
-        Object ref = phone_;
+        java.lang.Object ref = phone_;
         if (!(ref instanceof String)) {
           String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
           phone_ = s;
@@ -1221,6 +1281,42 @@ public final class Partners {
       void addServices(com.google.protobuf.ByteString value) {
         ensureServicesIsMutable();
         services_.add(value);
+        onChanged();
+      }
+      
+      // optional string shortServices = 12;
+      private java.lang.Object shortServices_ = "";
+      public boolean hasShortServices() {
+        return ((bitField0_ & 0x00000800) == 0x00000800);
+      }
+      public String getShortServices() {
+        java.lang.Object ref = shortServices_;
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+          shortServices_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      public Builder setShortServices(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000800;
+        shortServices_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearShortServices() {
+        bitField0_ = (bitField0_ & ~0x00000800);
+        shortServices_ = getDefaultInstance().getShortServices();
+        onChanged();
+        return this;
+      }
+      void setShortServices(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00000800;
+        shortServices_ = value;
         onChanged();
       }
       
@@ -1423,8 +1519,10 @@ public final class Partners {
       return size;
     }
     
+    private static final long serialVersionUID = 0L;
     @java.lang.Override
-    protected Object writeReplace() throws java.io.ObjectStreamException {
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
     
@@ -2063,6 +2161,11 @@ public final class Partners {
     boolean hasLocation();
     com.idamobile.protocol.ubrr.Commons.GeoPointMessage getLocation();
     com.idamobile.protocol.ubrr.Commons.GeoPointMessageOrBuilder getLocationOrBuilder();
+    
+    // repeated string products = 2;
+    java.util.List<String> getProductsList();
+    int getProductsCount();
+    String getProducts(int index);
   }
   public static final class NearestPartnerRequest extends
       com.google.protobuf.GeneratedMessage
@@ -2106,8 +2209,23 @@ public final class Partners {
       return location_;
     }
     
+    // repeated string products = 2;
+    public static final int PRODUCTS_FIELD_NUMBER = 2;
+    private com.google.protobuf.LazyStringList products_;
+    public java.util.List<String>
+        getProductsList() {
+      return products_;
+    }
+    public int getProductsCount() {
+      return products_.size();
+    }
+    public String getProducts(int index) {
+      return products_.get(index);
+    }
+    
     private void initFields() {
       location_ = com.idamobile.protocol.ubrr.Commons.GeoPointMessage.getDefaultInstance();
+      products_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -2132,6 +2250,9 @@ public final class Partners {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeMessage(1, location_);
       }
+      for (int i = 0; i < products_.size(); i++) {
+        output.writeBytes(2, products_.getByteString(i));
+      }
       getUnknownFields().writeTo(output);
     }
     
@@ -2145,13 +2266,24 @@ public final class Partners {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, location_);
       }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < products_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeBytesSizeNoTag(products_.getByteString(i));
+        }
+        size += dataSize;
+        size += 1 * getProductsList().size();
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
       return size;
     }
     
+    private static final long serialVersionUID = 0L;
     @java.lang.Override
-    protected Object writeReplace() throws java.io.ObjectStreamException {
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
     
@@ -2274,6 +2406,8 @@ public final class Partners {
           locationBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000001);
+        products_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
       
@@ -2320,6 +2454,12 @@ public final class Partners {
         } else {
           result.location_ = locationBuilder_.build();
         }
+        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+          products_ = new com.google.protobuf.UnmodifiableLazyStringList(
+              products_);
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.products_ = products_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -2338,6 +2478,16 @@ public final class Partners {
         if (other == com.idamobile.protocol.ubrr.Partners.NearestPartnerRequest.getDefaultInstance()) return this;
         if (other.hasLocation()) {
           mergeLocation(other.getLocation());
+        }
+        if (!other.products_.isEmpty()) {
+          if (products_.isEmpty()) {
+            products_ = other.products_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureProductsIsMutable();
+            products_.addAll(other.products_);
+          }
+          onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
@@ -2385,6 +2535,11 @@ public final class Partners {
               }
               input.readMessage(subBuilder, extensionRegistry);
               setLocation(subBuilder.buildPartial());
+              break;
+            }
+            case 18: {
+              ensureProductsIsMutable();
+              products_.add(input.readBytes());
               break;
             }
           }
@@ -2481,6 +2636,62 @@ public final class Partners {
           location_ = null;
         }
         return locationBuilder_;
+      }
+      
+      // repeated string products = 2;
+      private com.google.protobuf.LazyStringList products_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureProductsIsMutable() {
+        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+          products_ = new com.google.protobuf.LazyStringArrayList(products_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+      public java.util.List<String>
+          getProductsList() {
+        return java.util.Collections.unmodifiableList(products_);
+      }
+      public int getProductsCount() {
+        return products_.size();
+      }
+      public String getProducts(int index) {
+        return products_.get(index);
+      }
+      public Builder setProducts(
+          int index, String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureProductsIsMutable();
+        products_.set(index, value);
+        onChanged();
+        return this;
+      }
+      public Builder addProducts(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureProductsIsMutable();
+        products_.add(value);
+        onChanged();
+        return this;
+      }
+      public Builder addAllProducts(
+          java.lang.Iterable<String> values) {
+        ensureProductsIsMutable();
+        super.addAll(values, products_);
+        onChanged();
+        return this;
+      }
+      public Builder clearProducts() {
+        products_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      void addProducts(com.google.protobuf.ByteString value) {
+        ensureProductsIsMutable();
+        products_.add(value);
+        onChanged();
       }
       
       // @@protoc_insertion_point(builder_scope:messaging.NearestPartnerRequest)
@@ -2586,8 +2797,10 @@ public final class Partners {
       return size;
     }
     
+    private static final long serialVersionUID = 0L;
     @java.lang.Override
-    protected Object writeReplace() throws java.io.ObjectStreamException {
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
     
@@ -2939,6 +3152,11 @@ public final class Partners {
     // optional int32 page = 2;
     boolean hasPage();
     int getPage();
+    
+    // repeated string products = 3;
+    java.util.List<String> getProductsList();
+    int getProductsCount();
+    String getProducts(int index);
   }
   public static final class PartnersRequest extends
       com.google.protobuf.GeneratedMessage
@@ -2992,9 +3210,24 @@ public final class Partners {
       return page_;
     }
     
+    // repeated string products = 3;
+    public static final int PRODUCTS_FIELD_NUMBER = 3;
+    private com.google.protobuf.LazyStringList products_;
+    public java.util.List<String>
+        getProductsList() {
+      return products_;
+    }
+    public int getProductsCount() {
+      return products_.size();
+    }
+    public String getProducts(int index) {
+      return products_.get(index);
+    }
+    
     private void initFields() {
       location_ = com.idamobile.protocol.ubrr.Commons.GeoPointMessage.getDefaultInstance();
       page_ = 0;
+      products_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -3020,6 +3253,9 @@ public final class Partners {
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeInt32(2, page_);
       }
+      for (int i = 0; i < products_.size(); i++) {
+        output.writeBytes(3, products_.getByteString(i));
+      }
       getUnknownFields().writeTo(output);
     }
     
@@ -3037,13 +3273,24 @@ public final class Partners {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(2, page_);
       }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < products_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeBytesSizeNoTag(products_.getByteString(i));
+        }
+        size += dataSize;
+        size += 1 * getProductsList().size();
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
       return size;
     }
     
+    private static final long serialVersionUID = 0L;
     @java.lang.Override
-    protected Object writeReplace() throws java.io.ObjectStreamException {
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
     
@@ -3168,6 +3415,8 @@ public final class Partners {
         bitField0_ = (bitField0_ & ~0x00000001);
         page_ = 0;
         bitField0_ = (bitField0_ & ~0x00000002);
+        products_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
       
@@ -3218,6 +3467,12 @@ public final class Partners {
           to_bitField0_ |= 0x00000002;
         }
         result.page_ = page_;
+        if (((bitField0_ & 0x00000004) == 0x00000004)) {
+          products_ = new com.google.protobuf.UnmodifiableLazyStringList(
+              products_);
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.products_ = products_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -3239,6 +3494,16 @@ public final class Partners {
         }
         if (other.hasPage()) {
           setPage(other.getPage());
+        }
+        if (!other.products_.isEmpty()) {
+          if (products_.isEmpty()) {
+            products_ = other.products_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+          } else {
+            ensureProductsIsMutable();
+            products_.addAll(other.products_);
+          }
+          onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
@@ -3289,6 +3554,11 @@ public final class Partners {
             case 16: {
               bitField0_ |= 0x00000002;
               page_ = input.readInt32();
+              break;
+            }
+            case 26: {
+              ensureProductsIsMutable();
+              products_.add(input.readBytes());
               break;
             }
           }
@@ -3408,6 +3678,62 @@ public final class Partners {
         return this;
       }
       
+      // repeated string products = 3;
+      private com.google.protobuf.LazyStringList products_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureProductsIsMutable() {
+        if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+          products_ = new com.google.protobuf.LazyStringArrayList(products_);
+          bitField0_ |= 0x00000004;
+         }
+      }
+      public java.util.List<String>
+          getProductsList() {
+        return java.util.Collections.unmodifiableList(products_);
+      }
+      public int getProductsCount() {
+        return products_.size();
+      }
+      public String getProducts(int index) {
+        return products_.get(index);
+      }
+      public Builder setProducts(
+          int index, String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureProductsIsMutable();
+        products_.set(index, value);
+        onChanged();
+        return this;
+      }
+      public Builder addProducts(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureProductsIsMutable();
+        products_.add(value);
+        onChanged();
+        return this;
+      }
+      public Builder addAllProducts(
+          java.lang.Iterable<String> values) {
+        ensureProductsIsMutable();
+        super.addAll(values, products_);
+        onChanged();
+        return this;
+      }
+      public Builder clearProducts() {
+        products_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      void addProducts(com.google.protobuf.ByteString value) {
+        ensureProductsIsMutable();
+        products_.add(value);
+        onChanged();
+      }
+      
       // @@protoc_insertion_point(builder_scope:messaging.PartnersRequest)
     }
     
@@ -3422,9 +3748,9 @@ public final class Partners {
   public interface PartnersResponseOrBuilder
       extends com.google.protobuf.MessageOrBuilder {
     
-    // required int32 pagesCount = 1;
-    boolean hasPagesCount();
-    int getPagesCount();
+    // required int32 totalPages = 1;
+    boolean hasTotalPages();
+    int getTotalPages();
     
     // required int32 page = 2;
     boolean hasPage();
@@ -3469,14 +3795,14 @@ public final class Partners {
     }
     
     private int bitField0_;
-    // required int32 pagesCount = 1;
-    public static final int PAGESCOUNT_FIELD_NUMBER = 1;
-    private int pagesCount_;
-    public boolean hasPagesCount() {
+    // required int32 totalPages = 1;
+    public static final int TOTALPAGES_FIELD_NUMBER = 1;
+    private int totalPages_;
+    public boolean hasTotalPages() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
-    public int getPagesCount() {
-      return pagesCount_;
+    public int getTotalPages() {
+      return totalPages_;
     }
     
     // required int32 page = 2;
@@ -3511,7 +3837,7 @@ public final class Partners {
     }
     
     private void initFields() {
-      pagesCount_ = 0;
+      totalPages_ = 0;
       page_ = 0;
       partners_ = java.util.Collections.emptyList();
     }
@@ -3520,7 +3846,7 @@ public final class Partners {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized != -1) return isInitialized == 1;
       
-      if (!hasPagesCount()) {
+      if (!hasTotalPages()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -3542,7 +3868,7 @@ public final class Partners {
                         throws java.io.IOException {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeInt32(1, pagesCount_);
+        output.writeInt32(1, totalPages_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeInt32(2, page_);
@@ -3561,7 +3887,7 @@ public final class Partners {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, pagesCount_);
+          .computeInt32Size(1, totalPages_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
@@ -3576,8 +3902,10 @@ public final class Partners {
       return size;
     }
     
+    private static final long serialVersionUID = 0L;
     @java.lang.Override
-    protected Object writeReplace() throws java.io.ObjectStreamException {
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
     
@@ -3694,7 +4022,7 @@ public final class Partners {
       
       public Builder clear() {
         super.clear();
-        pagesCount_ = 0;
+        totalPages_ = 0;
         bitField0_ = (bitField0_ & ~0x00000001);
         page_ = 0;
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -3745,7 +4073,7 @@ public final class Partners {
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
           to_bitField0_ |= 0x00000001;
         }
-        result.pagesCount_ = pagesCount_;
+        result.totalPages_ = totalPages_;
         if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
           to_bitField0_ |= 0x00000002;
         }
@@ -3775,8 +4103,8 @@ public final class Partners {
       
       public Builder mergeFrom(com.idamobile.protocol.ubrr.Partners.PartnersResponse other) {
         if (other == com.idamobile.protocol.ubrr.Partners.PartnersResponse.getDefaultInstance()) return this;
-        if (other.hasPagesCount()) {
-          setPagesCount(other.getPagesCount());
+        if (other.hasTotalPages()) {
+          setTotalPages(other.getTotalPages());
         }
         if (other.hasPage()) {
           setPage(other.getPage());
@@ -3812,7 +4140,7 @@ public final class Partners {
       }
       
       public final boolean isInitialized() {
-        if (!hasPagesCount()) {
+        if (!hasTotalPages()) {
           
           return false;
         }
@@ -3854,7 +4182,7 @@ public final class Partners {
             }
             case 8: {
               bitField0_ |= 0x00000001;
-              pagesCount_ = input.readInt32();
+              totalPages_ = input.readInt32();
               break;
             }
             case 16: {
@@ -3874,23 +4202,23 @@ public final class Partners {
       
       private int bitField0_;
       
-      // required int32 pagesCount = 1;
-      private int pagesCount_ ;
-      public boolean hasPagesCount() {
+      // required int32 totalPages = 1;
+      private int totalPages_ ;
+      public boolean hasTotalPages() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
-      public int getPagesCount() {
-        return pagesCount_;
+      public int getTotalPages() {
+        return totalPages_;
       }
-      public Builder setPagesCount(int value) {
+      public Builder setTotalPages(int value) {
         bitField0_ |= 0x00000001;
-        pagesCount_ = value;
+        totalPages_ = value;
         onChanged();
         return this;
       }
-      public Builder clearPagesCount() {
+      public Builder clearTotalPages() {
         bitField0_ = (bitField0_ & ~0x00000001);
-        pagesCount_ = 0;
+        totalPages_ = 0;
         onChanged();
         return this;
       }
@@ -4125,6 +4453,11 @@ public final class Partners {
     boolean hasBottomRight();
     com.idamobile.protocol.ubrr.Commons.GeoPointMessage getBottomRight();
     com.idamobile.protocol.ubrr.Commons.GeoPointMessageOrBuilder getBottomRightOrBuilder();
+    
+    // repeated string products = 3;
+    java.util.List<String> getProductsList();
+    int getProductsCount();
+    String getProducts(int index);
   }
   public static final class MapPartnersRequest extends
       com.google.protobuf.GeneratedMessage
@@ -4181,9 +4514,24 @@ public final class Partners {
       return bottomRight_;
     }
     
+    // repeated string products = 3;
+    public static final int PRODUCTS_FIELD_NUMBER = 3;
+    private com.google.protobuf.LazyStringList products_;
+    public java.util.List<String>
+        getProductsList() {
+      return products_;
+    }
+    public int getProductsCount() {
+      return products_.size();
+    }
+    public String getProducts(int index) {
+      return products_.get(index);
+    }
+    
     private void initFields() {
       topLeft_ = com.idamobile.protocol.ubrr.Commons.GeoPointMessage.getDefaultInstance();
       bottomRight_ = com.idamobile.protocol.ubrr.Commons.GeoPointMessage.getDefaultInstance();
+      products_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -4219,6 +4567,9 @@ public final class Partners {
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeMessage(2, bottomRight_);
       }
+      for (int i = 0; i < products_.size(); i++) {
+        output.writeBytes(3, products_.getByteString(i));
+      }
       getUnknownFields().writeTo(output);
     }
     
@@ -4236,13 +4587,24 @@ public final class Partners {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, bottomRight_);
       }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < products_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeBytesSizeNoTag(products_.getByteString(i));
+        }
+        size += dataSize;
+        size += 1 * getProductsList().size();
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
       return size;
     }
     
+    private static final long serialVersionUID = 0L;
     @java.lang.Override
-    protected Object writeReplace() throws java.io.ObjectStreamException {
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
     
@@ -4372,6 +4734,8 @@ public final class Partners {
           bottomRightBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000002);
+        products_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
       
@@ -4426,6 +4790,12 @@ public final class Partners {
         } else {
           result.bottomRight_ = bottomRightBuilder_.build();
         }
+        if (((bitField0_ & 0x00000004) == 0x00000004)) {
+          products_ = new com.google.protobuf.UnmodifiableLazyStringList(
+              products_);
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.products_ = products_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -4447,6 +4817,16 @@ public final class Partners {
         }
         if (other.hasBottomRight()) {
           mergeBottomRight(other.getBottomRight());
+        }
+        if (!other.products_.isEmpty()) {
+          if (products_.isEmpty()) {
+            products_ = other.products_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+          } else {
+            ensureProductsIsMutable();
+            products_.addAll(other.products_);
+          }
+          onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
@@ -4511,6 +4891,11 @@ public final class Partners {
               }
               input.readMessage(subBuilder, extensionRegistry);
               setBottomRight(subBuilder.buildPartial());
+              break;
+            }
+            case 26: {
+              ensureProductsIsMutable();
+              products_.add(input.readBytes());
               break;
             }
           }
@@ -4699,6 +5084,62 @@ public final class Partners {
         return bottomRightBuilder_;
       }
       
+      // repeated string products = 3;
+      private com.google.protobuf.LazyStringList products_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureProductsIsMutable() {
+        if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+          products_ = new com.google.protobuf.LazyStringArrayList(products_);
+          bitField0_ |= 0x00000004;
+         }
+      }
+      public java.util.List<String>
+          getProductsList() {
+        return java.util.Collections.unmodifiableList(products_);
+      }
+      public int getProductsCount() {
+        return products_.size();
+      }
+      public String getProducts(int index) {
+        return products_.get(index);
+      }
+      public Builder setProducts(
+          int index, String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureProductsIsMutable();
+        products_.set(index, value);
+        onChanged();
+        return this;
+      }
+      public Builder addProducts(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureProductsIsMutable();
+        products_.add(value);
+        onChanged();
+        return this;
+      }
+      public Builder addAllProducts(
+          java.lang.Iterable<String> values) {
+        ensureProductsIsMutable();
+        super.addAll(values, products_);
+        onChanged();
+        return this;
+      }
+      public Builder clearProducts() {
+        products_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      void addProducts(com.google.protobuf.ByteString value) {
+        ensureProductsIsMutable();
+        products_.add(value);
+        onChanged();
+      }
+      
       // @@protoc_insertion_point(builder_scope:messaging.MapPartnersRequest)
     }
     
@@ -4859,8 +5300,10 @@ public final class Partners {
       return size;
     }
     
+    private static final long serialVersionUID = 0L;
     @java.lang.Override
-    protected Object writeReplace() throws java.io.ObjectStreamException {
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
     
@@ -5556,6 +5999,2228 @@ public final class Partners {
     // @@protoc_insertion_point(class_scope:messaging.MapPartnersResponse)
   }
   
+  public interface ProductRequestOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+    
+    // repeated string existing = 1;
+    java.util.List<String> getExistingList();
+    int getExistingCount();
+    String getExisting(int index);
+  }
+  public static final class ProductRequest extends
+      com.google.protobuf.GeneratedMessage
+      implements ProductRequestOrBuilder {
+    // Use ProductRequest.newBuilder() to construct.
+    private ProductRequest(Builder builder) {
+      super(builder);
+    }
+    private ProductRequest(boolean noInit) {}
+    
+    private static final ProductRequest defaultInstance;
+    public static ProductRequest getDefaultInstance() {
+      return defaultInstance;
+    }
+    
+    public ProductRequest getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+    
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.idamobile.protocol.ubrr.Partners.internal_static_messaging_ProductRequest_descriptor;
+    }
+    
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.idamobile.protocol.ubrr.Partners.internal_static_messaging_ProductRequest_fieldAccessorTable;
+    }
+    
+    // repeated string existing = 1;
+    public static final int EXISTING_FIELD_NUMBER = 1;
+    private com.google.protobuf.LazyStringList existing_;
+    public java.util.List<String>
+        getExistingList() {
+      return existing_;
+    }
+    public int getExistingCount() {
+      return existing_.size();
+    }
+    public String getExisting(int index) {
+      return existing_.get(index);
+    }
+    
+    private void initFields() {
+      existing_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+      
+      memoizedIsInitialized = 1;
+      return true;
+    }
+    
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      for (int i = 0; i < existing_.size(); i++) {
+        output.writeBytes(1, existing_.getByteString(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+    
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+    
+      size = 0;
+      {
+        int dataSize = 0;
+        for (int i = 0; i < existing_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeBytesSizeNoTag(existing_.getByteString(i));
+        }
+        size += dataSize;
+        size += 1 * getExistingList().size();
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+    
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+    
+    public static com.idamobile.protocol.ubrr.Partners.ProductRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static com.idamobile.protocol.ubrr.Partners.ProductRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.idamobile.protocol.ubrr.Partners.ProductRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static com.idamobile.protocol.ubrr.Partners.ProductRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.idamobile.protocol.ubrr.Partners.ProductRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static com.idamobile.protocol.ubrr.Partners.ProductRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.idamobile.protocol.ubrr.Partners.ProductRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static com.idamobile.protocol.ubrr.Partners.ProductRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static com.idamobile.protocol.ubrr.Partners.ProductRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static com.idamobile.protocol.ubrr.Partners.ProductRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.idamobile.protocol.ubrr.Partners.ProductRequest prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+    
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements com.idamobile.protocol.ubrr.Partners.ProductRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.idamobile.protocol.ubrr.Partners.internal_static_messaging_ProductRequest_descriptor;
+      }
+      
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.idamobile.protocol.ubrr.Partners.internal_static_messaging_ProductRequest_fieldAccessorTable;
+      }
+      
+      // Construct using com.idamobile.protocol.ubrr.Partners.ProductRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+      
+      private Builder(BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+      
+      public Builder clear() {
+        super.clear();
+        existing_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+      
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+      
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.idamobile.protocol.ubrr.Partners.ProductRequest.getDescriptor();
+      }
+      
+      public com.idamobile.protocol.ubrr.Partners.ProductRequest getDefaultInstanceForType() {
+        return com.idamobile.protocol.ubrr.Partners.ProductRequest.getDefaultInstance();
+      }
+      
+      public com.idamobile.protocol.ubrr.Partners.ProductRequest build() {
+        com.idamobile.protocol.ubrr.Partners.ProductRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+      
+      private com.idamobile.protocol.ubrr.Partners.ProductRequest buildParsed()
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        com.idamobile.protocol.ubrr.Partners.ProductRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(
+            result).asInvalidProtocolBufferException();
+        }
+        return result;
+      }
+      
+      public com.idamobile.protocol.ubrr.Partners.ProductRequest buildPartial() {
+        com.idamobile.protocol.ubrr.Partners.ProductRequest result = new com.idamobile.protocol.ubrr.Partners.ProductRequest(this);
+        int from_bitField0_ = bitField0_;
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          existing_ = new com.google.protobuf.UnmodifiableLazyStringList(
+              existing_);
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.existing_ = existing_;
+        onBuilt();
+        return result;
+      }
+      
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.idamobile.protocol.ubrr.Partners.ProductRequest) {
+          return mergeFrom((com.idamobile.protocol.ubrr.Partners.ProductRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+      
+      public Builder mergeFrom(com.idamobile.protocol.ubrr.Partners.ProductRequest other) {
+        if (other == com.idamobile.protocol.ubrr.Partners.ProductRequest.getDefaultInstance()) return this;
+        if (!other.existing_.isEmpty()) {
+          if (existing_.isEmpty()) {
+            existing_ = other.existing_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureExistingIsMutable();
+            existing_.addAll(other.existing_);
+          }
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+      
+      public final boolean isInitialized() {
+        return true;
+      }
+      
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder(
+            this.getUnknownFields());
+        while (true) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              this.setUnknownFields(unknownFields.build());
+              onChanged();
+              return this;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                this.setUnknownFields(unknownFields.build());
+                onChanged();
+                return this;
+              }
+              break;
+            }
+            case 10: {
+              ensureExistingIsMutable();
+              existing_.add(input.readBytes());
+              break;
+            }
+          }
+        }
+      }
+      
+      private int bitField0_;
+      
+      // repeated string existing = 1;
+      private com.google.protobuf.LazyStringList existing_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureExistingIsMutable() {
+        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+          existing_ = new com.google.protobuf.LazyStringArrayList(existing_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+      public java.util.List<String>
+          getExistingList() {
+        return java.util.Collections.unmodifiableList(existing_);
+      }
+      public int getExistingCount() {
+        return existing_.size();
+      }
+      public String getExisting(int index) {
+        return existing_.get(index);
+      }
+      public Builder setExisting(
+          int index, String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureExistingIsMutable();
+        existing_.set(index, value);
+        onChanged();
+        return this;
+      }
+      public Builder addExisting(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureExistingIsMutable();
+        existing_.add(value);
+        onChanged();
+        return this;
+      }
+      public Builder addAllExisting(
+          java.lang.Iterable<String> values) {
+        ensureExistingIsMutable();
+        super.addAll(values, existing_);
+        onChanged();
+        return this;
+      }
+      public Builder clearExisting() {
+        existing_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      void addExisting(com.google.protobuf.ByteString value) {
+        ensureExistingIsMutable();
+        existing_.add(value);
+        onChanged();
+      }
+      
+      // @@protoc_insertion_point(builder_scope:messaging.ProductRequest)
+    }
+    
+    static {
+      defaultInstance = new ProductRequest(true);
+      defaultInstance.initFields();
+    }
+    
+    // @@protoc_insertion_point(class_scope:messaging.ProductRequest)
+  }
+  
+  public interface ProductResponseOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+    
+    // repeated string products = 1;
+    java.util.List<String> getProductsList();
+    int getProductsCount();
+    String getProducts(int index);
+    
+    // repeated string deleted = 2;
+    java.util.List<String> getDeletedList();
+    int getDeletedCount();
+    String getDeleted(int index);
+  }
+  public static final class ProductResponse extends
+      com.google.protobuf.GeneratedMessage
+      implements ProductResponseOrBuilder {
+    // Use ProductResponse.newBuilder() to construct.
+    private ProductResponse(Builder builder) {
+      super(builder);
+    }
+    private ProductResponse(boolean noInit) {}
+    
+    private static final ProductResponse defaultInstance;
+    public static ProductResponse getDefaultInstance() {
+      return defaultInstance;
+    }
+    
+    public ProductResponse getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+    
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.idamobile.protocol.ubrr.Partners.internal_static_messaging_ProductResponse_descriptor;
+    }
+    
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.idamobile.protocol.ubrr.Partners.internal_static_messaging_ProductResponse_fieldAccessorTable;
+    }
+    
+    // repeated string products = 1;
+    public static final int PRODUCTS_FIELD_NUMBER = 1;
+    private com.google.protobuf.LazyStringList products_;
+    public java.util.List<String>
+        getProductsList() {
+      return products_;
+    }
+    public int getProductsCount() {
+      return products_.size();
+    }
+    public String getProducts(int index) {
+      return products_.get(index);
+    }
+    
+    // repeated string deleted = 2;
+    public static final int DELETED_FIELD_NUMBER = 2;
+    private com.google.protobuf.LazyStringList deleted_;
+    public java.util.List<String>
+        getDeletedList() {
+      return deleted_;
+    }
+    public int getDeletedCount() {
+      return deleted_.size();
+    }
+    public String getDeleted(int index) {
+      return deleted_.get(index);
+    }
+    
+    private void initFields() {
+      products_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      deleted_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+      
+      memoizedIsInitialized = 1;
+      return true;
+    }
+    
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      for (int i = 0; i < products_.size(); i++) {
+        output.writeBytes(1, products_.getByteString(i));
+      }
+      for (int i = 0; i < deleted_.size(); i++) {
+        output.writeBytes(2, deleted_.getByteString(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+    
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+    
+      size = 0;
+      {
+        int dataSize = 0;
+        for (int i = 0; i < products_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeBytesSizeNoTag(products_.getByteString(i));
+        }
+        size += dataSize;
+        size += 1 * getProductsList().size();
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < deleted_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeBytesSizeNoTag(deleted_.getByteString(i));
+        }
+        size += dataSize;
+        size += 1 * getDeletedList().size();
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+    
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+    
+    public static com.idamobile.protocol.ubrr.Partners.ProductResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static com.idamobile.protocol.ubrr.Partners.ProductResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.idamobile.protocol.ubrr.Partners.ProductResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static com.idamobile.protocol.ubrr.Partners.ProductResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.idamobile.protocol.ubrr.Partners.ProductResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static com.idamobile.protocol.ubrr.Partners.ProductResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.idamobile.protocol.ubrr.Partners.ProductResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static com.idamobile.protocol.ubrr.Partners.ProductResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static com.idamobile.protocol.ubrr.Partners.ProductResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static com.idamobile.protocol.ubrr.Partners.ProductResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.idamobile.protocol.ubrr.Partners.ProductResponse prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+    
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements com.idamobile.protocol.ubrr.Partners.ProductResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.idamobile.protocol.ubrr.Partners.internal_static_messaging_ProductResponse_descriptor;
+      }
+      
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.idamobile.protocol.ubrr.Partners.internal_static_messaging_ProductResponse_fieldAccessorTable;
+      }
+      
+      // Construct using com.idamobile.protocol.ubrr.Partners.ProductResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+      
+      private Builder(BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+      
+      public Builder clear() {
+        super.clear();
+        products_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        deleted_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        return this;
+      }
+      
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+      
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.idamobile.protocol.ubrr.Partners.ProductResponse.getDescriptor();
+      }
+      
+      public com.idamobile.protocol.ubrr.Partners.ProductResponse getDefaultInstanceForType() {
+        return com.idamobile.protocol.ubrr.Partners.ProductResponse.getDefaultInstance();
+      }
+      
+      public com.idamobile.protocol.ubrr.Partners.ProductResponse build() {
+        com.idamobile.protocol.ubrr.Partners.ProductResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+      
+      private com.idamobile.protocol.ubrr.Partners.ProductResponse buildParsed()
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        com.idamobile.protocol.ubrr.Partners.ProductResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(
+            result).asInvalidProtocolBufferException();
+        }
+        return result;
+      }
+      
+      public com.idamobile.protocol.ubrr.Partners.ProductResponse buildPartial() {
+        com.idamobile.protocol.ubrr.Partners.ProductResponse result = new com.idamobile.protocol.ubrr.Partners.ProductResponse(this);
+        int from_bitField0_ = bitField0_;
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          products_ = new com.google.protobuf.UnmodifiableLazyStringList(
+              products_);
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.products_ = products_;
+        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+          deleted_ = new com.google.protobuf.UnmodifiableLazyStringList(
+              deleted_);
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.deleted_ = deleted_;
+        onBuilt();
+        return result;
+      }
+      
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.idamobile.protocol.ubrr.Partners.ProductResponse) {
+          return mergeFrom((com.idamobile.protocol.ubrr.Partners.ProductResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+      
+      public Builder mergeFrom(com.idamobile.protocol.ubrr.Partners.ProductResponse other) {
+        if (other == com.idamobile.protocol.ubrr.Partners.ProductResponse.getDefaultInstance()) return this;
+        if (!other.products_.isEmpty()) {
+          if (products_.isEmpty()) {
+            products_ = other.products_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureProductsIsMutable();
+            products_.addAll(other.products_);
+          }
+          onChanged();
+        }
+        if (!other.deleted_.isEmpty()) {
+          if (deleted_.isEmpty()) {
+            deleted_ = other.deleted_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureDeletedIsMutable();
+            deleted_.addAll(other.deleted_);
+          }
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+      
+      public final boolean isInitialized() {
+        return true;
+      }
+      
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder(
+            this.getUnknownFields());
+        while (true) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              this.setUnknownFields(unknownFields.build());
+              onChanged();
+              return this;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                this.setUnknownFields(unknownFields.build());
+                onChanged();
+                return this;
+              }
+              break;
+            }
+            case 10: {
+              ensureProductsIsMutable();
+              products_.add(input.readBytes());
+              break;
+            }
+            case 18: {
+              ensureDeletedIsMutable();
+              deleted_.add(input.readBytes());
+              break;
+            }
+          }
+        }
+      }
+      
+      private int bitField0_;
+      
+      // repeated string products = 1;
+      private com.google.protobuf.LazyStringList products_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureProductsIsMutable() {
+        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+          products_ = new com.google.protobuf.LazyStringArrayList(products_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+      public java.util.List<String>
+          getProductsList() {
+        return java.util.Collections.unmodifiableList(products_);
+      }
+      public int getProductsCount() {
+        return products_.size();
+      }
+      public String getProducts(int index) {
+        return products_.get(index);
+      }
+      public Builder setProducts(
+          int index, String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureProductsIsMutable();
+        products_.set(index, value);
+        onChanged();
+        return this;
+      }
+      public Builder addProducts(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureProductsIsMutable();
+        products_.add(value);
+        onChanged();
+        return this;
+      }
+      public Builder addAllProducts(
+          java.lang.Iterable<String> values) {
+        ensureProductsIsMutable();
+        super.addAll(values, products_);
+        onChanged();
+        return this;
+      }
+      public Builder clearProducts() {
+        products_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      void addProducts(com.google.protobuf.ByteString value) {
+        ensureProductsIsMutable();
+        products_.add(value);
+        onChanged();
+      }
+      
+      // repeated string deleted = 2;
+      private com.google.protobuf.LazyStringList deleted_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureDeletedIsMutable() {
+        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+          deleted_ = new com.google.protobuf.LazyStringArrayList(deleted_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+      public java.util.List<String>
+          getDeletedList() {
+        return java.util.Collections.unmodifiableList(deleted_);
+      }
+      public int getDeletedCount() {
+        return deleted_.size();
+      }
+      public String getDeleted(int index) {
+        return deleted_.get(index);
+      }
+      public Builder setDeleted(
+          int index, String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureDeletedIsMutable();
+        deleted_.set(index, value);
+        onChanged();
+        return this;
+      }
+      public Builder addDeleted(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureDeletedIsMutable();
+        deleted_.add(value);
+        onChanged();
+        return this;
+      }
+      public Builder addAllDeleted(
+          java.lang.Iterable<String> values) {
+        ensureDeletedIsMutable();
+        super.addAll(values, deleted_);
+        onChanged();
+        return this;
+      }
+      public Builder clearDeleted() {
+        deleted_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      void addDeleted(com.google.protobuf.ByteString value) {
+        ensureDeletedIsMutable();
+        deleted_.add(value);
+        onChanged();
+      }
+      
+      // @@protoc_insertion_point(builder_scope:messaging.ProductResponse)
+    }
+    
+    static {
+      defaultInstance = new ProductResponse(true);
+      defaultInstance.initFields();
+    }
+    
+    // @@protoc_insertion_point(class_scope:messaging.ProductResponse)
+  }
+  
+  public interface CityMessageOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+    
+    // required string city = 1;
+    boolean hasCity();
+    String getCity();
+    
+    // repeated string subwayStations = 2;
+    java.util.List<String> getSubwayStationsList();
+    int getSubwayStationsCount();
+    String getSubwayStations(int index);
+  }
+  public static final class CityMessage extends
+      com.google.protobuf.GeneratedMessage
+      implements CityMessageOrBuilder {
+    // Use CityMessage.newBuilder() to construct.
+    private CityMessage(Builder builder) {
+      super(builder);
+    }
+    private CityMessage(boolean noInit) {}
+    
+    private static final CityMessage defaultInstance;
+    public static CityMessage getDefaultInstance() {
+      return defaultInstance;
+    }
+    
+    public CityMessage getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+    
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.idamobile.protocol.ubrr.Partners.internal_static_messaging_CityMessage_descriptor;
+    }
+    
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.idamobile.protocol.ubrr.Partners.internal_static_messaging_CityMessage_fieldAccessorTable;
+    }
+    
+    private int bitField0_;
+    // required string city = 1;
+    public static final int CITY_FIELD_NUMBER = 1;
+    private java.lang.Object city_;
+    public boolean hasCity() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    public String getCity() {
+      java.lang.Object ref = city_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+          city_ = s;
+        }
+        return s;
+      }
+    }
+    private com.google.protobuf.ByteString getCityBytes() {
+      java.lang.Object ref = city_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+        city_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    
+    // repeated string subwayStations = 2;
+    public static final int SUBWAYSTATIONS_FIELD_NUMBER = 2;
+    private com.google.protobuf.LazyStringList subwayStations_;
+    public java.util.List<String>
+        getSubwayStationsList() {
+      return subwayStations_;
+    }
+    public int getSubwayStationsCount() {
+      return subwayStations_.size();
+    }
+    public String getSubwayStations(int index) {
+      return subwayStations_.get(index);
+    }
+    
+    private void initFields() {
+      city_ = "";
+      subwayStations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+      
+      if (!hasCity()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+    
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeBytes(1, getCityBytes());
+      }
+      for (int i = 0; i < subwayStations_.size(); i++) {
+        output.writeBytes(2, subwayStations_.getByteString(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+    
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+    
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, getCityBytes());
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < subwayStations_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeBytesSizeNoTag(subwayStations_.getByteString(i));
+        }
+        size += dataSize;
+        size += 1 * getSubwayStationsList().size();
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+    
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+    
+    public static com.idamobile.protocol.ubrr.Partners.CityMessage parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static com.idamobile.protocol.ubrr.Partners.CityMessage parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.idamobile.protocol.ubrr.Partners.CityMessage parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static com.idamobile.protocol.ubrr.Partners.CityMessage parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.idamobile.protocol.ubrr.Partners.CityMessage parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static com.idamobile.protocol.ubrr.Partners.CityMessage parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.idamobile.protocol.ubrr.Partners.CityMessage parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static com.idamobile.protocol.ubrr.Partners.CityMessage parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static com.idamobile.protocol.ubrr.Partners.CityMessage parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static com.idamobile.protocol.ubrr.Partners.CityMessage parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.idamobile.protocol.ubrr.Partners.CityMessage prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+    
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements com.idamobile.protocol.ubrr.Partners.CityMessageOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.idamobile.protocol.ubrr.Partners.internal_static_messaging_CityMessage_descriptor;
+      }
+      
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.idamobile.protocol.ubrr.Partners.internal_static_messaging_CityMessage_fieldAccessorTable;
+      }
+      
+      // Construct using com.idamobile.protocol.ubrr.Partners.CityMessage.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+      
+      private Builder(BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+      
+      public Builder clear() {
+        super.clear();
+        city_ = "";
+        bitField0_ = (bitField0_ & ~0x00000001);
+        subwayStations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        return this;
+      }
+      
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+      
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.idamobile.protocol.ubrr.Partners.CityMessage.getDescriptor();
+      }
+      
+      public com.idamobile.protocol.ubrr.Partners.CityMessage getDefaultInstanceForType() {
+        return com.idamobile.protocol.ubrr.Partners.CityMessage.getDefaultInstance();
+      }
+      
+      public com.idamobile.protocol.ubrr.Partners.CityMessage build() {
+        com.idamobile.protocol.ubrr.Partners.CityMessage result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+      
+      private com.idamobile.protocol.ubrr.Partners.CityMessage buildParsed()
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        com.idamobile.protocol.ubrr.Partners.CityMessage result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(
+            result).asInvalidProtocolBufferException();
+        }
+        return result;
+      }
+      
+      public com.idamobile.protocol.ubrr.Partners.CityMessage buildPartial() {
+        com.idamobile.protocol.ubrr.Partners.CityMessage result = new com.idamobile.protocol.ubrr.Partners.CityMessage(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.city_ = city_;
+        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+          subwayStations_ = new com.google.protobuf.UnmodifiableLazyStringList(
+              subwayStations_);
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.subwayStations_ = subwayStations_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+      
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.idamobile.protocol.ubrr.Partners.CityMessage) {
+          return mergeFrom((com.idamobile.protocol.ubrr.Partners.CityMessage)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+      
+      public Builder mergeFrom(com.idamobile.protocol.ubrr.Partners.CityMessage other) {
+        if (other == com.idamobile.protocol.ubrr.Partners.CityMessage.getDefaultInstance()) return this;
+        if (other.hasCity()) {
+          setCity(other.getCity());
+        }
+        if (!other.subwayStations_.isEmpty()) {
+          if (subwayStations_.isEmpty()) {
+            subwayStations_ = other.subwayStations_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureSubwayStationsIsMutable();
+            subwayStations_.addAll(other.subwayStations_);
+          }
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+      
+      public final boolean isInitialized() {
+        if (!hasCity()) {
+          
+          return false;
+        }
+        return true;
+      }
+      
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder(
+            this.getUnknownFields());
+        while (true) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              this.setUnknownFields(unknownFields.build());
+              onChanged();
+              return this;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                this.setUnknownFields(unknownFields.build());
+                onChanged();
+                return this;
+              }
+              break;
+            }
+            case 10: {
+              bitField0_ |= 0x00000001;
+              city_ = input.readBytes();
+              break;
+            }
+            case 18: {
+              ensureSubwayStationsIsMutable();
+              subwayStations_.add(input.readBytes());
+              break;
+            }
+          }
+        }
+      }
+      
+      private int bitField0_;
+      
+      // required string city = 1;
+      private java.lang.Object city_ = "";
+      public boolean hasCity() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      public String getCity() {
+        java.lang.Object ref = city_;
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+          city_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      public Builder setCity(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        city_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearCity() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        city_ = getDefaultInstance().getCity();
+        onChanged();
+        return this;
+      }
+      void setCity(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00000001;
+        city_ = value;
+        onChanged();
+      }
+      
+      // repeated string subwayStations = 2;
+      private com.google.protobuf.LazyStringList subwayStations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureSubwayStationsIsMutable() {
+        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+          subwayStations_ = new com.google.protobuf.LazyStringArrayList(subwayStations_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+      public java.util.List<String>
+          getSubwayStationsList() {
+        return java.util.Collections.unmodifiableList(subwayStations_);
+      }
+      public int getSubwayStationsCount() {
+        return subwayStations_.size();
+      }
+      public String getSubwayStations(int index) {
+        return subwayStations_.get(index);
+      }
+      public Builder setSubwayStations(
+          int index, String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureSubwayStationsIsMutable();
+        subwayStations_.set(index, value);
+        onChanged();
+        return this;
+      }
+      public Builder addSubwayStations(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureSubwayStationsIsMutable();
+        subwayStations_.add(value);
+        onChanged();
+        return this;
+      }
+      public Builder addAllSubwayStations(
+          java.lang.Iterable<String> values) {
+        ensureSubwayStationsIsMutable();
+        super.addAll(values, subwayStations_);
+        onChanged();
+        return this;
+      }
+      public Builder clearSubwayStations() {
+        subwayStations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      void addSubwayStations(com.google.protobuf.ByteString value) {
+        ensureSubwayStationsIsMutable();
+        subwayStations_.add(value);
+        onChanged();
+      }
+      
+      // @@protoc_insertion_point(builder_scope:messaging.CityMessage)
+    }
+    
+    static {
+      defaultInstance = new CityMessage(true);
+      defaultInstance.initFields();
+    }
+    
+    // @@protoc_insertion_point(class_scope:messaging.CityMessage)
+  }
+  
+  public interface CitiesRequestOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+  }
+  public static final class CitiesRequest extends
+      com.google.protobuf.GeneratedMessage
+      implements CitiesRequestOrBuilder {
+    // Use CitiesRequest.newBuilder() to construct.
+    private CitiesRequest(Builder builder) {
+      super(builder);
+    }
+    private CitiesRequest(boolean noInit) {}
+    
+    private static final CitiesRequest defaultInstance;
+    public static CitiesRequest getDefaultInstance() {
+      return defaultInstance;
+    }
+    
+    public CitiesRequest getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+    
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.idamobile.protocol.ubrr.Partners.internal_static_messaging_CitiesRequest_descriptor;
+    }
+    
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.idamobile.protocol.ubrr.Partners.internal_static_messaging_CitiesRequest_fieldAccessorTable;
+    }
+    
+    private void initFields() {
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+      
+      memoizedIsInitialized = 1;
+      return true;
+    }
+    
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      getUnknownFields().writeTo(output);
+    }
+    
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+    
+      size = 0;
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+    
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+    
+    public static com.idamobile.protocol.ubrr.Partners.CitiesRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static com.idamobile.protocol.ubrr.Partners.CitiesRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.idamobile.protocol.ubrr.Partners.CitiesRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static com.idamobile.protocol.ubrr.Partners.CitiesRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.idamobile.protocol.ubrr.Partners.CitiesRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static com.idamobile.protocol.ubrr.Partners.CitiesRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.idamobile.protocol.ubrr.Partners.CitiesRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static com.idamobile.protocol.ubrr.Partners.CitiesRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static com.idamobile.protocol.ubrr.Partners.CitiesRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static com.idamobile.protocol.ubrr.Partners.CitiesRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.idamobile.protocol.ubrr.Partners.CitiesRequest prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+    
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements com.idamobile.protocol.ubrr.Partners.CitiesRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.idamobile.protocol.ubrr.Partners.internal_static_messaging_CitiesRequest_descriptor;
+      }
+      
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.idamobile.protocol.ubrr.Partners.internal_static_messaging_CitiesRequest_fieldAccessorTable;
+      }
+      
+      // Construct using com.idamobile.protocol.ubrr.Partners.CitiesRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+      
+      private Builder(BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+      
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+      
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+      
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.idamobile.protocol.ubrr.Partners.CitiesRequest.getDescriptor();
+      }
+      
+      public com.idamobile.protocol.ubrr.Partners.CitiesRequest getDefaultInstanceForType() {
+        return com.idamobile.protocol.ubrr.Partners.CitiesRequest.getDefaultInstance();
+      }
+      
+      public com.idamobile.protocol.ubrr.Partners.CitiesRequest build() {
+        com.idamobile.protocol.ubrr.Partners.CitiesRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+      
+      private com.idamobile.protocol.ubrr.Partners.CitiesRequest buildParsed()
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        com.idamobile.protocol.ubrr.Partners.CitiesRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(
+            result).asInvalidProtocolBufferException();
+        }
+        return result;
+      }
+      
+      public com.idamobile.protocol.ubrr.Partners.CitiesRequest buildPartial() {
+        com.idamobile.protocol.ubrr.Partners.CitiesRequest result = new com.idamobile.protocol.ubrr.Partners.CitiesRequest(this);
+        onBuilt();
+        return result;
+      }
+      
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.idamobile.protocol.ubrr.Partners.CitiesRequest) {
+          return mergeFrom((com.idamobile.protocol.ubrr.Partners.CitiesRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+      
+      public Builder mergeFrom(com.idamobile.protocol.ubrr.Partners.CitiesRequest other) {
+        if (other == com.idamobile.protocol.ubrr.Partners.CitiesRequest.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+      
+      public final boolean isInitialized() {
+        return true;
+      }
+      
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder(
+            this.getUnknownFields());
+        while (true) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              this.setUnknownFields(unknownFields.build());
+              onChanged();
+              return this;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                this.setUnknownFields(unknownFields.build());
+                onChanged();
+                return this;
+              }
+              break;
+            }
+          }
+        }
+      }
+      
+      
+      // @@protoc_insertion_point(builder_scope:messaging.CitiesRequest)
+    }
+    
+    static {
+      defaultInstance = new CitiesRequest(true);
+      defaultInstance.initFields();
+    }
+    
+    // @@protoc_insertion_point(class_scope:messaging.CitiesRequest)
+  }
+  
+  public interface CitiesResponseOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+    
+    // repeated .messaging.CityMessage cities = 1;
+    java.util.List<com.idamobile.protocol.ubrr.Partners.CityMessage> 
+        getCitiesList();
+    com.idamobile.protocol.ubrr.Partners.CityMessage getCities(int index);
+    int getCitiesCount();
+    java.util.List<? extends com.idamobile.protocol.ubrr.Partners.CityMessageOrBuilder> 
+        getCitiesOrBuilderList();
+    com.idamobile.protocol.ubrr.Partners.CityMessageOrBuilder getCitiesOrBuilder(
+        int index);
+  }
+  public static final class CitiesResponse extends
+      com.google.protobuf.GeneratedMessage
+      implements CitiesResponseOrBuilder {
+    // Use CitiesResponse.newBuilder() to construct.
+    private CitiesResponse(Builder builder) {
+      super(builder);
+    }
+    private CitiesResponse(boolean noInit) {}
+    
+    private static final CitiesResponse defaultInstance;
+    public static CitiesResponse getDefaultInstance() {
+      return defaultInstance;
+    }
+    
+    public CitiesResponse getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+    
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.idamobile.protocol.ubrr.Partners.internal_static_messaging_CitiesResponse_descriptor;
+    }
+    
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.idamobile.protocol.ubrr.Partners.internal_static_messaging_CitiesResponse_fieldAccessorTable;
+    }
+    
+    // repeated .messaging.CityMessage cities = 1;
+    public static final int CITIES_FIELD_NUMBER = 1;
+    private java.util.List<com.idamobile.protocol.ubrr.Partners.CityMessage> cities_;
+    public java.util.List<com.idamobile.protocol.ubrr.Partners.CityMessage> getCitiesList() {
+      return cities_;
+    }
+    public java.util.List<? extends com.idamobile.protocol.ubrr.Partners.CityMessageOrBuilder> 
+        getCitiesOrBuilderList() {
+      return cities_;
+    }
+    public int getCitiesCount() {
+      return cities_.size();
+    }
+    public com.idamobile.protocol.ubrr.Partners.CityMessage getCities(int index) {
+      return cities_.get(index);
+    }
+    public com.idamobile.protocol.ubrr.Partners.CityMessageOrBuilder getCitiesOrBuilder(
+        int index) {
+      return cities_.get(index);
+    }
+    
+    private void initFields() {
+      cities_ = java.util.Collections.emptyList();
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+      
+      for (int i = 0; i < getCitiesCount(); i++) {
+        if (!getCities(i).isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+    
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      for (int i = 0; i < cities_.size(); i++) {
+        output.writeMessage(1, cities_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+    
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+    
+      size = 0;
+      for (int i = 0; i < cities_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, cities_.get(i));
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+    
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+    
+    public static com.idamobile.protocol.ubrr.Partners.CitiesResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static com.idamobile.protocol.ubrr.Partners.CitiesResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.idamobile.protocol.ubrr.Partners.CitiesResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static com.idamobile.protocol.ubrr.Partners.CitiesResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.idamobile.protocol.ubrr.Partners.CitiesResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static com.idamobile.protocol.ubrr.Partners.CitiesResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.idamobile.protocol.ubrr.Partners.CitiesResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static com.idamobile.protocol.ubrr.Partners.CitiesResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static com.idamobile.protocol.ubrr.Partners.CitiesResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static com.idamobile.protocol.ubrr.Partners.CitiesResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.idamobile.protocol.ubrr.Partners.CitiesResponse prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+    
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements com.idamobile.protocol.ubrr.Partners.CitiesResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.idamobile.protocol.ubrr.Partners.internal_static_messaging_CitiesResponse_descriptor;
+      }
+      
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.idamobile.protocol.ubrr.Partners.internal_static_messaging_CitiesResponse_fieldAccessorTable;
+      }
+      
+      // Construct using com.idamobile.protocol.ubrr.Partners.CitiesResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+      
+      private Builder(BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          getCitiesFieldBuilder();
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+      
+      public Builder clear() {
+        super.clear();
+        if (citiesBuilder_ == null) {
+          cities_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          citiesBuilder_.clear();
+        }
+        return this;
+      }
+      
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+      
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.idamobile.protocol.ubrr.Partners.CitiesResponse.getDescriptor();
+      }
+      
+      public com.idamobile.protocol.ubrr.Partners.CitiesResponse getDefaultInstanceForType() {
+        return com.idamobile.protocol.ubrr.Partners.CitiesResponse.getDefaultInstance();
+      }
+      
+      public com.idamobile.protocol.ubrr.Partners.CitiesResponse build() {
+        com.idamobile.protocol.ubrr.Partners.CitiesResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+      
+      private com.idamobile.protocol.ubrr.Partners.CitiesResponse buildParsed()
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        com.idamobile.protocol.ubrr.Partners.CitiesResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(
+            result).asInvalidProtocolBufferException();
+        }
+        return result;
+      }
+      
+      public com.idamobile.protocol.ubrr.Partners.CitiesResponse buildPartial() {
+        com.idamobile.protocol.ubrr.Partners.CitiesResponse result = new com.idamobile.protocol.ubrr.Partners.CitiesResponse(this);
+        int from_bitField0_ = bitField0_;
+        if (citiesBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+            cities_ = java.util.Collections.unmodifiableList(cities_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.cities_ = cities_;
+        } else {
+          result.cities_ = citiesBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+      
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.idamobile.protocol.ubrr.Partners.CitiesResponse) {
+          return mergeFrom((com.idamobile.protocol.ubrr.Partners.CitiesResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+      
+      public Builder mergeFrom(com.idamobile.protocol.ubrr.Partners.CitiesResponse other) {
+        if (other == com.idamobile.protocol.ubrr.Partners.CitiesResponse.getDefaultInstance()) return this;
+        if (citiesBuilder_ == null) {
+          if (!other.cities_.isEmpty()) {
+            if (cities_.isEmpty()) {
+              cities_ = other.cities_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureCitiesIsMutable();
+              cities_.addAll(other.cities_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.cities_.isEmpty()) {
+            if (citiesBuilder_.isEmpty()) {
+              citiesBuilder_.dispose();
+              citiesBuilder_ = null;
+              cities_ = other.cities_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              citiesBuilder_ = 
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                   getCitiesFieldBuilder() : null;
+            } else {
+              citiesBuilder_.addAllMessages(other.cities_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+      
+      public final boolean isInitialized() {
+        for (int i = 0; i < getCitiesCount(); i++) {
+          if (!getCities(i).isInitialized()) {
+            
+            return false;
+          }
+        }
+        return true;
+      }
+      
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder(
+            this.getUnknownFields());
+        while (true) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              this.setUnknownFields(unknownFields.build());
+              onChanged();
+              return this;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                this.setUnknownFields(unknownFields.build());
+                onChanged();
+                return this;
+              }
+              break;
+            }
+            case 10: {
+              com.idamobile.protocol.ubrr.Partners.CityMessage.Builder subBuilder = com.idamobile.protocol.ubrr.Partners.CityMessage.newBuilder();
+              input.readMessage(subBuilder, extensionRegistry);
+              addCities(subBuilder.buildPartial());
+              break;
+            }
+          }
+        }
+      }
+      
+      private int bitField0_;
+      
+      // repeated .messaging.CityMessage cities = 1;
+      private java.util.List<com.idamobile.protocol.ubrr.Partners.CityMessage> cities_ =
+        java.util.Collections.emptyList();
+      private void ensureCitiesIsMutable() {
+        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+          cities_ = new java.util.ArrayList<com.idamobile.protocol.ubrr.Partners.CityMessage>(cities_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+      
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.idamobile.protocol.ubrr.Partners.CityMessage, com.idamobile.protocol.ubrr.Partners.CityMessage.Builder, com.idamobile.protocol.ubrr.Partners.CityMessageOrBuilder> citiesBuilder_;
+      
+      public java.util.List<com.idamobile.protocol.ubrr.Partners.CityMessage> getCitiesList() {
+        if (citiesBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(cities_);
+        } else {
+          return citiesBuilder_.getMessageList();
+        }
+      }
+      public int getCitiesCount() {
+        if (citiesBuilder_ == null) {
+          return cities_.size();
+        } else {
+          return citiesBuilder_.getCount();
+        }
+      }
+      public com.idamobile.protocol.ubrr.Partners.CityMessage getCities(int index) {
+        if (citiesBuilder_ == null) {
+          return cities_.get(index);
+        } else {
+          return citiesBuilder_.getMessage(index);
+        }
+      }
+      public Builder setCities(
+          int index, com.idamobile.protocol.ubrr.Partners.CityMessage value) {
+        if (citiesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureCitiesIsMutable();
+          cities_.set(index, value);
+          onChanged();
+        } else {
+          citiesBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      public Builder setCities(
+          int index, com.idamobile.protocol.ubrr.Partners.CityMessage.Builder builderForValue) {
+        if (citiesBuilder_ == null) {
+          ensureCitiesIsMutable();
+          cities_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          citiesBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      public Builder addCities(com.idamobile.protocol.ubrr.Partners.CityMessage value) {
+        if (citiesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureCitiesIsMutable();
+          cities_.add(value);
+          onChanged();
+        } else {
+          citiesBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      public Builder addCities(
+          int index, com.idamobile.protocol.ubrr.Partners.CityMessage value) {
+        if (citiesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureCitiesIsMutable();
+          cities_.add(index, value);
+          onChanged();
+        } else {
+          citiesBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      public Builder addCities(
+          com.idamobile.protocol.ubrr.Partners.CityMessage.Builder builderForValue) {
+        if (citiesBuilder_ == null) {
+          ensureCitiesIsMutable();
+          cities_.add(builderForValue.build());
+          onChanged();
+        } else {
+          citiesBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      public Builder addCities(
+          int index, com.idamobile.protocol.ubrr.Partners.CityMessage.Builder builderForValue) {
+        if (citiesBuilder_ == null) {
+          ensureCitiesIsMutable();
+          cities_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          citiesBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      public Builder addAllCities(
+          java.lang.Iterable<? extends com.idamobile.protocol.ubrr.Partners.CityMessage> values) {
+        if (citiesBuilder_ == null) {
+          ensureCitiesIsMutable();
+          super.addAll(values, cities_);
+          onChanged();
+        } else {
+          citiesBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      public Builder clearCities() {
+        if (citiesBuilder_ == null) {
+          cities_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          citiesBuilder_.clear();
+        }
+        return this;
+      }
+      public Builder removeCities(int index) {
+        if (citiesBuilder_ == null) {
+          ensureCitiesIsMutable();
+          cities_.remove(index);
+          onChanged();
+        } else {
+          citiesBuilder_.remove(index);
+        }
+        return this;
+      }
+      public com.idamobile.protocol.ubrr.Partners.CityMessage.Builder getCitiesBuilder(
+          int index) {
+        return getCitiesFieldBuilder().getBuilder(index);
+      }
+      public com.idamobile.protocol.ubrr.Partners.CityMessageOrBuilder getCitiesOrBuilder(
+          int index) {
+        if (citiesBuilder_ == null) {
+          return cities_.get(index);  } else {
+          return citiesBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      public java.util.List<? extends com.idamobile.protocol.ubrr.Partners.CityMessageOrBuilder> 
+           getCitiesOrBuilderList() {
+        if (citiesBuilder_ != null) {
+          return citiesBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(cities_);
+        }
+      }
+      public com.idamobile.protocol.ubrr.Partners.CityMessage.Builder addCitiesBuilder() {
+        return getCitiesFieldBuilder().addBuilder(
+            com.idamobile.protocol.ubrr.Partners.CityMessage.getDefaultInstance());
+      }
+      public com.idamobile.protocol.ubrr.Partners.CityMessage.Builder addCitiesBuilder(
+          int index) {
+        return getCitiesFieldBuilder().addBuilder(
+            index, com.idamobile.protocol.ubrr.Partners.CityMessage.getDefaultInstance());
+      }
+      public java.util.List<com.idamobile.protocol.ubrr.Partners.CityMessage.Builder> 
+           getCitiesBuilderList() {
+        return getCitiesFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.idamobile.protocol.ubrr.Partners.CityMessage, com.idamobile.protocol.ubrr.Partners.CityMessage.Builder, com.idamobile.protocol.ubrr.Partners.CityMessageOrBuilder> 
+          getCitiesFieldBuilder() {
+        if (citiesBuilder_ == null) {
+          citiesBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+              com.idamobile.protocol.ubrr.Partners.CityMessage, com.idamobile.protocol.ubrr.Partners.CityMessage.Builder, com.idamobile.protocol.ubrr.Partners.CityMessageOrBuilder>(
+                  cities_,
+                  ((bitField0_ & 0x00000001) == 0x00000001),
+                  getParentForChildren(),
+                  isClean());
+          cities_ = null;
+        }
+        return citiesBuilder_;
+      }
+      
+      // @@protoc_insertion_point(builder_scope:messaging.CitiesResponse)
+    }
+    
+    static {
+      defaultInstance = new CitiesResponse(true);
+      defaultInstance.initFields();
+    }
+    
+    // @@protoc_insertion_point(class_scope:messaging.CitiesResponse)
+  }
+  
   private static com.google.protobuf.Descriptors.Descriptor
     internal_static_messaging_PartnerMessage_descriptor;
   private static
@@ -5596,6 +8261,31 @@ public final class Partners {
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_messaging_MapPartnersResponse_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_messaging_ProductRequest_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_messaging_ProductRequest_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_messaging_ProductResponse_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_messaging_ProductResponse_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_messaging_CityMessage_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_messaging_CityMessage_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_messaging_CitiesRequest_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_messaging_CitiesRequest_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_messaging_CitiesResponse_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_messaging_CitiesResponse_fieldAccessorTable;
   
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -5606,31 +8296,38 @@ public final class Partners {
   static {
     java.lang.String[] descriptorData = {
       "\n\016partners.proto\022\tmessaging\032\rcommons.pro" +
-      "to\"\325\001\n\016PartnerMessage\022\021\n\tpartnerId\030\001 \002(\005" +
+      "to\"\354\001\n\016PartnerMessage\022\021\n\tpartnerId\030\001 \002(\005" +
       "\022\014\n\004city\030\002 \001(\t\022\025\n\rsubwayStation\030\003 \001(\t\022\017\n" +
       "\007address\030\004 \001(\t\022\020\n\010latitude\030\005 \001(\001\022\021\n\tlong" +
       "itude\030\006 \001(\001\022\025\n\roperationTime\030\007 \001(\t\022\014\n\004na" +
       "me\030\010 \001(\t\022\017\n\007zipCode\030\t \001(\t\022\r\n\005phone\030\n \001(\t" +
-      "\022\020\n\010services\030\013 \003(\t\"\256\001\n\016ClusterMessage\022*\n" +
-      "\006center\030\001 \002(\0132\032.messaging.GeoPointMessag" +
-      "e\022+\n\007topLeft\030\002 \002(\0132\032.messaging.GeoPointM" +
-      "essage\022/\n\013bottomRight\030\003 \002(\0132\032.messaging.",
-      "GeoPointMessage\022\022\n\nitemsCount\030\004 \002(\005\"E\n\025N" +
-      "earestPartnerRequest\022,\n\010location\030\001 \002(\0132\032" +
-      ".messaging.GeoPointMessage\"D\n\026NearestPar" +
-      "tnerResponse\022*\n\007partner\030\001 \001(\0132\031.messagin" +
-      "g.PartnerMessage\"M\n\017PartnersRequest\022,\n\010l" +
-      "ocation\030\001 \001(\0132\032.messaging.GeoPointMessag" +
-      "e\022\014\n\004page\030\002 \001(\005\"a\n\020PartnersResponse\022\022\n\np" +
-      "agesCount\030\001 \002(\005\022\014\n\004page\030\002 \002(\005\022+\n\010partner" +
-      "s\030\003 \003(\0132\031.messaging.PartnerMessage\"r\n\022Ma" +
-      "pPartnersRequest\022+\n\007topLeft\030\001 \002(\0132\032.mess",
-      "aging.GeoPointMessage\022/\n\013bottomRight\030\002 \002" +
-      "(\0132\032.messaging.GeoPointMessage\"o\n\023MapPar" +
-      "tnersResponse\022+\n\010partners\030\001 \003(\0132\031.messag" +
-      "ing.PartnerMessage\022+\n\010clusters\030\002 \003(\0132\031.m" +
-      "essaging.ClusterMessageB\035\n\033com.idamobile" +
-      ".protocol.ubrr"
+      "\022\020\n\010services\030\013 \003(\t\022\025\n\rshortServices\030\014 \001(" +
+      "\t\"\256\001\n\016ClusterMessage\022*\n\006center\030\001 \002(\0132\032.m" +
+      "essaging.GeoPointMessage\022+\n\007topLeft\030\002 \002(" +
+      "\0132\032.messaging.GeoPointMessage\022/\n\013bottomR",
+      "ight\030\003 \002(\0132\032.messaging.GeoPointMessage\022\022" +
+      "\n\nitemsCount\030\004 \002(\005\"W\n\025NearestPartnerRequ" +
+      "est\022,\n\010location\030\001 \002(\0132\032.messaging.GeoPoi" +
+      "ntMessage\022\020\n\010products\030\002 \003(\t\"D\n\026NearestPa" +
+      "rtnerResponse\022*\n\007partner\030\001 \001(\0132\031.messagi" +
+      "ng.PartnerMessage\"_\n\017PartnersRequest\022,\n\010" +
+      "location\030\001 \001(\0132\032.messaging.GeoPointMessa" +
+      "ge\022\014\n\004page\030\002 \001(\005\022\020\n\010products\030\003 \003(\t\"a\n\020Pa" +
+      "rtnersResponse\022\022\n\ntotalPages\030\001 \002(\005\022\014\n\004pa" +
+      "ge\030\002 \002(\005\022+\n\010partners\030\003 \003(\0132\031.messaging.P",
+      "artnerMessage\"\204\001\n\022MapPartnersRequest\022+\n\007" +
+      "topLeft\030\001 \002(\0132\032.messaging.GeoPointMessag" +
+      "e\022/\n\013bottomRight\030\002 \002(\0132\032.messaging.GeoPo" +
+      "intMessage\022\020\n\010products\030\003 \003(\t\"o\n\023MapPartn" +
+      "ersResponse\022+\n\010partners\030\001 \003(\0132\031.messagin" +
+      "g.PartnerMessage\022+\n\010clusters\030\002 \003(\0132\031.mes" +
+      "saging.ClusterMessage\"\"\n\016ProductRequest\022" +
+      "\020\n\010existing\030\001 \003(\t\"4\n\017ProductResponse\022\020\n\010" +
+      "products\030\001 \003(\t\022\017\n\007deleted\030\002 \003(\t\"3\n\013CityM" +
+      "essage\022\014\n\004city\030\001 \002(\t\022\026\n\016subwayStations\030\002",
+      " \003(\t\"\017\n\rCitiesRequest\"8\n\016CitiesResponse\022" +
+      "&\n\006cities\030\001 \003(\0132\026.messaging.CityMessageB" +
+      "\035\n\033com.idamobile.protocol.ubrr"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
       new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -5642,7 +8339,7 @@ public final class Partners {
           internal_static_messaging_PartnerMessage_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_messaging_PartnerMessage_descriptor,
-              new java.lang.String[] { "PartnerId", "City", "SubwayStation", "Address", "Latitude", "Longitude", "OperationTime", "Name", "ZipCode", "Phone", "Services", },
+              new java.lang.String[] { "PartnerId", "City", "SubwayStation", "Address", "Latitude", "Longitude", "OperationTime", "Name", "ZipCode", "Phone", "Services", "ShortServices", },
               com.idamobile.protocol.ubrr.Partners.PartnerMessage.class,
               com.idamobile.protocol.ubrr.Partners.PartnerMessage.Builder.class);
           internal_static_messaging_ClusterMessage_descriptor =
@@ -5658,7 +8355,7 @@ public final class Partners {
           internal_static_messaging_NearestPartnerRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_messaging_NearestPartnerRequest_descriptor,
-              new java.lang.String[] { "Location", },
+              new java.lang.String[] { "Location", "Products", },
               com.idamobile.protocol.ubrr.Partners.NearestPartnerRequest.class,
               com.idamobile.protocol.ubrr.Partners.NearestPartnerRequest.Builder.class);
           internal_static_messaging_NearestPartnerResponse_descriptor =
@@ -5674,7 +8371,7 @@ public final class Partners {
           internal_static_messaging_PartnersRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_messaging_PartnersRequest_descriptor,
-              new java.lang.String[] { "Location", "Page", },
+              new java.lang.String[] { "Location", "Page", "Products", },
               com.idamobile.protocol.ubrr.Partners.PartnersRequest.class,
               com.idamobile.protocol.ubrr.Partners.PartnersRequest.Builder.class);
           internal_static_messaging_PartnersResponse_descriptor =
@@ -5682,7 +8379,7 @@ public final class Partners {
           internal_static_messaging_PartnersResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_messaging_PartnersResponse_descriptor,
-              new java.lang.String[] { "PagesCount", "Page", "Partners", },
+              new java.lang.String[] { "TotalPages", "Page", "Partners", },
               com.idamobile.protocol.ubrr.Partners.PartnersResponse.class,
               com.idamobile.protocol.ubrr.Partners.PartnersResponse.Builder.class);
           internal_static_messaging_MapPartnersRequest_descriptor =
@@ -5690,7 +8387,7 @@ public final class Partners {
           internal_static_messaging_MapPartnersRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_messaging_MapPartnersRequest_descriptor,
-              new java.lang.String[] { "TopLeft", "BottomRight", },
+              new java.lang.String[] { "TopLeft", "BottomRight", "Products", },
               com.idamobile.protocol.ubrr.Partners.MapPartnersRequest.class,
               com.idamobile.protocol.ubrr.Partners.MapPartnersRequest.Builder.class);
           internal_static_messaging_MapPartnersResponse_descriptor =
@@ -5701,6 +8398,46 @@ public final class Partners {
               new java.lang.String[] { "Partners", "Clusters", },
               com.idamobile.protocol.ubrr.Partners.MapPartnersResponse.class,
               com.idamobile.protocol.ubrr.Partners.MapPartnersResponse.Builder.class);
+          internal_static_messaging_ProductRequest_descriptor =
+            getDescriptor().getMessageTypes().get(8);
+          internal_static_messaging_ProductRequest_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_messaging_ProductRequest_descriptor,
+              new java.lang.String[] { "Existing", },
+              com.idamobile.protocol.ubrr.Partners.ProductRequest.class,
+              com.idamobile.protocol.ubrr.Partners.ProductRequest.Builder.class);
+          internal_static_messaging_ProductResponse_descriptor =
+            getDescriptor().getMessageTypes().get(9);
+          internal_static_messaging_ProductResponse_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_messaging_ProductResponse_descriptor,
+              new java.lang.String[] { "Products", "Deleted", },
+              com.idamobile.protocol.ubrr.Partners.ProductResponse.class,
+              com.idamobile.protocol.ubrr.Partners.ProductResponse.Builder.class);
+          internal_static_messaging_CityMessage_descriptor =
+            getDescriptor().getMessageTypes().get(10);
+          internal_static_messaging_CityMessage_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_messaging_CityMessage_descriptor,
+              new java.lang.String[] { "City", "SubwayStations", },
+              com.idamobile.protocol.ubrr.Partners.CityMessage.class,
+              com.idamobile.protocol.ubrr.Partners.CityMessage.Builder.class);
+          internal_static_messaging_CitiesRequest_descriptor =
+            getDescriptor().getMessageTypes().get(11);
+          internal_static_messaging_CitiesRequest_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_messaging_CitiesRequest_descriptor,
+              new java.lang.String[] { },
+              com.idamobile.protocol.ubrr.Partners.CitiesRequest.class,
+              com.idamobile.protocol.ubrr.Partners.CitiesRequest.Builder.class);
+          internal_static_messaging_CitiesResponse_descriptor =
+            getDescriptor().getMessageTypes().get(12);
+          internal_static_messaging_CitiesResponse_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_messaging_CitiesResponse_descriptor,
+              new java.lang.String[] { "Cities", },
+              com.idamobile.protocol.ubrr.Partners.CitiesResponse.class,
+              com.idamobile.protocol.ubrr.Partners.CitiesResponse.Builder.class);
           return null;
         }
       };

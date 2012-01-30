@@ -1,5 +1,7 @@
 package com.idamobile.server.service.locations;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -33,7 +35,8 @@ public class NearestPartnerResponseService extends AbstractMessageService<Neares
 				
 		NearestPartnerResponse.Builder builder = NearestPartnerResponse.newBuilder();
 
-		Partner partner = partnerDao.getNearestPartner(new GeoPoint(request.getLocation()));
+		List<String> products = request.getProductsList();
+		Partner partner = partnerDao.getNearestPartner(new GeoPoint(request.getLocation()), products);
 		if (partner != null) {
 			builder.setPartner(partner.createMessage());
 		}

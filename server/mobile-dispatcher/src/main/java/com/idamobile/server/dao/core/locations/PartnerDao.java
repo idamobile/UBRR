@@ -17,7 +17,7 @@ public interface PartnerDao {
 	 * @param location
 	 * @return
 	 */
-	Partner getNearestPartner(GeoPoint location);
+	Partner getNearestPartner(GeoPoint location, List<String> products);
 	
 	/**
 	 * Returns page of partners sorted by increasing distance to the given location
@@ -26,7 +26,7 @@ public interface PartnerDao {
 	 * @param pageSize
 	 * @return
 	 */
-	List<Partner> getPartners(GeoPoint location, int page, int pageSize);
+	List<Partner> getPartners(GeoPoint location, int page, int pageSize, List<String> products);
 	
 	/**
 	 * Returns unordered list of partners
@@ -34,7 +34,7 @@ public interface PartnerDao {
 	 * @param pageSize
 	 * @return
 	 */
-	List<Partner> getPartners(int page, int pageSize);
+	List<Partner> getPartners(int page, int pageSize, List<String> products);
 	
 	/**
 	 * Returns partners from specified rectangular area
@@ -42,11 +42,11 @@ public interface PartnerDao {
 	 * @param bottomRight
 	 * @return
 	 */
-	List<Partner> getViewportPartners(GeoPoint topLeft, GeoPoint bottomRight);
+	List<Partner> getViewportPartners(GeoPoint topLeft, GeoPoint bottomRight, List<String> products);
 	
 	/**
 	 * Returns number of partners
 	 * @return
 	 */
-	int count();
+	int count(List<String> products);
 }

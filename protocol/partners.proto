@@ -17,6 +17,7 @@ message PartnerMessage {
 	optional string zipCode				= 9;
 	optional string phone				= 10;
 	repeated string services			= 11;
+	optional string shortServices		= 12;
 }
 
 message ClusterMessage {
@@ -28,6 +29,7 @@ message ClusterMessage {
 
 message NearestPartnerRequest {
 	required GeoPointMessage location	= 1;
+	repeated string products			= 2;
 }
 
 message NearestPartnerResponse {
@@ -37,10 +39,11 @@ message NearestPartnerResponse {
 message PartnersRequest {
 	optional GeoPointMessage location	= 1;
 	optional int32 page					= 2;
+	repeated string products			= 3;
 }
 
 message PartnersResponse {
-	required int32 pagesCount			= 1;
+	required int32 totalPages			= 1;
 	required int32 page					= 2;
 	repeated PartnerMessage partners	= 3;
 }
@@ -48,9 +51,31 @@ message PartnersResponse {
 message MapPartnersRequest {
 	required GeoPointMessage topLeft		= 1;
 	required GeoPointMessage bottomRight	= 2;
+	repeated string products				= 3;
 }
 
 message MapPartnersResponse {
 	repeated PartnerMessage partners		= 1;
 	repeated ClusterMessage clusters		= 2;
+}
+
+message ProductRequest {
+	repeated string existing		= 1;
+}
+
+message ProductResponse {
+	repeated string products		= 1;
+	repeated string deleted			= 2;
+}
+
+message CityMessage {
+	required string city			= 1;
+	repeated string subwayStations 	= 2;
+}
+
+message CitiesRequest {
+}
+
+message CitiesResponse {
+	repeated CityMessage cities = 1;
 }

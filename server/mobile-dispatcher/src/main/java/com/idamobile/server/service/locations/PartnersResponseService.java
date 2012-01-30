@@ -17,7 +17,7 @@ import com.idamobile.server.model.locations.Partner;
 import com.idamobile.server.service.support.AbstractMessageService;
 
 @Component
-public class PartnersResponseService extends AbstractMessageService<PartnersRequest>{
+public class PartnersResponseService extends AbstractMessageService<PartnersRequest> {
 
 	@Value("${idaserver.locations.pageSize}")
 	private int pageSize;
@@ -46,11 +46,13 @@ public class PartnersResponseService extends AbstractMessageService<PartnersRequ
 			page = 1;
 		}
 
+		List<String> products = request.getProductsList();
 		List<Partner> partners = null;
+		
 		if (request.hasLocation()) {
-			partners = partnerDao.getPartners(new GeoPoint(request.getLocation()), page, pageSize);
-		}else {
-			partners = partnerDao.getPartners(page, pageSize);
+			partners = partnerDao.getPartners(new GeoPoint(request.getLocation()), page, pageSize, products);
+		} else {
+			partners = partnerDao.getPartners(page, pageSize, products);
 		}
 
 		PartnersResponse.Builder builder = PartnersResponse.newBuilder();
@@ -60,9 +62,8 @@ public class PartnersResponseService extends AbstractMessageService<PartnersRequ
 		}
 
 		builder.setPage(page);
-		int count = partnerDao.count();
-		int pagesCount = (count == 0) ? 0 : (count/pageSize + 1);
-		builder.setPagesCount(pagesCount);
+		int count = partnerDao.count(products);
+		builder.setTotalPages((int) Math.ceil(1.0 * count/pageSize));
 		
 		responseBuilder.setPartnersResponse(builder);
 	}
