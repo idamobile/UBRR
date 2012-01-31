@@ -1,7 +1,6 @@
 package com.idamobile.dispatcher.test;
 
 import java.io.InputStream;
-import java.security.NoSuchAlgorithmException;
 
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.TrustManager;
@@ -16,21 +15,18 @@ import org.apache.http.entity.ByteArrayEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
 
 import com.idamobile.dispatcher.ssl.TrustAllManager;
-import com.idamobile.protocol.ubrr.Banners.BannersRequest;
 import com.idamobile.protocol.ubrr.Commons.GeoPointMessage;
-import com.idamobile.protocol.ubrr.Currency.CurrencyRateRequest;
-import com.idamobile.protocol.ubrr.Locations.AtmsRequest;
-import com.idamobile.protocol.ubrr.Locations.OfficesRequest;
-import com.idamobile.protocol.ubrr.News.NewsRequest;
+import com.idamobile.protocol.ubrr.Partners.CitiesRequest;
 import com.idamobile.protocol.ubrr.Partners.MapPartnersRequest;
-import com.idamobile.protocol.ubrr.Partners.NearestPartnerRequest;
-import com.idamobile.protocol.ubrr.Partners.PartnersRequest;
+import com.idamobile.protocol.ubrr.Partners.PartnersBySubwayRequest;
+import com.idamobile.protocol.ubrr.Partners.ProductRequest;
 import com.idamobile.protocol.ubrr.Protocol.MBSRequest;
 import com.idamobile.protocol.ubrr.Protocol.MBSResponse;
 
 public class App {
-	public static final String IDA_SERVER_URL = "http://project.idamob.ru:8000/idaserver-UBRR/request/";
-	//public static final String IDA_SERVER_URL = "http://localhost:8000/idaserver-UBRR/request/";
+//	public static final String IDA_SERVER_URL = "http://project.idamob.ru:8000/idaserver-UBRR/request/";
+//	public static final String IDA_SERVER_URL = "http://localhost:8000/idaserver-UBRR/request/";
+	public static final String IDA_SERVER_URL  = "http://localhost:8000/idaserver/request/";
 	 
     /**
      * @param args
@@ -49,10 +45,20 @@ public class App {
     	//request.setAtmsRequest(AtmsRequest.newBuilder().setLastUpdateTime(0l));
     	//request.setOfficesRequest(OfficesRequest.newBuilder().setLastUpdateTime(0l));
     	
-    	request.setMapPartnersRequest(MapPartnersRequest.newBuilder()
-    			.setTopLeft(GeoPointMessage.newBuilder().setLatitude(50.0).setLongitude(30.1))
-    			.setBottomRight(GeoPointMessage.newBuilder().setLatitude(56.6).setLongitude(40.5)));
+//    	request.setMapPartnersRequest(MapPartnersRequest.newBuilder()
+//    			.setTopLeft(GeoPointMessage.newBuilder().setLatitude(50.0).setLongitude(30.1))
+//    			.setBottomRight(GeoPointMessage.newBuilder().setLatitude(56.6).setLongitude(40.5))
+//    			.addProducts("Card 66"));
     	
+    	request.setProductsRequest(ProductRequest.newBuilder());
+    	
+//    	request.setCitiesRequest(CitiesRequest.newBuilder());
+    	
+    	request.setPartnersBySubwayRequest(PartnersBySubwayRequest.newBuilder()
+    			.setCity("Курск")
+    			.setSubwayStation("Курск")
+//    			.addProducts("Card 66")
+    			);
     	
     	post.setEntity(new ByteArrayEntity(request.build().toByteArray()));
     	    	

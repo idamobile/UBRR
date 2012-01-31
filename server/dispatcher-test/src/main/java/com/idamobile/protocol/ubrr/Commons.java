@@ -327,12 +327,12 @@ public final class Commons {
     private int bitField0_;
     // required string key = 1;
     public static final int KEY_FIELD_NUMBER = 1;
-    private Object key_;
+    private java.lang.Object key_;
     public boolean hasKey() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     public String getKey() {
-      Object ref = key_;
+      java.lang.Object ref = key_;
       if (ref instanceof String) {
         return (String) ref;
       } else {
@@ -346,7 +346,7 @@ public final class Commons {
       }
     }
     private com.google.protobuf.ByteString getKeyBytes() {
-      Object ref = key_;
+      java.lang.Object ref = key_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8((String) ref);
@@ -424,8 +424,10 @@ public final class Commons {
       return size;
     }
     
+    private static final long serialVersionUID = 0L;
     @java.lang.Override
-    protected Object writeReplace() throws java.io.ObjectStreamException {
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
     
@@ -674,12 +676,12 @@ public final class Commons {
       private int bitField0_;
       
       // required string key = 1;
-      private Object key_ = "";
+      private java.lang.Object key_ = "";
       public boolean hasKey() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       public String getKey() {
-        Object ref = key_;
+        java.lang.Object ref = key_;
         if (!(ref instanceof String)) {
           String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
           key_ = s;
@@ -888,8 +890,10 @@ public final class Commons {
       return size;
     }
     
+    private static final long serialVersionUID = 0L;
     @java.lang.Override
-    protected Object writeReplace() throws java.io.ObjectStreamException {
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
     
