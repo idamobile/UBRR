@@ -1,0 +1,8 @@
+#Tue Jan 31 14:35:19 MSK 2012
+compiler.compileProtoFiles=true
+compiler.enableProjectSettings=true
+compiler.javaCodeGenerationEnabled=true
+compiler.javaOutputDirectory=src/main/java
+compiler.protocFilePath=D\:\\iDaMobile\\protoc.exe
+eclipse.preferences.version=1
+paths.directoryPaths=${workspace_loc\:/${project}/protocol}
