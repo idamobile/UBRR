@@ -47,7 +47,7 @@ public class MapPartnersResponseService extends AbstractMessageService<MapPartne
 		
 		double top = request.getTopLeft().getLatitude();
 		double left = request.getTopLeft().getLongitude();
-		double dx = (request.getBottomRight().getLatitude()-top)/cellsX;
+		double dx = (top-request.getBottomRight().getLatitude())/cellsX;
 		double dy = (request.getBottomRight().getLongitude()-left)/cellsY;
 		
 		List<String> products = request.getProductsList();
@@ -56,8 +56,8 @@ public class MapPartnersResponseService extends AbstractMessageService<MapPartne
 		
 			for (int x = 0; x<cellsX; x++) {
 				for (int y = 0; y<cellsY; y++) {
-					GeoPoint tl = new GeoPoint(top+dx*x, left+dy*y);
-					GeoPoint br = new GeoPoint(top+dx*(x+1), left+dy*(y+1));
+					GeoPoint tl = new GeoPoint(top-dx*x, left+dy*y);
+					GeoPoint br = new GeoPoint(top-dx*(x+1), left+dy*(y+1));
 					List<Partner> partners = partnerDao.getViewportPartners(tl, br, products);
 					if (partners.size() > clusterMaxSize) {
 						double centerX = 0.0;

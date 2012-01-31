@@ -55,8 +55,8 @@ public class PartnerDaoImpl implements PartnerDao {
 			"SELECT " + FIELDS +
 			"FROM " + TableNames.PARTNERS + 
 			" WHERE " +
-			"	latitude >= :topLeftLat AND longitude >= :topLeftLng " +
-			"AND latitude <= :btmRightLat AND longitude <= :btmRightLng " +
+			"	latitude <= :topLeftLat AND longitude >= :topLeftLng " +
+			"AND latitude >= :btmRightLat AND longitude <= :btmRightLng " +
 			"AND partner_id in ( " + FILTER_SUB_QUERY + ")";
 	
 	private static final String SQL_COUNT = 
