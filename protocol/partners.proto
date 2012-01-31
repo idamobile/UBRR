@@ -43,8 +43,8 @@ message PartnersRequest {
 }
 
 message PartnersResponse {
-	required int32 totalPages			= 1;
-	required int32 page					= 2;
+	optional int32 totalPages			= 1;
+	optional int32 page					= 2;
 	repeated PartnerMessage partners	= 3;
 }
 
@@ -78,4 +78,17 @@ message CitiesRequest {
 
 message CitiesResponse {
 	repeated CityMessage cities = 1;
+}
+
+message PartnersBySubwayRequest {
+	required string city				= 1;
+	required string subwayStation		= 2;
+	optional int32 page					= 3;
+	repeated string products			= 4;
+}
+
+message PartnersBySubwayResponse {
+	optional int32 totalPages			= 1;
+	optional int32 page					= 2;
+	repeated PartnerMessage partners	= 3;
 }

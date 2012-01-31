@@ -36,9 +36,12 @@ public class NearestPartnerResponseService extends AbstractMessageService<Neares
 		NearestPartnerResponse.Builder builder = NearestPartnerResponse.newBuilder();
 
 		List<String> products = request.getProductsList();
-		Partner partner = partnerDao.getNearestPartner(new GeoPoint(request.getLocation()), products);
-		if (partner != null) {
-			builder.setPartner(partner.createMessage());
+		
+		if (products != null && !products.isEmpty()) {
+			Partner partner = partnerDao.getNearestPartner(new GeoPoint(request.getLocation()), products);
+			if (partner != null) {
+				builder.setPartner(partner.createMessage());
+			}
 		}
 		
 		responseBuilder.setNearestPartnerResponse(builder.build());

@@ -86,6 +86,7 @@ message MBSRequest {
 	optional MapPartnersRequest mapPartnersRequest					= 13;
 	optional ProductRequest productsRequest							= 14;
 	optional CitiesRequest citiesRequest							= 15;
+	optional PartnersBySubwayRequest partnersBySubwayRequest		= 16;
 }
 
 message MBSResponse {
@@ -104,4 +105,5 @@ message MBSResponse {
 	optional MapPartnersResponse mapPartnersResponse				= 13;
 	optional ProductResponse productsResponse						= 14;
 	optional CitiesResponse citiesResponse							= 15;
+	optional PartnersBySubwayResponse partnersBySubwayResponse		= 16;
 }

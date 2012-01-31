@@ -4388,6 +4388,11 @@ public final class Protocol {
     boolean hasCitiesRequest();
     com.idamobile.protocol.ubrr.Partners.CitiesRequest getCitiesRequest();
     com.idamobile.protocol.ubrr.Partners.CitiesRequestOrBuilder getCitiesRequestOrBuilder();
+    
+    // optional .messaging.PartnersBySubwayRequest partnersBySubwayRequest = 16;
+    boolean hasPartnersBySubwayRequest();
+    com.idamobile.protocol.ubrr.Partners.PartnersBySubwayRequest getPartnersBySubwayRequest();
+    com.idamobile.protocol.ubrr.Partners.PartnersBySubwayRequestOrBuilder getPartnersBySubwayRequestOrBuilder();
   }
   public static final class MBSRequest extends
       com.google.protobuf.GeneratedMessage
@@ -4613,6 +4618,19 @@ public final class Protocol {
       return citiesRequest_;
     }
     
+    // optional .messaging.PartnersBySubwayRequest partnersBySubwayRequest = 16;
+    public static final int PARTNERSBYSUBWAYREQUEST_FIELD_NUMBER = 16;
+    private com.idamobile.protocol.ubrr.Partners.PartnersBySubwayRequest partnersBySubwayRequest_;
+    public boolean hasPartnersBySubwayRequest() {
+      return ((bitField0_ & 0x00008000) == 0x00008000);
+    }
+    public com.idamobile.protocol.ubrr.Partners.PartnersBySubwayRequest getPartnersBySubwayRequest() {
+      return partnersBySubwayRequest_;
+    }
+    public com.idamobile.protocol.ubrr.Partners.PartnersBySubwayRequestOrBuilder getPartnersBySubwayRequestOrBuilder() {
+      return partnersBySubwayRequest_;
+    }
+    
     private void initFields() {
       bankContactsRequest_ = com.idamobile.protocol.ubrr.Protocol.BankContactsRequest.getDefaultInstance();
       bannersRequest_ = com.idamobile.protocol.ubrr.Banners.BannersRequest.getDefaultInstance();
@@ -4629,6 +4647,7 @@ public final class Protocol {
       mapPartnersRequest_ = com.idamobile.protocol.ubrr.Partners.MapPartnersRequest.getDefaultInstance();
       productsRequest_ = com.idamobile.protocol.ubrr.Partners.ProductRequest.getDefaultInstance();
       citiesRequest_ = com.idamobile.protocol.ubrr.Partners.CitiesRequest.getDefaultInstance();
+      partnersBySubwayRequest_ = com.idamobile.protocol.ubrr.Partners.PartnersBySubwayRequest.getDefaultInstance();
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -4661,6 +4680,12 @@ public final class Protocol {
       }
       if (hasMapPartnersRequest()) {
         if (!getMapPartnersRequest().isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      if (hasPartnersBySubwayRequest()) {
+        if (!getPartnersBySubwayRequest().isInitialized()) {
           memoizedIsInitialized = 0;
           return false;
         }
@@ -4716,6 +4741,9 @@ public final class Protocol {
       }
       if (((bitField0_ & 0x00004000) == 0x00004000)) {
         output.writeMessage(15, citiesRequest_);
+      }
+      if (((bitField0_ & 0x00008000) == 0x00008000)) {
+        output.writeMessage(16, partnersBySubwayRequest_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -4785,6 +4813,10 @@ public final class Protocol {
       if (((bitField0_ & 0x00004000) == 0x00004000)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(15, citiesRequest_);
+      }
+      if (((bitField0_ & 0x00008000) == 0x00008000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(16, partnersBySubwayRequest_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -4917,6 +4949,7 @@ public final class Protocol {
           getMapPartnersRequestFieldBuilder();
           getProductsRequestFieldBuilder();
           getCitiesRequestFieldBuilder();
+          getPartnersBySubwayRequestFieldBuilder();
         }
       }
       private static Builder create() {
@@ -5015,6 +5048,12 @@ public final class Protocol {
           citiesRequestBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00004000);
+        if (partnersBySubwayRequestBuilder_ == null) {
+          partnersBySubwayRequest_ = com.idamobile.protocol.ubrr.Partners.PartnersBySubwayRequest.getDefaultInstance();
+        } else {
+          partnersBySubwayRequestBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00008000);
         return this;
       }
       
@@ -5173,6 +5212,14 @@ public final class Protocol {
         } else {
           result.citiesRequest_ = citiesRequestBuilder_.build();
         }
+        if (((from_bitField0_ & 0x00008000) == 0x00008000)) {
+          to_bitField0_ |= 0x00008000;
+        }
+        if (partnersBySubwayRequestBuilder_ == null) {
+          result.partnersBySubwayRequest_ = partnersBySubwayRequest_;
+        } else {
+          result.partnersBySubwayRequest_ = partnersBySubwayRequestBuilder_.build();
+        }
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -5234,6 +5281,9 @@ public final class Protocol {
         if (other.hasCitiesRequest()) {
           mergeCitiesRequest(other.getCitiesRequest());
         }
+        if (other.hasPartnersBySubwayRequest()) {
+          mergePartnersBySubwayRequest(other.getPartnersBySubwayRequest());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
@@ -5265,6 +5315,12 @@ public final class Protocol {
         }
         if (hasMapPartnersRequest()) {
           if (!getMapPartnersRequest().isInitialized()) {
+            
+            return false;
+          }
+        }
+        if (hasPartnersBySubwayRequest()) {
+          if (!getPartnersBySubwayRequest().isInitialized()) {
             
             return false;
           }
@@ -5428,6 +5484,15 @@ public final class Protocol {
               }
               input.readMessage(subBuilder, extensionRegistry);
               setCitiesRequest(subBuilder.buildPartial());
+              break;
+            }
+            case 130: {
+              com.idamobile.protocol.ubrr.Partners.PartnersBySubwayRequest.Builder subBuilder = com.idamobile.protocol.ubrr.Partners.PartnersBySubwayRequest.newBuilder();
+              if (hasPartnersBySubwayRequest()) {
+                subBuilder.mergeFrom(getPartnersBySubwayRequest());
+              }
+              input.readMessage(subBuilder, extensionRegistry);
+              setPartnersBySubwayRequest(subBuilder.buildPartial());
               break;
             }
           }
@@ -6786,6 +6851,96 @@ public final class Protocol {
         return citiesRequestBuilder_;
       }
       
+      // optional .messaging.PartnersBySubwayRequest partnersBySubwayRequest = 16;
+      private com.idamobile.protocol.ubrr.Partners.PartnersBySubwayRequest partnersBySubwayRequest_ = com.idamobile.protocol.ubrr.Partners.PartnersBySubwayRequest.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          com.idamobile.protocol.ubrr.Partners.PartnersBySubwayRequest, com.idamobile.protocol.ubrr.Partners.PartnersBySubwayRequest.Builder, com.idamobile.protocol.ubrr.Partners.PartnersBySubwayRequestOrBuilder> partnersBySubwayRequestBuilder_;
+      public boolean hasPartnersBySubwayRequest() {
+        return ((bitField0_ & 0x00008000) == 0x00008000);
+      }
+      public com.idamobile.protocol.ubrr.Partners.PartnersBySubwayRequest getPartnersBySubwayRequest() {
+        if (partnersBySubwayRequestBuilder_ == null) {
+          return partnersBySubwayRequest_;
+        } else {
+          return partnersBySubwayRequestBuilder_.getMessage();
+        }
+      }
+      public Builder setPartnersBySubwayRequest(com.idamobile.protocol.ubrr.Partners.PartnersBySubwayRequest value) {
+        if (partnersBySubwayRequestBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          partnersBySubwayRequest_ = value;
+          onChanged();
+        } else {
+          partnersBySubwayRequestBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00008000;
+        return this;
+      }
+      public Builder setPartnersBySubwayRequest(
+          com.idamobile.protocol.ubrr.Partners.PartnersBySubwayRequest.Builder builderForValue) {
+        if (partnersBySubwayRequestBuilder_ == null) {
+          partnersBySubwayRequest_ = builderForValue.build();
+          onChanged();
+        } else {
+          partnersBySubwayRequestBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00008000;
+        return this;
+      }
+      public Builder mergePartnersBySubwayRequest(com.idamobile.protocol.ubrr.Partners.PartnersBySubwayRequest value) {
+        if (partnersBySubwayRequestBuilder_ == null) {
+          if (((bitField0_ & 0x00008000) == 0x00008000) &&
+              partnersBySubwayRequest_ != com.idamobile.protocol.ubrr.Partners.PartnersBySubwayRequest.getDefaultInstance()) {
+            partnersBySubwayRequest_ =
+              com.idamobile.protocol.ubrr.Partners.PartnersBySubwayRequest.newBuilder(partnersBySubwayRequest_).mergeFrom(value).buildPartial();
+          } else {
+            partnersBySubwayRequest_ = value;
+          }
+          onChanged();
+        } else {
+          partnersBySubwayRequestBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00008000;
+        return this;
+      }
+      public Builder clearPartnersBySubwayRequest() {
+        if (partnersBySubwayRequestBuilder_ == null) {
+          partnersBySubwayRequest_ = com.idamobile.protocol.ubrr.Partners.PartnersBySubwayRequest.getDefaultInstance();
+          onChanged();
+        } else {
+          partnersBySubwayRequestBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00008000);
+        return this;
+      }
+      public com.idamobile.protocol.ubrr.Partners.PartnersBySubwayRequest.Builder getPartnersBySubwayRequestBuilder() {
+        bitField0_ |= 0x00008000;
+        onChanged();
+        return getPartnersBySubwayRequestFieldBuilder().getBuilder();
+      }
+      public com.idamobile.protocol.ubrr.Partners.PartnersBySubwayRequestOrBuilder getPartnersBySubwayRequestOrBuilder() {
+        if (partnersBySubwayRequestBuilder_ != null) {
+          return partnersBySubwayRequestBuilder_.getMessageOrBuilder();
+        } else {
+          return partnersBySubwayRequest_;
+        }
+      }
+      private com.google.protobuf.SingleFieldBuilder<
+          com.idamobile.protocol.ubrr.Partners.PartnersBySubwayRequest, com.idamobile.protocol.ubrr.Partners.PartnersBySubwayRequest.Builder, com.idamobile.protocol.ubrr.Partners.PartnersBySubwayRequestOrBuilder> 
+          getPartnersBySubwayRequestFieldBuilder() {
+        if (partnersBySubwayRequestBuilder_ == null) {
+          partnersBySubwayRequestBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.idamobile.protocol.ubrr.Partners.PartnersBySubwayRequest, com.idamobile.protocol.ubrr.Partners.PartnersBySubwayRequest.Builder, com.idamobile.protocol.ubrr.Partners.PartnersBySubwayRequestOrBuilder>(
+                  partnersBySubwayRequest_,
+                  getParentForChildren(),
+                  isClean());
+          partnersBySubwayRequest_ = null;
+        }
+        return partnersBySubwayRequestBuilder_;
+      }
+      
       // @@protoc_insertion_point(builder_scope:messaging.MBSRequest)
     }
     
@@ -6874,6 +7029,11 @@ public final class Protocol {
     boolean hasCitiesResponse();
     com.idamobile.protocol.ubrr.Partners.CitiesResponse getCitiesResponse();
     com.idamobile.protocol.ubrr.Partners.CitiesResponseOrBuilder getCitiesResponseOrBuilder();
+    
+    // optional .messaging.PartnersBySubwayResponse partnersBySubwayResponse = 16;
+    boolean hasPartnersBySubwayResponse();
+    com.idamobile.protocol.ubrr.Partners.PartnersBySubwayResponse getPartnersBySubwayResponse();
+    com.idamobile.protocol.ubrr.Partners.PartnersBySubwayResponseOrBuilder getPartnersBySubwayResponseOrBuilder();
   }
   public static final class MBSResponse extends
       com.google.protobuf.GeneratedMessage
@@ -7099,6 +7259,19 @@ public final class Protocol {
       return citiesResponse_;
     }
     
+    // optional .messaging.PartnersBySubwayResponse partnersBySubwayResponse = 16;
+    public static final int PARTNERSBYSUBWAYRESPONSE_FIELD_NUMBER = 16;
+    private com.idamobile.protocol.ubrr.Partners.PartnersBySubwayResponse partnersBySubwayResponse_;
+    public boolean hasPartnersBySubwayResponse() {
+      return ((bitField0_ & 0x00008000) == 0x00008000);
+    }
+    public com.idamobile.protocol.ubrr.Partners.PartnersBySubwayResponse getPartnersBySubwayResponse() {
+      return partnersBySubwayResponse_;
+    }
+    public com.idamobile.protocol.ubrr.Partners.PartnersBySubwayResponseOrBuilder getPartnersBySubwayResponseOrBuilder() {
+      return partnersBySubwayResponse_;
+    }
+    
     private void initFields() {
       bankContactsResponse_ = com.idamobile.protocol.ubrr.Protocol.BankContactsResponse.getDefaultInstance();
       bannersResponse_ = com.idamobile.protocol.ubrr.Banners.BannersResponse.getDefaultInstance();
@@ -7115,6 +7288,7 @@ public final class Protocol {
       mapPartnersResponse_ = com.idamobile.protocol.ubrr.Partners.MapPartnersResponse.getDefaultInstance();
       productsResponse_ = com.idamobile.protocol.ubrr.Partners.ProductResponse.getDefaultInstance();
       citiesResponse_ = com.idamobile.protocol.ubrr.Partners.CitiesResponse.getDefaultInstance();
+      partnersBySubwayResponse_ = com.idamobile.protocol.ubrr.Partners.PartnersBySubwayResponse.getDefaultInstance();
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -7205,6 +7379,12 @@ public final class Protocol {
           return false;
         }
       }
+      if (hasPartnersBySubwayResponse()) {
+        if (!getPartnersBySubwayResponse().isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
       memoizedIsInitialized = 1;
       return true;
     }
@@ -7256,6 +7436,9 @@ public final class Protocol {
       }
       if (((bitField0_ & 0x00004000) == 0x00004000)) {
         output.writeMessage(15, citiesResponse_);
+      }
+      if (((bitField0_ & 0x00008000) == 0x00008000)) {
+        output.writeMessage(16, partnersBySubwayResponse_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -7325,6 +7508,10 @@ public final class Protocol {
       if (((bitField0_ & 0x00004000) == 0x00004000)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(15, citiesResponse_);
+      }
+      if (((bitField0_ & 0x00008000) == 0x00008000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(16, partnersBySubwayResponse_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -7457,6 +7644,7 @@ public final class Protocol {
           getMapPartnersResponseFieldBuilder();
           getProductsResponseFieldBuilder();
           getCitiesResponseFieldBuilder();
+          getPartnersBySubwayResponseFieldBuilder();
         }
       }
       private static Builder create() {
@@ -7555,6 +7743,12 @@ public final class Protocol {
           citiesResponseBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00004000);
+        if (partnersBySubwayResponseBuilder_ == null) {
+          partnersBySubwayResponse_ = com.idamobile.protocol.ubrr.Partners.PartnersBySubwayResponse.getDefaultInstance();
+        } else {
+          partnersBySubwayResponseBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00008000);
         return this;
       }
       
@@ -7713,6 +7907,14 @@ public final class Protocol {
         } else {
           result.citiesResponse_ = citiesResponseBuilder_.build();
         }
+        if (((from_bitField0_ & 0x00008000) == 0x00008000)) {
+          to_bitField0_ |= 0x00008000;
+        }
+        if (partnersBySubwayResponseBuilder_ == null) {
+          result.partnersBySubwayResponse_ = partnersBySubwayResponse_;
+        } else {
+          result.partnersBySubwayResponse_ = partnersBySubwayResponseBuilder_.build();
+        }
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -7773,6 +7975,9 @@ public final class Protocol {
         }
         if (other.hasCitiesResponse()) {
           mergeCitiesResponse(other.getCitiesResponse());
+        }
+        if (other.hasPartnersBySubwayResponse()) {
+          mergePartnersBySubwayResponse(other.getPartnersBySubwayResponse());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
@@ -7859,6 +8064,12 @@ public final class Protocol {
         }
         if (hasCitiesResponse()) {
           if (!getCitiesResponse().isInitialized()) {
+            
+            return false;
+          }
+        }
+        if (hasPartnersBySubwayResponse()) {
+          if (!getPartnersBySubwayResponse().isInitialized()) {
             
             return false;
           }
@@ -8022,6 +8233,15 @@ public final class Protocol {
               }
               input.readMessage(subBuilder, extensionRegistry);
               setCitiesResponse(subBuilder.buildPartial());
+              break;
+            }
+            case 130: {
+              com.idamobile.protocol.ubrr.Partners.PartnersBySubwayResponse.Builder subBuilder = com.idamobile.protocol.ubrr.Partners.PartnersBySubwayResponse.newBuilder();
+              if (hasPartnersBySubwayResponse()) {
+                subBuilder.mergeFrom(getPartnersBySubwayResponse());
+              }
+              input.readMessage(subBuilder, extensionRegistry);
+              setPartnersBySubwayResponse(subBuilder.buildPartial());
               break;
             }
           }
@@ -9380,6 +9600,96 @@ public final class Protocol {
         return citiesResponseBuilder_;
       }
       
+      // optional .messaging.PartnersBySubwayResponse partnersBySubwayResponse = 16;
+      private com.idamobile.protocol.ubrr.Partners.PartnersBySubwayResponse partnersBySubwayResponse_ = com.idamobile.protocol.ubrr.Partners.PartnersBySubwayResponse.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          com.idamobile.protocol.ubrr.Partners.PartnersBySubwayResponse, com.idamobile.protocol.ubrr.Partners.PartnersBySubwayResponse.Builder, com.idamobile.protocol.ubrr.Partners.PartnersBySubwayResponseOrBuilder> partnersBySubwayResponseBuilder_;
+      public boolean hasPartnersBySubwayResponse() {
+        return ((bitField0_ & 0x00008000) == 0x00008000);
+      }
+      public com.idamobile.protocol.ubrr.Partners.PartnersBySubwayResponse getPartnersBySubwayResponse() {
+        if (partnersBySubwayResponseBuilder_ == null) {
+          return partnersBySubwayResponse_;
+        } else {
+          return partnersBySubwayResponseBuilder_.getMessage();
+        }
+      }
+      public Builder setPartnersBySubwayResponse(com.idamobile.protocol.ubrr.Partners.PartnersBySubwayResponse value) {
+        if (partnersBySubwayResponseBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          partnersBySubwayResponse_ = value;
+          onChanged();
+        } else {
+          partnersBySubwayResponseBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00008000;
+        return this;
+      }
+      public Builder setPartnersBySubwayResponse(
+          com.idamobile.protocol.ubrr.Partners.PartnersBySubwayResponse.Builder builderForValue) {
+        if (partnersBySubwayResponseBuilder_ == null) {
+          partnersBySubwayResponse_ = builderForValue.build();
+          onChanged();
+        } else {
+          partnersBySubwayResponseBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00008000;
+        return this;
+      }
+      public Builder mergePartnersBySubwayResponse(com.idamobile.protocol.ubrr.Partners.PartnersBySubwayResponse value) {
+        if (partnersBySubwayResponseBuilder_ == null) {
+          if (((bitField0_ & 0x00008000) == 0x00008000) &&
+              partnersBySubwayResponse_ != com.idamobile.protocol.ubrr.Partners.PartnersBySubwayResponse.getDefaultInstance()) {
+            partnersBySubwayResponse_ =
+              com.idamobile.protocol.ubrr.Partners.PartnersBySubwayResponse.newBuilder(partnersBySubwayResponse_).mergeFrom(value).buildPartial();
+          } else {
+            partnersBySubwayResponse_ = value;
+          }
+          onChanged();
+        } else {
+          partnersBySubwayResponseBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00008000;
+        return this;
+      }
+      public Builder clearPartnersBySubwayResponse() {
+        if (partnersBySubwayResponseBuilder_ == null) {
+          partnersBySubwayResponse_ = com.idamobile.protocol.ubrr.Partners.PartnersBySubwayResponse.getDefaultInstance();
+          onChanged();
+        } else {
+          partnersBySubwayResponseBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00008000);
+        return this;
+      }
+      public com.idamobile.protocol.ubrr.Partners.PartnersBySubwayResponse.Builder getPartnersBySubwayResponseBuilder() {
+        bitField0_ |= 0x00008000;
+        onChanged();
+        return getPartnersBySubwayResponseFieldBuilder().getBuilder();
+      }
+      public com.idamobile.protocol.ubrr.Partners.PartnersBySubwayResponseOrBuilder getPartnersBySubwayResponseOrBuilder() {
+        if (partnersBySubwayResponseBuilder_ != null) {
+          return partnersBySubwayResponseBuilder_.getMessageOrBuilder();
+        } else {
+          return partnersBySubwayResponse_;
+        }
+      }
+      private com.google.protobuf.SingleFieldBuilder<
+          com.idamobile.protocol.ubrr.Partners.PartnersBySubwayResponse, com.idamobile.protocol.ubrr.Partners.PartnersBySubwayResponse.Builder, com.idamobile.protocol.ubrr.Partners.PartnersBySubwayResponseOrBuilder> 
+          getPartnersBySubwayResponseFieldBuilder() {
+        if (partnersBySubwayResponseBuilder_ == null) {
+          partnersBySubwayResponseBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.idamobile.protocol.ubrr.Partners.PartnersBySubwayResponse, com.idamobile.protocol.ubrr.Partners.PartnersBySubwayResponse.Builder, com.idamobile.protocol.ubrr.Partners.PartnersBySubwayResponseOrBuilder>(
+                  partnersBySubwayResponse_,
+                  getParentForChildren(),
+                  isClean());
+          partnersBySubwayResponse_ = null;
+        }
+        return partnersBySubwayResponseBuilder_;
+      }
+      
       // @@protoc_insertion_point(builder_scope:messaging.MBSResponse)
     }
     
@@ -9468,7 +9778,7 @@ public final class Protocol {
       "\002(\0162\024.messaging.EmailType\022%\n\005items\030\002 \003(\013" +
       "2\026.messaging.PairMessage\"N\n\021SendEmailRes" +
       "ponse\022#\n\004code\030\001 \002(\0162\025.messaging.ResultCo" +
-      "de\022\024\n\014errorMessage\030\002 \001(\t\"\276\006\n\nMBSRequest\022" +
+      "de\022\024\n\014errorMessage\030\002 \001(\t\"\203\007\n\nMBSRequest\022" +
       ";\n\023bankContactsRequest\030\001 \001(\0132\036.messaging",
       ".BankContactsRequest\0221\n\016bannersRequest\030\002" +
       " \001(\0132\031.messaging.BannersRequest\022-\n\014image" +
@@ -9489,33 +9799,37 @@ public final class Protocol {
       "\r \001(\0132\035.messaging.MapPartnersRequest\0222\n\017" +
       "productsRequest\030\016 \001(\0132\031.messaging.Produc" +
       "tRequest\022/\n\rcitiesRequest\030\017 \001(\0132\030.messag" +
-      "ing.CitiesRequest\"\335\006\n\013MBSResponse\022=\n\024ban",
-      "kContactsResponse\030\001 \001(\0132\037.messaging.Bank" +
-      "ContactsResponse\0223\n\017bannersResponse\030\002 \001(" +
-      "\0132\032.messaging.BannersResponse\022/\n\rimageRe" +
-      "sponse\030\003 \001(\0132\030.messaging.ImageResponse\0223" +
-      "\n\017officesResponse\030\004 \001(\0132\032.messaging.Offi" +
-      "cesResponse\022-\n\014atmsResponse\030\005 \001(\0132\027.mess" +
-      "aging.AtmsResponse\022C\n\027nearestLocationRes" +
-      "ponse\030\006 \001(\0132\".messaging.NearestLocationR" +
-      "esponse\0227\n\021sendEmailResponse\030\007 \001(\0132\034.mes" +
-      "saging.SendEmailResponse\0229\n\020currencyResp",
-      "onse\030\010 \001(\0132\037.messaging.CurrencyRateRespo" +
-      "nse\022-\n\014newsResponse\030\t \001(\0132\027.messaging.Ne" +
-      "wsResponse\022=\n\024creditPointsResponse\030\n \001(\013" +
-      "2\037.messaging.CreditPointsResponse\022A\n\026nea" +
-      "restPartnerResponse\030\013 \001(\0132!.messaging.Ne" +
-      "arestPartnerResponse\0225\n\020partnersResponse" +
-      "\030\014 \001(\0132\033.messaging.PartnersResponse\022;\n\023m" +
-      "apPartnersResponse\030\r \001(\0132\036.messaging.Map" +
-      "PartnersResponse\0224\n\020productsResponse\030\016 \001" +
-      "(\0132\032.messaging.ProductResponse\0221\n\016cities",
-      "Response\030\017 \001(\0132\031.messaging.CitiesRespons" +
-      "e*B\n\013ContactType\022\013\n\007UNKNOWN\020\000\022\t\n\005PHONE\020\001" +
-      "\022\t\n\005EMAIL\020\002\022\007\n\003URL\020\003\022\007\n\003LOB\020\004*b\n\tEmailTy" +
-      "pe\022\014\n\010FEEDBACK\020\000\022\016\n\nORDER_CALL\020\001\022\021\n\rBECO" +
-      "ME_CLIENT\020\002\022\024\n\020MANAGE_DOCUMENTS\020\003\022\016\n\nGET" +
-      "_CREDIT\020\004B\035\n\033com.idamobile.protocol.ubrr"
+      "ing.CitiesRequest\022C\n\027partnersBySubwayReq",
+      "uest\030\020 \001(\0132\".messaging.PartnersBySubwayR" +
+      "equest\"\244\007\n\013MBSResponse\022=\n\024bankContactsRe" +
+      "sponse\030\001 \001(\0132\037.messaging.BankContactsRes" +
+      "ponse\0223\n\017bannersResponse\030\002 \001(\0132\032.messagi" +
+      "ng.BannersResponse\022/\n\rimageResponse\030\003 \001(" +
+      "\0132\030.messaging.ImageResponse\0223\n\017officesRe" +
+      "sponse\030\004 \001(\0132\032.messaging.OfficesResponse" +
+      "\022-\n\014atmsResponse\030\005 \001(\0132\027.messaging.AtmsR" +
+      "esponse\022C\n\027nearestLocationResponse\030\006 \001(\013" +
+      "2\".messaging.NearestLocationResponse\0227\n\021",
+      "sendEmailResponse\030\007 \001(\0132\034.messaging.Send" +
+      "EmailResponse\0229\n\020currencyResponse\030\010 \001(\0132" +
+      "\037.messaging.CurrencyRateResponse\022-\n\014news" +
+      "Response\030\t \001(\0132\027.messaging.NewsResponse\022" +
+      "=\n\024creditPointsResponse\030\n \001(\0132\037.messagin" +
+      "g.CreditPointsResponse\022A\n\026nearestPartner" +
+      "Response\030\013 \001(\0132!.messaging.NearestPartne" +
+      "rResponse\0225\n\020partnersResponse\030\014 \001(\0132\033.me" +
+      "ssaging.PartnersResponse\022;\n\023mapPartnersR" +
+      "esponse\030\r \001(\0132\036.messaging.MapPartnersRes",
+      "ponse\0224\n\020productsResponse\030\016 \001(\0132\032.messag" +
+      "ing.ProductResponse\0221\n\016citiesResponse\030\017 " +
+      "\001(\0132\031.messaging.CitiesResponse\022E\n\030partne" +
+      "rsBySubwayResponse\030\020 \001(\0132#.messaging.Par" +
+      "tnersBySubwayResponse*B\n\013ContactType\022\013\n\007" +
+      "UNKNOWN\020\000\022\t\n\005PHONE\020\001\022\t\n\005EMAIL\020\002\022\007\n\003URL\020\003" +
+      "\022\007\n\003LOB\020\004*b\n\tEmailType\022\014\n\010FEEDBACK\020\000\022\016\n\n" +
+      "ORDER_CALL\020\001\022\021\n\rBECOME_CLIENT\020\002\022\024\n\020MANAG" +
+      "E_DOCUMENTS\020\003\022\016\n\nGET_CREDIT\020\004B\035\n\033com.ida" +
+      "mobile.protocol.ubrr"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
       new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -9591,7 +9905,7 @@ public final class Protocol {
           internal_static_messaging_MBSRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_messaging_MBSRequest_descriptor,
-              new java.lang.String[] { "BankContactsRequest", "BannersRequest", "ImageRequest", "OfficesRequest", "AtmsRequest", "NearestLocationRequest", "SendEmailRequest", "CurrencyRequest", "NewsRequest", "CreditPointsRequest", "NearestPartnerRequest", "PartnersRequest", "MapPartnersRequest", "ProductsRequest", "CitiesRequest", },
+              new java.lang.String[] { "BankContactsRequest", "BannersRequest", "ImageRequest", "OfficesRequest", "AtmsRequest", "NearestLocationRequest", "SendEmailRequest", "CurrencyRequest", "NewsRequest", "CreditPointsRequest", "NearestPartnerRequest", "PartnersRequest", "MapPartnersRequest", "ProductsRequest", "CitiesRequest", "PartnersBySubwayRequest", },
               com.idamobile.protocol.ubrr.Protocol.MBSRequest.class,
               com.idamobile.protocol.ubrr.Protocol.MBSRequest.Builder.class);
           internal_static_messaging_MBSResponse_descriptor =
@@ -9599,7 +9913,7 @@ public final class Protocol {
           internal_static_messaging_MBSResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_messaging_MBSResponse_descriptor,
-              new java.lang.String[] { "BankContactsResponse", "BannersResponse", "ImageResponse", "OfficesResponse", "AtmsResponse", "NearestLocationResponse", "SendEmailResponse", "CurrencyResponse", "NewsResponse", "CreditPointsResponse", "NearestPartnerResponse", "PartnersResponse", "MapPartnersResponse", "ProductsResponse", "CitiesResponse", },
+              new java.lang.String[] { "BankContactsResponse", "BannersResponse", "ImageResponse", "OfficesResponse", "AtmsResponse", "NearestLocationResponse", "SendEmailResponse", "CurrencyResponse", "NewsResponse", "CreditPointsResponse", "NearestPartnerResponse", "PartnersResponse", "MapPartnersResponse", "ProductsResponse", "CitiesResponse", "PartnersBySubwayResponse", },
               com.idamobile.protocol.ubrr.Protocol.MBSResponse.class,
               com.idamobile.protocol.ubrr.Protocol.MBSResponse.Builder.class);
           return null;

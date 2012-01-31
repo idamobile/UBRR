@@ -28,8 +28,10 @@ public class PartnerDaoImpl implements PartnerDao {
 
 	private static final String FILTER_SUB_QUERY = "SELECT partner_id FROM ida_partner_card WHERE card in (:" + PRODUCTS_PARAM + ")";
 
+	private static final String FILTER_BY_CITY_AND_SUBWAY = " AND city = :city AND subway_station = :station";
+	
 	private static final String FIELDS = "partner_id, zip_code, city, subway_station, name, address, operation_time, latitude, longitude, phone, services, short_services ";
-
+	
 	private static final String SQL_GET_NEAREST_PARTNER = 
 			"SELECT " + FIELDS + 
 			"FROM " + TableNames.PARTNERS +
@@ -39,8 +41,16 @@ public class PartnerDaoImpl implements PartnerDao {
 	private static final String SQL_PARTNERS_UNORDERED = 
 			"SELECT " + FIELDS + 
 			"FROM " + TableNames.PARTNERS +
-			" WHERE partner_id in ( " + FILTER_SUB_QUERY + ")";
+			" WHERE partner_id in ( " + FILTER_SUB_QUERY + ")" +
+			" ORDER BY order_num";
 
+	private static final String SQL_PARTNERS_BY_SUBWAY = 
+			"SELECT " + FIELDS +
+			"FROM " + TableNames.PARTNERS + 
+			" WHERE partner_id in ( " + FILTER_SUB_QUERY + ")" +
+			FILTER_BY_CITY_AND_SUBWAY + 
+			" ORDER BY order_num";
+	
 	private static final String SQL_SELECT_VIEWPORT = 
 			"SELECT " + FIELDS +
 			"FROM " + TableNames.PARTNERS + 
@@ -52,6 +62,11 @@ public class PartnerDaoImpl implements PartnerDao {
 	private static final String SQL_COUNT = 
 			"SELECT COUNT(*) FROM "+ TableNames.PARTNERS +
 			" WHERE partner_id in ( " + FILTER_SUB_QUERY + ")";
+
+	private static final String SQL_COUNT_BY_SUBWAY = 
+			"SELECT COUNT(*) FROM "+ TableNames.PARTNERS +
+			" WHERE partner_id in ( " + FILTER_SUB_QUERY + ")" +
+			FILTER_BY_CITY_AND_SUBWAY;
 	
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
@@ -111,7 +126,7 @@ public class PartnerDaoImpl implements PartnerDao {
 	@SuppressWarnings("serial")
 	@Transactional(readOnly = true)
 	@Override
-	public List<Partner> getPartners(final GeoPoint location, int page, int pageSize, final List<String> products) {
+	public List<Partner> getPartners(final GeoPoint location, final List<String> products, int page, int pageSize) {
 		final int startIndex = (page-1)*pageSize;
 		final int endIndex = page*pageSize;
 
@@ -168,7 +183,7 @@ public class PartnerDaoImpl implements PartnerDao {
 
 	@Transactional(readOnly = true)
 	@Override
-	public List<Partner> getPartners(int page, int pageSize, List<String> products) {
+	public List<Partner> getPartners(List<String> products, int page, int pageSize) {
 		final int startIndex = (page-1)*pageSize;
 		final int endIndex = page*pageSize;
 
@@ -228,6 +243,43 @@ public class PartnerDaoImpl implements PartnerDao {
 			
 		});*/
 	}
+	
+	@SuppressWarnings("serial")
+	@Transactional(readOnly = true)
+	@Override
+	public List<Partner> getPartners(final String city, final String station, final List<String> products, int page, int pageSize) {
+		final int startIndex = (page-1)*pageSize;
+		final int endIndex = page*pageSize;
+
+		return getJdbcTemplate().query(
+				SQL_PARTNERS_BY_SUBWAY, 
+				
+				new HashMap<String, Object>() {{
+					put("city", city); 
+					put("station", station); 
+					put(PRODUCTS_PARAM, products); 
+				}},
+				
+				new ResultSetExtractor<List<Partner>>() {
+					@Override
+					public List<Partner> extractData(ResultSet rs) throws SQLException,
+							DataAccessException {
+						List<Partner> partners = new ArrayList<Partner>();
+						
+						int i = 0;
+						while (i < startIndex && rs.next()) {
+							i++;
+						}
+						while (i < endIndex && rs.next()) {					
+							partners.add(extract(rs));
+							i++;
+						}
+						
+						return partners;
+					}
+				}
+			);
+	}
 
 	@SuppressWarnings("serial")
 	@Transactional(readOnly = true)
@@ -257,5 +309,19 @@ public class PartnerDaoImpl implements PartnerDao {
 	@Override
 	public int count(List<String> products) {
 		return getJdbcTemplate().queryForInt(SQL_COUNT, Collections.singletonMap(PRODUCTS_PARAM, products));
+	}
+
+	@SuppressWarnings("serial")
+	@Transactional(readOnly = true)
+	@Override
+	public int countBySubway(final String city, final String station, final List<String> products) {
+		return getJdbcTemplate().queryForInt(
+				SQL_COUNT_BY_SUBWAY, 
+				new HashMap<String, Object>() {{
+					put("city", city);
+					put("station", station);
+					put(PRODUCTS_PARAM, products);
+				}}
+		);
 	}
 }

@@ -52,36 +52,39 @@ public class MapPartnersResponseService extends AbstractMessageService<MapPartne
 		
 		List<String> products = request.getProductsList();
 		
-		for (int x = 0; x<cellsX; x++) {
-			for (int y = 0; y<cellsY; y++) {
-				GeoPoint tl = new GeoPoint(top+dx*x, left+dy*y);
-				GeoPoint br = new GeoPoint(top+dx*(x+1), left+dy*(y+1));
-				List<Partner> partners = partnerDao.getViewportPartners(tl, br, products);
-				if (partners.size() > clusterMaxSize) {
-					double centerX = 0.0;
-					double centerY = 0.0;
-					for (Partner p: partners) {
-						centerX += p.getLatitude();
-						centerY += p.getLongitude();
+		if (products != null && !products.isEmpty()) {
+		
+			for (int x = 0; x<cellsX; x++) {
+				for (int y = 0; y<cellsY; y++) {
+					GeoPoint tl = new GeoPoint(top+dx*x, left+dy*y);
+					GeoPoint br = new GeoPoint(top+dx*(x+1), left+dy*(y+1));
+					List<Partner> partners = partnerDao.getViewportPartners(tl, br, products);
+					if (partners.size() > clusterMaxSize) {
+						double centerX = 0.0;
+						double centerY = 0.0;
+						for (Partner p: partners) {
+							centerX += p.getLatitude();
+							centerY += p.getLongitude();
+						}
+						centerX /= partners.size();
+						centerY /= partners.size();
+						
+						ClusterMessage.Builder cluster = ClusterMessage.newBuilder();
+						cluster.setCenter(new GeoPoint(centerX, centerY).asMessage());
+						cluster.setTopLeft(tl.asMessage());
+						cluster.setBottomRight(br.asMessage());
+						cluster.setItemsCount(partners.size());
+						
+						builder.addClusters(cluster.build());
+					}else {
+						for (Partner p: partners) {
+							builder.addPartners(p.createMessage());
+						}
 					}
-					centerX /= partners.size();
-					centerY /= partners.size();
 					
-					ClusterMessage.Builder cluster = ClusterMessage.newBuilder();
-					cluster.setCenter(new GeoPoint(centerX, centerY).asMessage());
-					cluster.setTopLeft(tl.asMessage());
-					cluster.setBottomRight(br.asMessage());
-					cluster.setItemsCount(partners.size());
-					
-					builder.addClusters(cluster.build());
-				}else {
-					for (Partner p: partners) {
-						builder.addPartners(p.createMessage());
-					}
 				}
-				
 			}
-		}		
+		}
 		
 		responseBuilder.setMapPartnersResponse(builder.build());
 		
