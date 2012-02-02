@@ -14,13 +14,14 @@ import org.springframework.jdbc.core.ResultSetExtractor;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.idamobile.server.dao.core.impl.TableNames;
 import com.idamobile.server.dao.core.locations.CityDao;
 
 @Repository
 public class CityDaoImpl implements CityDao {
 
 	private static final String SQL_SELECT_CITIES = 
-		"select unique city, subway_station from ida_partners order by city, subway_station";
+		"select unique city, subway_station from " + TableNames.PARTNERS + " order by city, subway_station";
 		
 	@Autowired
 	private JdbcTemplate jdbcTemplate;

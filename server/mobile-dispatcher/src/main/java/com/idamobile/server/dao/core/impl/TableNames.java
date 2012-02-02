@@ -9,6 +9,6 @@ public class TableNames {
 	public static final String ATMS 			= "ida_atms" + UBRR_VIEWS_SUFFIX;
 	public static final String OFFICES 			= "ida_offices" + UBRR_VIEWS_SUFFIX;
 	public static final String CREDIT_POINTS 	= "ida_pay_cred" + UBRR_VIEWS_SUFFIX;
-	public static final String PARTNERS			= "ida_partners" + UBRR_VIEWS_SUFFIX;
+	public static final String PARTNERS			= "ida_partner" + UBRR_VIEWS_SUFFIX;
 
 }
