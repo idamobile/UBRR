@@ -42,3 +42,13 @@ VALUES(11, 'idaserver.locations.pageSize', '500');
 
 INSERT INTO ida_properties(id, name, value)
 VALUES(12, 'idaserver.banners.pageSize', '5');
+
+-- Discounts clustering params
+INSERT INTO ida_properties(id, name, value)
+VALUES(13, 'idaserver.cluster.maxSize', '5');
+
+INSERT INTO ida_properties(id, name, value)
+VALUES(14, 'idaserver.cluster.cellsX', '3');
+
+INSERT INTO ida_properties(id, name, value)
+VALUES(15, 'idaserver.cluster.cellsY', '4');

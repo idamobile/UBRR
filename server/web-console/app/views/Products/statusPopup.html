@@ -1,0 +1,27 @@
+#{form @Products.save(), enctype:'multipart/form-data', name: 'add_product_form'}
+
+<div class="popup" id="products-add-popup">
+	<ul class="item-list">
+		<li class="item type1">
+			<div class="labels">
+				<span class="title">Product name</span> 
+			</div> <input type="text" class="value input-text" name="product.id" value="${product?.id}" />
+			<div class="clear"></div>
+		</li>
+	</ul>
+
+	<div class="buttons-set">
+		<button type="button" class="button btn-green"
+			onclick="document.add_product_form.submit();">
+			<span><span>Save</span></span>
+		</button>
+		<button type="button" class="button btn-grey"
+			onclick="$j.fancybox.close()">
+			<span><span>Cancel</span>
+			</span>
+		</button>
+		<div class="clear"></div>
+	</div>
+</div>
+
+#{/form}

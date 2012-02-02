@@ -16,5 +16,8 @@ public class UpdateTimeAwareModel extends Model{
 	public void saveLastUpdateTime() {
 		LastUpdate.setNow(ENTITY_NAME);
 	}
-
+	
+	public long getLastUpdateTime() {
+		return LastUpdate.get(ENTITY_NAME);
+	}
 }

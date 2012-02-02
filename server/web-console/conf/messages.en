@@ -6,3 +6,8 @@ contacts.facebook.url=Facebook Page
 contacts.vkontakte.url=Vkontakte Page
 contacts.twitter.url=Twitter Page
 contacts.odnoklassniki.url=Odnoklassniki Page
+contacts.bank.url=Bank URL
+contacts.internet.bank.url=Internet-bank URL
+
+bank.url=http://ubrr.ru
+web.console.header=UBRD Administrative Console

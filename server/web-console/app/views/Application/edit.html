@@ -8,7 +8,7 @@
 	<form name="contactsForm" action="@{Application.saveContacts}" method="GET">
 
 		<div class="page-title title-buttons">
-			<h1>HCB Administrative Console</h1>
+			<h1>&{'web.console.header'}</h1>
 			<span class="meta">Last updated on <span class="date">%{out.print(new java.util.Date(models.Contacts.getLastUpdateTime()))}%</span></span>
 			<div class="buttons">
 				<a class="button btn-green" href="javascript: document.contactsForm.submit()"><span><span>Save</span></span></a>

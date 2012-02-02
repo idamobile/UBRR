@@ -8,8 +8,8 @@
 
 <div class="col-main">
 	<div class="page-title">
-		<h1>HCB Administrative Console</h1>
-		<span class="meta">Last updated <span class="date">18 august 2011</span></span>
+		<h1>&{'web.console.header'}</h1>
+		<span class="meta">Last updated on <span class="date">%{out.print(new java.util.Date(new models.Banner().getLastUpdateTime()))}%</span></span>
 		<div class="buttons">		
 			<a type="button" class="button btn-edit banner-popup-button" href="@{Banners.add}"><span><span>Add Banner</span></span></a>
 		</div>

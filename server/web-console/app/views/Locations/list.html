@@ -1,0 +1,30 @@
+#{extends 'main.html' /}
+#{set title:'Home' /}
+
+#{sidebar active:'locations'/}
+
+<div class="col-main">
+	<div class="page-title">
+		<h1>&{'web.console.header'}</h1>
+	</div>
+	
+	<table class="custom-table">	
+		<tr><td class="custom-date">
+			<span class="custom-date">ATMs last updated on <span class="date">${controllers.Locations.getLastUpdateForAtms()}</span></span>
+		</td><td>
+			<a type="button" class="custom-btn" href="@{Locations.updateAtms}"><span><span>Update ATMs</span></span></a>
+		</td></tr>
+		<tr><td colspan="2" class="custom-divider">&nbsp;</td></tr>
+		<tr><td class="custom-date">
+			<span class="custom-date">Offices last updated on <span class="date">${controllers.Locations.getLastUpdateForOffices()}</span></span>
+		</td><td>
+			<a type="button" class="custom-btn" href="@{Locations.updateOffices}"><span><span>Update Offices</span></span></a>
+		</td></tr>
+		<tr><td colspan="2" class="custom-divider">&nbsp;</td></tr>
+		<tr><td class="custom-date">
+			<span class="custom-date">Credit points last updated on <span class="date">${controllers.Locations.getLastUpdateForCredits()}</span></span>
+		</td><td>
+			<a type="button" class="custom-btn" href="@{Locations.updateCredits}"><span><span>Update Credits</span></span></a>
+		</td></tr>
+	</table>
+</div>
