@@ -8,7 +8,7 @@
 
 <div class="col-main">
 	<div class="page-title title-buttons">
-		<h1>HCB Administrative Console</h1>
+		<h1>&{'web.console.header'}</h1>
 		<div class="buttons">		
 			<a type="button" class="button btn-edit status-popup-button" href="@{EmailConfigs.emailPopup}"><span><span>Add Email Config</span></span></a>
 		</div>
@@ -34,12 +34,8 @@
 		    	<td class="name">
 		    	#{if conf.emailType == 0}
 		    		FEEDBACK
-		    	#{/ if} #{elseif conf.emailType == 1}
-		    		ORDER_CALL
-		    	#{/ elseif} #{elseif conf.emailType == 2}
-		    		BECOME_CLIENT
-		    	#{/ elseif} #{else}
-		    		MANAGE_DOCUMENTS
+		    	#{/ if} #{else}
+		    		ORDER_CREDIT
 		    	#{/ else}
 		    	</td>
 		    	<td class="status">${conf.recipients}</td>

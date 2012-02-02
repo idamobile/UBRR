@@ -8,6 +8,15 @@
 			@{Banners.list}
 		#{/ sidebar-item}
 		
+		#{sidebar-item active: "${_active == 'locations'}", title: 'Locations'}
+			@{Locations.list}
+		#{/ sidebar-item}
+		
+		#{sidebar-item active: "${_active == 'products'}", title: 'Products'}
+			@{Products.list}
+		#{/ sidebar-item}
+		
+<!--		
 		#{sidebar-item active: "${_active == 'prod_stats'}", title: 'Product Status Mapping'}
 			@{ProductStatuses.list}
 		#{/ sidebar-item}
@@ -27,15 +36,15 @@
 		#{sidebar-item active: "${_active == 'discount_categories'}", title: 'Discount Categories'}
 			@{DiscountCategories.list}
 		#{/ sidebar-item}
-
+ -->
 		#{sidebar-item active: "${_active == 'email_conf'}", title: 'Email Settings'}
 			@{EmailConfigs.list}
 		#{/ sidebar-item}
-
+<!-- 
 		#{sidebar-item active: "${_active == 'tos_int'}", title: 'Integrations'}
 			@{TosIntegrations.list}
 		#{/ sidebar-item}
-
+ -->
 				
 		#{sidebar-item active: "${_active == 'settings'}", title: 'Settings'}
 			@{Settings.index}

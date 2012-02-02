@@ -1,0 +1,47 @@
+#{set 'moreScripts'}
+	<script type="text/javascript" src="@{'/public/js/popup.scripts.js'}"></script>
+#{/set}
+#{extends 'main.html' /}
+#{set title:'Home' /}
+
+#{sidebar active:'products'/}
+
+<div class="col-main">
+	<div class="page-title title-buttons">
+		<h1>&{'web.console.header'}</h1>
+		<div class="buttons">		
+			<a type="button" class="button btn-edit status-popup-button" href="@{Products.statusPopup}"><span><span>Add Product</span></span></a>
+		</div>
+	</div>
+
+#{if products.isEmpty()}
+	<div>No products</div>
+#{/if}
+#{else}
+	<table class="data-table pst">
+		<thead>
+			<tr>
+				<td class="name">Products</td>
+				<td class="btns">&nbsp;</td>
+			</tr>		
+		</thead>
+		<tbody>
+	#{list items:products, as:'product'}
+		    <tr>
+		    	<td class="name">${product.id}</td>
+				
+				<td class="btns">
+		            <a class="button btn-small-grey" href="@{Products.delete(product.id)}"><span><span>Delete</span></span></a>
+		            
+				</td>    	
+		    </tr>
+	#{/list}
+		</tbody>
+	</table>
+#{/else}
+
+	<div class="buttons-set">
+		<a type="button" class="button btn-edit status-popup-button" href="@{Products.statusPopup}"><span><span>Add Product</span></span></a>
+	</div>
+
+</div>

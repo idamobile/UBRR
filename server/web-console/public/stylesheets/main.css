@@ -205,6 +205,7 @@ button.button { -webkit-border-fit:lines; } /* <- Safari & Google Chrome Fix */
 .btn-small-blue span span {
 	background-position: 100% 0;
 	padding: 0 12px 0 0;
+	
 }
 .btn-small-grey span {
 	background: transparent url(../images/bg_button_small_grey.png) no-repeat 0 0;
@@ -287,9 +288,13 @@ button.disabled span {}
 }
 .header .langs li {
 	display: inline;
-	background: transparent url(../images/bg_divider_hor.png) repeat-y 100% 0;
-	padding: 2px 8px 2px 0;
+	
+	padding: 2px 0px 2px 2px;
+	margin-left: 2px;
 	margin-right: 2px;
+}
+.header .langs li.divider {
+	background: transparent url(../images/bg_divider_hor.png) repeat-y 100% 0;
 }
 .header .langs a {
 	color: #262626;
@@ -603,6 +608,51 @@ button.disabled span {}
 .page-title .button {
 	float: left;
 	margin-right: 18px;
+}
+
+
+.custom-btn span {
+	background: transparent url(../images/bg_button.png) no-repeat 0 0; 
+	display: block;
+	height: 30px; 
+	width: 150px;
+	padding: 0px 0px 0px 10px;
+	font-size: 15px;
+	line-height: 31px;
+	font-weight: bold;
+	text-align: center; 
+	white-space: nowrap; 
+	text-transform: uppercase;
+	color: #fff;
+	text-shadow: 0px -1px 1px #086080;
+	overflow:visible; 
+	border:0; 
+	margin:0; 
+	cursor:pointer;
+	text-decoration: none;
+	float: left;
+}
+
+.custom-btn span span {
+	background-position: 100% 50%;
+	padding: 1px 10px 0px 0px;
+}
+
+.custom-date {
+	margin: 0px 10px 0px 0;
+	padding: 8px 0 0 0;
+	text-align: center; 
+	font-size: 15px;
+}
+
+.custom-table {
+	width: 100%;
+	margin-top: 40px;
+}
+
+.custom-divider {
+	background: transparent url(../images/bg_divider_vert.png) repeat-x 0 50%;
+	padding: 8px 0 10px;
 }
 
 

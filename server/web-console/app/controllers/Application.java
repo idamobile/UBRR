@@ -28,8 +28,8 @@ public class Application extends Controller {
 		Lang.change(lang);
 		index();
 	}
-	
-    public static void index() {
+
+	public static void index() {
         render();
     }
     

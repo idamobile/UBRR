@@ -20,7 +20,7 @@
 		    
 		        <div class="header-container">
 		    		<div class="header">
-		                <a class="logo" href="http://homecredit.ru">
+		                <a class="logo" href="&{'bank.url'}">
 		                	<img src="@{'/public/images/logo.png'}" alt="Logo Alt" />
 		                </a>
 		                <div class="user">
@@ -32,8 +32,21 @@
 		                	</span>
 		                </div>
 		                <ul class="langs">
-		                	<li><a href="@{Application.changeLanguage('ru')}">Russian</a></li>
-		                	<li class="active last"><a href="@{Application.changeLanguage('en')}">English</a></li>
+		                	#{if play.i18n.Lang.get() == 'ru' }
+			                	<li class="active">
+							#{/if} #{else}
+			                	<li>
+							#{/else}
+			                		<a href="@{Application.changeLanguage('ru')}">Russian</a>
+			                	</li>
+			                	<li class="divider"></li>
+		                	#{if play.i18n.Lang.get() == 'en' }
+			                	<li class="active">
+							#{/if} #{else}
+			                	<li>
+							#{/else}
+			                		<a href="@{Application.changeLanguage('en')}">English</a>
+		    	            	</li>
 		                </ul>
 					</div>
 				</div>
