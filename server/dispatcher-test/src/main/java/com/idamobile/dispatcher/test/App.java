@@ -1,10 +1,17 @@
 package com.idamobile.dispatcher.test;
 
+import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.Reader;
+import java.io.StringWriter;
+import java.io.Writer;
 
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.TrustManager;
 
+import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.conn.ClientConnectionManager;
@@ -15,18 +22,16 @@ import org.apache.http.entity.ByteArrayEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
 
 import com.idamobile.dispatcher.ssl.TrustAllManager;
-import com.idamobile.protocol.ubrr.Commons.GeoPointMessage;
 import com.idamobile.protocol.ubrr.Partners.CitiesRequest;
-import com.idamobile.protocol.ubrr.Partners.MapPartnersRequest;
-import com.idamobile.protocol.ubrr.Partners.PartnersBySubwayRequest;
 import com.idamobile.protocol.ubrr.Partners.ProductRequest;
 import com.idamobile.protocol.ubrr.Protocol.MBSRequest;
 import com.idamobile.protocol.ubrr.Protocol.MBSResponse;
 
 public class App {
 //	public static final String IDA_SERVER_URL = "http://project.idamob.ru:8000/idaserver-UBRR/request/";
+	public static final String IDA_SERVER_URL = "http://91.208.121.19:8080/idaserver/request/";
 //	public static final String IDA_SERVER_URL = "http://localhost:8000/idaserver-UBRR/request/";
-	public static final String IDA_SERVER_URL  = "http://localhost:8000/idaserver/request/";
+//	public static final String IDA_SERVER_URL  = "http://localhost:8000/idaserver/request/";
 	 
     /**
      * @param args
@@ -46,28 +51,70 @@ public class App {
     	//request.setOfficesRequest(OfficesRequest.newBuilder().setLastUpdateTime(0l));
     	
 //    	request.setMapPartnersRequest(MapPartnersRequest.newBuilder()
-//    			.setTopLeft(GeoPointMessage.newBuilder().setLatitude(50.0).setLongitude(30.1))
-//    			.setBottomRight(GeoPointMessage.newBuilder().setLatitude(56.6).setLongitude(40.5))
-//    			.addProducts("Card 66"));
+//    			.setTopLeft(GeoPointMessage.newBuilder().setLatitude(56.0).setLongitude(30.1))
+//    			.setBottomRight(GeoPointMessage.newBuilder().setLatitude(50.6).setLongitude(40.5))
+//    			.addProducts("Card 66")
+//    			.addProducts("Visa Platinum")
+//    	);
+    	
+//    	request.setMapPartnersRequest(MapPartnersRequest.newBuilder()
+//    			.setTopLeft(GeoPointMessage.newBuilder().setLatitude(80.0).setLongitude(7))
+//    			.setBottomRight(GeoPointMessage.newBuilder().setLatitude(-33.426264).setLongitude(175.578271))
+//    			.addProducts("Card 66")
+//    			.addProducts("VISA_CLUB66")
+//    			.addProducts("Visa Platinum")
+//    			);
     	
     	request.setProductsRequest(ProductRequest.newBuilder());
     	
-//    	request.setCitiesRequest(CitiesRequest.newBuilder());
+    	request.setCitiesRequest(CitiesRequest.newBuilder());
     	
-    	request.setPartnersBySubwayRequest(PartnersBySubwayRequest.newBuilder()
-    			.setCity("Курск")
-    			.setSubwayStation("Курск")
+//    	request.setPartnersBySubwayRequest(PartnersBySubwayRequest.newBuilder()
+//    			.setCity("Курск")
+//    			.setSubwayStation("Курск")
 //    			.addProducts("Card 66")
-    			);
+//    			.addProducts("Visa Platinum")
+//    			);
     	
     	post.setEntity(new ByteArrayEntity(request.build().toByteArray()));
     	    	
-    	InputStream content = client.execute(post).getEntity().getContent();
-    	System.out.println(MBSResponse.parseFrom(content));
+    	HttpResponse resp = client.execute(post);
+    	InputStream content = resp.getEntity().getContent();
+    	
+		int statusCode = resp.getStatusLine().getStatusCode();
+		System.out.println("Response Code: " + statusCode);
+		
+		if (statusCode == 500) {
+			System.out.println(convertStreamToString(content));
+		} else {
+			System.out.println(MBSResponse.parseFrom(content));
+		}
+		
     	
     }
+    
+    public static String convertStreamToString(InputStream is) throws IOException {
+        if (is != null) {
+            Writer writer = new StringWriter();
 
-    private static HttpClient getTrustAllClient(HttpClient base) throws Exception {
+            char[] buffer = new char[1024];
+            try {
+                Reader reader = new BufferedReader(new InputStreamReader(is, "UTF-8"));
+                int n;
+                while ((n = reader.read(buffer)) != -1) {
+                    writer.write(buffer, 0, n);
+                }
+            } finally {
+                is.close();
+            }
+            return writer.toString();
+        } else {        
+            return "";
+        }
+    }
+
+    @SuppressWarnings("deprecation")
+	private static HttpClient getTrustAllClient(HttpClient base) throws Exception {
     	SSLContext ctx = SSLContext.getInstance("TLS");
     	ctx.init(null, new TrustManager[]{new TrustAllManager()}, null);
     	SSLSocketFactory ssf = new SSLSocketFactory(ctx);
