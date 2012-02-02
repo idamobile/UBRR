@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import com.idamobile.protocol.ubrr.Partners.PartnersBySubwayRequest;
-import com.idamobile.protocol.ubrr.Partners.PartnersResponse;
+import com.idamobile.protocol.ubrr.Partners.PartnersBySubwayResponse;
 import com.idamobile.protocol.ubrr.Protocol.MBSRequest;
 import com.idamobile.protocol.ubrr.Protocol.MBSResponse.Builder;
 import com.idamobile.server.ServerConstants;
@@ -17,7 +17,7 @@ import com.idamobile.server.service.support.AbstractMessageService;
 
 @Component
 public class PartnersBySubwayResponseService extends AbstractMessageService<PartnersBySubwayRequest> {
-
+	
 	@Value("${idaserver.locations.pageSize}")
 	private int pageSize;
 	
@@ -49,7 +49,7 @@ public class PartnersBySubwayResponseService extends AbstractMessageService<Part
 		String station = request.getSubwayStation();
 		List<String> products = request.getProductsList();
 		
-		PartnersResponse.Builder builder = PartnersResponse.newBuilder();
+		PartnersBySubwayResponse.Builder builder =PartnersBySubwayResponse.newBuilder();
 		
 		if (products != null && !products.isEmpty()) {
 			List<Partner> partners = partnerDao.getPartners(city, station, products, page, pageSize);
@@ -62,7 +62,7 @@ public class PartnersBySubwayResponseService extends AbstractMessageService<Part
 			builder.setTotalPages((int) Math.ceil(1.0 * count/pageSize));
 		}
 		
-		responseBuilder.setPartnersResponse(builder);
+		responseBuilder.setPartnersBySubwayResponse(builder);
 	}
 
 }
