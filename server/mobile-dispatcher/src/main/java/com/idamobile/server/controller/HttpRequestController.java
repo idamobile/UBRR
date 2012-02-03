@@ -1,26 +1,18 @@
 package com.idamobile.server.controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.log4j.Logger;
-import org.quartz.Job;
-import org.quartz.JobBuilder;
-import org.quartz.JobDetail;
-import org.quartz.Trigger;
-import org.quartz.TriggerBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import com.idamobile.protocol.ubrr.Protocol.MBSRequest;
 import com.idamobile.protocol.ubrr.Protocol.MBSResponse;
-import com.idamobile.server.quartz.QuartzManager;
 import com.idamobile.server.service.support.MessageProcessor;
 
 /**
@@ -50,13 +42,19 @@ public class HttpRequestController {
 	public void processRequestMessage(HttpServletRequest request, HttpServletResponse response) {
 		try {
 
-			 MBSRequest requestMessage = MBSRequest.parseFrom(request
+			long start = System.nanoTime();
+			MBSRequest requestMessage = MBSRequest.parseFrom(request
 					.getInputStream());
+			long estimate = (System.nanoTime() - start) / 1000;
+			log.info("Time to parse request: " + estimate + " ms");
 
 			response.setContentType(MIME_TYPE_PROTOBUF);
 
+			start = System.nanoTime();
 			MBSResponse responseMessage = messageProcessor
 					.handleRequest(requestMessage);
+			estimate = (System.nanoTime() - start) / 1000;
+			log.info("Time to handle request: " + estimate + " ms");
 
 			responseMessage.writeTo(response.getOutputStream());
 

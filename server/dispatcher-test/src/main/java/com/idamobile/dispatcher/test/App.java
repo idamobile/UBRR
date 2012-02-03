@@ -81,9 +81,9 @@ public class App {
 //    			.addProducts("Visa Platinum")
 //    			);
     	
-    	request.setProductsRequest(ProductRequest.newBuilder());
+//    	request.setProductsRequest(ProductRequest.newBuilder());
     	
-    	request.setCitiesRequest(CitiesRequest.newBuilder());
+//    	request.setCitiesRequest(CitiesRequest.newBuilder());
     	
 //    	request.setPartnersBySubwayRequest(PartnersBySubwayRequest.newBuilder()
 //    			.setCity("Курск")
@@ -94,7 +94,10 @@ public class App {
     	
     	post.setEntity(new ByteArrayEntity(request.build().toByteArray()));
     	    	
+		long start = System.currentTimeMillis();
     	HttpResponse resp = client.execute(post);
+    	long end = System.currentTimeMillis();
+    	System.out.println(end - start + " ms");
     	InputStream content = resp.getEntity().getContent();
     	
 		int statusCode = resp.getStatusLine().getStatusCode();
