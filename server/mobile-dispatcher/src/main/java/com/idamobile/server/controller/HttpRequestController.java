@@ -55,6 +55,7 @@ public class HttpRequestController {
 					.handleRequest(requestMessage);
 			estimate = (System.nanoTime() - start) / (int)1e6;
 			log.info("Time to handle request: " + estimate + " ms");
+			response.setHeader("RequestHandlingTime", estimate + " ms");
 
 			responseMessage.writeTo(response.getOutputStream());
 
