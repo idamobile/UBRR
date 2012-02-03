@@ -24,15 +24,13 @@ import org.apache.http.impl.client.DefaultHttpClient;
 
 import com.idamobile.dispatcher.ssl.TrustAllManager;
 import com.idamobile.protocol.ubrr.Commons.GeoPointMessage;
-import com.idamobile.protocol.ubrr.Partners.CitiesRequest;
 import com.idamobile.protocol.ubrr.Partners.MapPartnersRequest;
-import com.idamobile.protocol.ubrr.Partners.ProductRequest;
 import com.idamobile.protocol.ubrr.Protocol.MBSRequest;
 import com.idamobile.protocol.ubrr.Protocol.MBSResponse;
 
 public class App {
-//	public static final String IDA_SERVER_URL = "http://project.idamob.ru:8000/idaserver-UBRR/request/";
-	public static final String IDA_SERVER_URL = "http://91.208.121.19:8080/idaserver/request/";
+	public static final String IDA_SERVER_URL = "http://project.idamob.ru:8000/idaserver-UBRR/request/";
+//	public static final String IDA_SERVER_URL = "http://91.208.121.19:8080/idaserver/request/";
 //	public static final String IDA_SERVER_URL = "http://localhost:8000/idaserver-UBRR/request/";
 //	public static final String IDA_SERVER_URL  = "http://localhost:8000/idaserver/request/";
 	 
@@ -81,9 +79,9 @@ public class App {
 //    			.addProducts("Visa Platinum")
 //    			);
     	
-    	request.setProductsRequest(ProductRequest.newBuilder());
+//    	request.setProductsRequest(ProductRequest.newBuilder());
     	
-    	request.setCitiesRequest(CitiesRequest.newBuilder());
+//    	request.setCitiesRequest(CitiesRequest.newBuilder());
     	
 //    	request.setPartnersBySubwayRequest(PartnersBySubwayRequest.newBuilder()
 //    			.setCity("Курск")
@@ -94,7 +92,10 @@ public class App {
     	
     	post.setEntity(new ByteArrayEntity(request.build().toByteArray()));
     	    	
+		long start = System.currentTimeMillis();
     	HttpResponse resp = client.execute(post);
+    	long end = System.currentTimeMillis();
+    	System.out.println(end - start + " ms");
     	InputStream content = resp.getEntity().getContent();
     	
 		int statusCode = resp.getStatusLine().getStatusCode();

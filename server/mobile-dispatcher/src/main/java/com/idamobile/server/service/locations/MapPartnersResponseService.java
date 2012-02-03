@@ -2,6 +2,7 @@ package com.idamobile.server.service.locations;
 
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -18,6 +19,8 @@ import com.idamobile.server.service.support.AbstractMessageService;
 
 @Component
 public class MapPartnersResponseService extends AbstractMessageService<MapPartnersRequest>{
+	
+	private final Logger log = Logger.getLogger(MapPartnersResponseService.class);
 
 	@Value("${idaserver.cluster.maxSize}")
 	private int clusterMaxSize;
@@ -58,7 +61,12 @@ public class MapPartnersResponseService extends AbstractMessageService<MapPartne
 				for (int y = 0; y<cellsY; y++) {
 					GeoPoint tl = new GeoPoint(top-dx*x, left+dy*y);
 					GeoPoint br = new GeoPoint(top-dx*(x+1), left+dy*(y+1));
+					
+					long start = System.nanoTime();
 					List<Partner> partners = partnerDao.getViewportPartners(tl, br, products);
+					long estimate = (System.nanoTime() - start) / (int)1e6;
+					log.info("Time to get partners by viewport: " + estimate + " ms, got " + partners.size() + " partners");
+					
 					if (partners.size() > clusterMaxSize) {
 						double centerX = 0.0;
 						double centerY = 0.0;
