@@ -7,6 +7,7 @@ import java.io.InputStreamReader;
 import java.io.Reader;
 import java.io.StringWriter;
 import java.io.Writer;
+import java.util.Arrays;
 
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.TrustManager;
@@ -52,20 +53,33 @@ public class App {
     	//request.setAtmsRequest(AtmsRequest.newBuilder().setLastUpdateTime(0l));
     	//request.setOfficesRequest(OfficesRequest.newBuilder().setLastUpdateTime(0l));
     	
-//    	request.setMapPartnersRequest(MapPartnersRequest.newBuilder()
-//    			.setTopLeft(GeoPointMessage.newBuilder().setLatitude(56.0).setLongitude(30.1))
-//    			.setBottomRight(GeoPointMessage.newBuilder().setLatitude(50.6).setLongitude(40.5))
+    	Iterable<String> products = Arrays.asList(
+    			 "Maestro_Unembossed"
+    			 ,"MasterCard_Gold "
+    			 ,"MasterCard_Platinum"
+    			 ,"MasterCard_Standard"
+    			 ,"VISA_CLUB66"
+    			 ,"VISA_Classic_UralAirlines"
+    			 ,"VISA_Gold_UralAirlines"
+    			 ,"Visa_Classic"
+    			 ,"Visa_Gold"
+    			 ,"Visa_Unembossed"
+    			);
+		request.setMapPartnersRequest(MapPartnersRequest.newBuilder()
+    			.setTopLeft(GeoPointMessage.newBuilder().setLatitude(56.17292).setLongitude(36.607934))
+    			.setBottomRight(GeoPointMessage.newBuilder().setLatitude(55.19117).setLongitude(37.926292))
+    			.addAllProducts(products )
 //    			.addProducts("Card 66")
 //    			.addProducts("Visa Platinum")
-//    	);
+    	);
     	
-    	request.setMapPartnersRequest(MapPartnersRequest.newBuilder()
-    			.setTopLeft(GeoPointMessage.newBuilder().setLatitude(80.0).setLongitude(7))
-    			.setBottomRight(GeoPointMessage.newBuilder().setLatitude(-33.426264).setLongitude(175.578271))
-    			.addProducts("Card 66")
-    			.addProducts("VISA_CLUB66")
-    			.addProducts("Visa Platinum")
-    			);
+//    	request.setMapPartnersRequest(MapPartnersRequest.newBuilder()
+//    			.setTopLeft(GeoPointMessage.newBuilder().setLatitude(80.0).setLongitude(7))
+//    			.setBottomRight(GeoPointMessage.newBuilder().setLatitude(-33.426264).setLongitude(175.578271))
+//    			.addProducts("Card 66")
+//    			.addProducts("VISA_CLUB66")
+//    			.addProducts("Visa Platinum")
+//    			);
     	
     	request.setProductsRequest(ProductRequest.newBuilder());
     	

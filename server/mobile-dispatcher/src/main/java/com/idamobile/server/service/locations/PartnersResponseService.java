@@ -19,7 +19,7 @@ import com.idamobile.server.service.support.AbstractMessageService;
 @Component
 public class PartnersResponseService extends AbstractMessageService<PartnersRequest> {
 
-	@Value("${idaserver.locations.pageSize}")
+	@Value("${idaserver.partners.pageSize}")
 	private int pageSize;
 	
 	@Autowired
