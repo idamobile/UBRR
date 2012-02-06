@@ -15,6 +15,7 @@ public class Locations extends Controller {
 	private static final String ENTITY_ATM = "locations.atms";
 	private static final String ENTITY_OFFICES = "locations.offices";
 	private static final String ENTITY_CREDITS = "locations.credit.points";
+	private static final String ENTITY_PARTNERS = "locations.partners";
 
 	@Before
     static void setConnectedUser() {
@@ -30,25 +31,32 @@ public class Locations extends Controller {
 	public static String getLastUpdateForAtms() {
 		return new Date(LastUpdate.get(ENTITY_ATM)).toString();
 	}
-	
 	public static void updateAtms() {
 		LastUpdate.setNow(ENTITY_ATM);
 		list();
 	}
+	
 	public static String getLastUpdateForOffices() {
 		return new Date(LastUpdate.get(ENTITY_OFFICES)).toString();
 	}
-	
 	public static void updateOffices() {
 		LastUpdate.setNow(ENTITY_OFFICES);
 		list();
 	}
+	
 	public static String getLastUpdateForCredits() {
 		return new Date(LastUpdate.get(ENTITY_CREDITS)).toString();
 	}
-	
 	public static void updateCredits() {
 		LastUpdate.setNow(ENTITY_CREDITS);
+		list();
+	}
+	
+	public static String getLastUpdateForPartners() {
+		return new Date(LastUpdate.get(ENTITY_PARTNERS)).toString();
+	}
+	public static void updatePartners() {
+		LastUpdate.setNow(ENTITY_PARTNERS);
 		list();
 	}
 }

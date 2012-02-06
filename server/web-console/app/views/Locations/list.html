@@ -26,5 +26,11 @@
 		</td><td>
 			<a type="button" class="custom-btn" href="@{Locations.updateCredits}"><span><span>Update Credits</span></span></a>
 		</td></tr>
+		<tr><td colspan="2" class="custom-divider">&nbsp;</td></tr>
+		<tr><td class="custom-date">
+			<span class="custom-date">Partners last updated on <span class="date">${controllers.Locations.getLastUpdateForPartners()}</span></span>
+		</td><td>
+			<a type="button" class="custom-btn" href="@{Locations.updatePartners}"><span><span>Update Partners</span></span></a>
+		</td></tr>
 	</table>
 </div>
