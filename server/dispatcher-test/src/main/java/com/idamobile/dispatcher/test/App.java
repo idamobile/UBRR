@@ -12,6 +12,7 @@ import java.util.Arrays;
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.TrustManager;
 
+import org.apache.http.Header;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpPost;
@@ -23,17 +24,14 @@ import org.apache.http.entity.ByteArrayEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
 
 import com.idamobile.dispatcher.ssl.TrustAllManager;
-import com.idamobile.protocol.ubrr.Commons.GeoPointMessage;
-import com.idamobile.protocol.ubrr.Partners.CitiesRequest;
-import com.idamobile.protocol.ubrr.Partners.MapPartnersRequest;
-import com.idamobile.protocol.ubrr.Partners.ProductRequest;
+import com.idamobile.protocol.ubrr.Partners.PartnersRequest;
 import com.idamobile.protocol.ubrr.Protocol.MBSRequest;
 import com.idamobile.protocol.ubrr.Protocol.MBSResponse;
 
 public class App {
 //	public static final String IDA_SERVER_URL = "http://project.idamob.ru:8000/idaserver-UBRR/request/";
-	public static final String IDA_SERVER_URL = "http://91.208.121.19:8080/idaserver/request/";
-//	public static final String IDA_SERVER_URL = "http://localhost:8000/idaserver-UBRR/request/";
+//	public static final String IDA_SERVER_URL = "http://91.208.121.19:8080/idaserver/request/";
+	public static final String IDA_SERVER_URL = "http://localhost:8000/idaserver-UBRR/request/";
 //	public static final String IDA_SERVER_URL  = "http://localhost:8000/idaserver/request/";
 	 
     /**
@@ -65,13 +63,13 @@ public class App {
     			 ,"Visa_Gold"
     			 ,"Visa_Unembossed"
     			);
-		request.setMapPartnersRequest(MapPartnersRequest.newBuilder()
-    			.setTopLeft(GeoPointMessage.newBuilder().setLatitude(56.17292).setLongitude(36.607934))
-    			.setBottomRight(GeoPointMessage.newBuilder().setLatitude(55.19117).setLongitude(37.926292))
-    			.addAllProducts(products )
-//    			.addProducts("Card 66")
-//    			.addProducts("Visa Platinum")
-    	);
+//		request.setMapPartnersRequest(MapPartnersRequest.newBuilder()
+//    			.setTopLeft(GeoPointMessage.newBuilder().setLatitude(56.17292).setLongitude(36.607934))
+//    			.setBottomRight(GeoPointMessage.newBuilder().setLatitude(55.19117).setLongitude(37.926292))
+//    			.addAllProducts(products )
+////    			.addProducts("Card 66")
+////    			.addProducts("Visa Platinum")
+//    	);
     	
 //    	request.setMapPartnersRequest(MapPartnersRequest.newBuilder()
 //    			.setTopLeft(GeoPointMessage.newBuilder().setLatitude(80.0).setLongitude(7))
@@ -92,6 +90,8 @@ public class App {
 //    			.addProducts("Visa Platinum")
 //    			);
     	
+    	request.setPartnersRequest(PartnersRequest.newBuilder().setLastUpdateTime(0l));
+    	
     	post.setEntity(new ByteArrayEntity(request.build().toByteArray()));
     	    	
 		long start = System.currentTimeMillis();
@@ -102,6 +102,8 @@ public class App {
     	
 		int statusCode = resp.getStatusLine().getStatusCode();
 		System.out.println("Response Code: " + statusCode);
+		Header[] headers = resp.getHeaders("RequestHandlingTime");
+		System.out.println(Arrays.asList(headers));
 		
 		if (statusCode == 200) {
 			System.out.println(MBSResponse.parseFrom(content));

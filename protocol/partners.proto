@@ -18,77 +18,27 @@ message PartnerMessage {
 	optional string phone				= 10;
 	repeated string services			= 11;
 	optional string shortServices		= 12;
-}
-
-message ClusterMessage {
-	required GeoPointMessage center			= 1;
-	required GeoPointMessage topLeft		= 2;
-	required GeoPointMessage bottomRight	= 3;
-	required int32 itemsCount				= 4;
+	repeated string products			= 13;
 }
 
 message NearestPartnerRequest {
 	required GeoPointMessage location	= 1;
-	repeated string products			= 2;
 }
 
 message NearestPartnerResponse {
 	optional PartnerMessage partner		= 1;
 }
 
-message PartnersRequest {
-	optional GeoPointMessage location	= 1;
+message	PartnersRequest {
+	optional int64 lastUpdateTime		= 1;
 	optional int32 page					= 2;
-	repeated string products			= 3;
+	optional double latitude			= 3;
+	optional double longitude			= 4;
 }
 
-message PartnersResponse {
-	optional int32 totalPages			= 1;
-	optional int32 page					= 2;
-	repeated PartnerMessage partners	= 3;
-}
-
-message MapPartnersRequest {
-	required GeoPointMessage topLeft		= 1;
-	required GeoPointMessage bottomRight	= 2;
-	repeated string products				= 3;
-}
-
-message MapPartnersResponse {
-	repeated PartnerMessage partners		= 1;
-	repeated ClusterMessage clusters		= 2;
-}
-
-message ProductRequest {
-	repeated string existing		= 1;
-}
-
-message ProductResponse {
-	repeated string products		= 1;
-	repeated string deleted			= 2;
-}
-
-message CityMessage {
-	required string city			= 1;
-	repeated string subwayStations 	= 2;
-}
-
-message CitiesRequest {
-}
-
-message CitiesResponse {
-	repeated CityMessage cities = 1;
-}
-
-message PartnersBySubwayRequest {
-	required string city				= 1;
-	required string subwayStation		= 2;
+message	PartnersResponse {
+	required int64 lastUpdateTime		= 1;
+	optional int32 totalPages			= 2;
 	optional int32 page					= 3;
-	repeated string products			= 4;
-}
-
-message PartnersBySubwayResponse {
-	optional int32 totalPages			= 1;
-	optional int32 page					= 2;
-	repeated PartnerMessage partners	= 3;
+	repeated PartnerMessage partners	= 4;
 }

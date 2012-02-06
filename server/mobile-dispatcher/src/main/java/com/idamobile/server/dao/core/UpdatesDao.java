@@ -8,6 +8,7 @@ public interface UpdatesDao {
 	public static final String ENTITY_LOC_OFFICES = "locations.offices";
 	public static final String ENTITY_LOC_ATMS = "locations.atms";
 	public static final String ENTITY_LOC_CREDIT_POINTS = "locations.credit.points";
+	public static final String ENTITY_LOC_PARTNERS = "locations.partners";
 	
 	public static final String ENTITY_HC_STATUSES = "statuses";
 	public static final String ENTITY_HC_TYPES = "productTypes";

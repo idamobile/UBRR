@@ -1,7 +1,6 @@
 package com.idamobile.server.service.locations;
 
-import java.util.List;
-
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -16,7 +15,9 @@ import com.idamobile.server.service.support.AbstractMessageService;
 
 @Component
 public class NearestPartnerResponseService extends AbstractMessageService<NearestPartnerRequest>{
-
+	
+	private Logger log = Logger.getLogger(NearestPartnerResponseService.class);
+	
 	@Autowired
 	private PartnerDao partnerDao;
 	
@@ -35,13 +36,12 @@ public class NearestPartnerResponseService extends AbstractMessageService<Neares
 				
 		NearestPartnerResponse.Builder builder = NearestPartnerResponse.newBuilder();
 
-		List<String> products = request.getProductsList();
-		
-		if (products != null && !products.isEmpty()) {
-			Partner partner = partnerDao.getNearestPartner(new GeoPoint(request.getLocation()), products);
-			if (partner != null) {
-				builder.setPartner(partner.createMessage());
-			}
+		GeoPoint location = new GeoPoint(request.getLocation());
+		Partner partner = partnerDao.get(location);
+		if (partner != null) {
+			builder.setPartner(partner.createMessage());
+		} else {
+			log.warn("Nearest partner is null for location: " + location);
 		}
 		
 		responseBuilder.setNearestPartnerResponse(builder.build());

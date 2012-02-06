@@ -1,7 +1,5 @@
 package com.idamobile.server.service.locations;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -11,19 +9,22 @@ import com.idamobile.protocol.ubrr.Partners.PartnersResponse;
 import com.idamobile.protocol.ubrr.Protocol.MBSRequest;
 import com.idamobile.protocol.ubrr.Protocol.MBSResponse.Builder;
 import com.idamobile.server.ServerConstants;
+import com.idamobile.server.dao.core.UpdatesDao;
 import com.idamobile.server.dao.core.locations.PartnerDao;
-import com.idamobile.server.model.locations.GeoPoint;
 import com.idamobile.server.model.locations.Partner;
 import com.idamobile.server.service.support.AbstractMessageService;
 
 @Component
 public class PartnersResponseService extends AbstractMessageService<PartnersRequest> {
 
-	@Value("${idaserver.partners.pageSize}")
+	@Value("${idaserver.locations.pageSize}")
 	private int pageSize;
 	
 	@Autowired
 	private PartnerDao partnerDao;
+	
+	@Autowired
+	private UpdatesDao updatesDao;
 	
 	@Override
 	protected boolean isApplicable(MBSRequest request) {
@@ -46,28 +47,23 @@ public class PartnersResponseService extends AbstractMessageService<PartnersRequ
 			page = 1;
 		}
 
-		List<String> products = request.getProductsList();
-		
 		PartnersResponse.Builder builder = PartnersResponse.newBuilder();
 		
-		if (products != null && !products.isEmpty()) {
-			List<Partner> partners = null;
+		long storedUpdateTime = updatesDao.getUpdateTime(UpdatesDao.ENTITY_LOC_PARTNERS);
 		
-			if (request.hasLocation()) {
-				partners = partnerDao.getPartners(new GeoPoint(request.getLocation()), products, page, pageSize);
-			} else {
-				partners = partnerDao.getPartners(products, page, pageSize);
-			}
-	
-			for (Partner p: partners) {
+		if (request.getLastUpdateTime() < storedUpdateTime) {
+		
+			for (Partner p: partnerDao.get(page, pageSize)) {
 				builder.addPartners(p.createMessage());
 			}
 	
 			builder.setPage(page);
-			int count = partnerDao.count(products);
+			int count = partnerDao.count();
 			builder.setTotalPages((int) Math.ceil(1.0 * count/pageSize));
 		}
-		responseBuilder.setPartnersResponse(builder);
+		builder.setLastUpdateTime(storedUpdateTime);
+		responseBuilder.setPartnersResponse(builder);	
+		
 	}
 
 }
