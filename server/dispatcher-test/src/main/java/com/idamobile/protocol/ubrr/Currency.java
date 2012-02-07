@@ -697,6 +697,10 @@ public final class Currency {
   
   public interface CurrencyRateRequestOrBuilder
       extends com.google.protobuf.MessageOrBuilder {
+    
+    // optional int64 lastUpdateTime = 1;
+    boolean hasLastUpdateTime();
+    long getLastUpdateTime();
   }
   public static final class CurrencyRateRequest extends
       com.google.protobuf.GeneratedMessage
@@ -726,7 +730,19 @@ public final class Currency {
       return com.idamobile.protocol.ubrr.Currency.internal_static_messaging_CurrencyRateRequest_fieldAccessorTable;
     }
     
+    private int bitField0_;
+    // optional int64 lastUpdateTime = 1;
+    public static final int LASTUPDATETIME_FIELD_NUMBER = 1;
+    private long lastUpdateTime_;
+    public boolean hasLastUpdateTime() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    public long getLastUpdateTime() {
+      return lastUpdateTime_;
+    }
+    
     private void initFields() {
+      lastUpdateTime_ = 0L;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -740,6 +756,9 @@ public final class Currency {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeInt64(1, lastUpdateTime_);
+      }
       getUnknownFields().writeTo(output);
     }
     
@@ -749,6 +768,10 @@ public final class Currency {
       if (size != -1) return size;
     
       size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(1, lastUpdateTime_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
       return size;
@@ -873,6 +896,8 @@ public final class Currency {
       
       public Builder clear() {
         super.clear();
+        lastUpdateTime_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
       
@@ -909,6 +934,13 @@ public final class Currency {
       
       public com.idamobile.protocol.ubrr.Currency.CurrencyRateRequest buildPartial() {
         com.idamobile.protocol.ubrr.Currency.CurrencyRateRequest result = new com.idamobile.protocol.ubrr.Currency.CurrencyRateRequest(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.lastUpdateTime_ = lastUpdateTime_;
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -924,6 +956,9 @@ public final class Currency {
       
       public Builder mergeFrom(com.idamobile.protocol.ubrr.Currency.CurrencyRateRequest other) {
         if (other == com.idamobile.protocol.ubrr.Currency.CurrencyRateRequest.getDefaultInstance()) return this;
+        if (other.hasLastUpdateTime()) {
+          setLastUpdateTime(other.getLastUpdateTime());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
@@ -955,10 +990,37 @@ public final class Currency {
               }
               break;
             }
+            case 8: {
+              bitField0_ |= 0x00000001;
+              lastUpdateTime_ = input.readInt64();
+              break;
+            }
           }
         }
       }
       
+      private int bitField0_;
+      
+      // optional int64 lastUpdateTime = 1;
+      private long lastUpdateTime_ ;
+      public boolean hasLastUpdateTime() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      public long getLastUpdateTime() {
+        return lastUpdateTime_;
+      }
+      public Builder setLastUpdateTime(long value) {
+        bitField0_ |= 0x00000001;
+        lastUpdateTime_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearLastUpdateTime() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        lastUpdateTime_ = 0L;
+        onChanged();
+        return this;
+      }
       
       // @@protoc_insertion_point(builder_scope:messaging.CurrencyRateRequest)
     }
@@ -1630,12 +1692,12 @@ public final class Currency {
       "Message\022/\n\toperation\030\001 \002(\0162\034.messaging.C" +
       "urrencyOperation\022\020\n\010currency\030\002 \002(\005\022\r\n\005pr" +
       "ice\030\003 \002(\001\022\016\n\006amount\030\004 \002(\001\022\r\n\005delta\030\005 \002(\001" +
-      "\"\025\n\023CurrencyRateRequest\"\\\n\024CurrencyRateR" +
-      "esponse\022\026\n\016lastUpdateTime\030\001 \002(\003\022,\n\010curre" +
-      "ncy\030\002 \003(\0132\032.messaging.CurrencyMessage*3\n" +
-      "\021CurrencyOperation\022\007\n\003BUY\020\000\022\010\n\004SELL\020\001\022\013\n" +
-      "\007CENTRAL\020\002B\035\n\033com.idamobile.protocol.ubr" +
-      "r"
+      "\"-\n\023CurrencyRateRequest\022\026\n\016lastUpdateTim" +
+      "e\030\001 \001(\003\"\\\n\024CurrencyRateResponse\022\026\n\016lastU" +
+      "pdateTime\030\001 \002(\003\022,\n\010currency\030\002 \003(\0132\032.mess" +
+      "aging.CurrencyMessage*3\n\021CurrencyOperati" +
+      "on\022\007\n\003BUY\020\000\022\010\n\004SELL\020\001\022\013\n\007CENTRAL\020\002B\035\n\033co" +
+      "m.idamobile.protocol.ubrr"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
       new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -1655,7 +1717,7 @@ public final class Currency {
           internal_static_messaging_CurrencyRateRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_messaging_CurrencyRateRequest_descriptor,
-              new java.lang.String[] { },
+              new java.lang.String[] { "LastUpdateTime", },
               com.idamobile.protocol.ubrr.Currency.CurrencyRateRequest.class,
               com.idamobile.protocol.ubrr.Currency.CurrencyRateRequest.Builder.class);
           internal_static_messaging_CurrencyRateResponse_descriptor =

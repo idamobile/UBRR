@@ -7,4 +7,6 @@ import com.idamobile.server.model.CurrencyRate;
 public interface CurrencyRateDao {
 
 	List<CurrencyRate> all();
+	
+	long getLastUpdateTime();
 }

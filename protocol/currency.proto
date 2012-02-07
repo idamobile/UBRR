@@ -18,6 +18,7 @@ message CurrencyMessage {
 }
 
 message CurrencyRateRequest {
+	optional int64 lastUpdateTime	= 1;
 }
 
 message CurrencyRateResponse {

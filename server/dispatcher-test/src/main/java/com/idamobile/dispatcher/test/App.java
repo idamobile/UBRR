@@ -24,6 +24,7 @@ import org.apache.http.entity.ByteArrayEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
 
 import com.idamobile.dispatcher.ssl.TrustAllManager;
+import com.idamobile.protocol.ubrr.Currency.CurrencyRateRequest;
 import com.idamobile.protocol.ubrr.Partners.PartnersRequest;
 import com.idamobile.protocol.ubrr.Protocol.MBSRequest;
 import com.idamobile.protocol.ubrr.Protocol.MBSResponse;
@@ -46,7 +47,7 @@ public class App {
     	MBSRequest.Builder request = MBSRequest.newBuilder();    	
 
     	//request.setNewsRequest(NewsRequest.newBuilder().addNewsIds(1000).addNewsIds(2));
-    	//request.setCurrencyRequest(CurrencyRateRequest.newBuilder());
+    	request.setCurrencyRequest(CurrencyRateRequest.newBuilder().setLastUpdateTime(1326923611265l));
     	
     	//request.setAtmsRequest(AtmsRequest.newBuilder().setLastUpdateTime(0l));
     	//request.setOfficesRequest(OfficesRequest.newBuilder().setLastUpdateTime(0l));
@@ -90,7 +91,7 @@ public class App {
 //    			.addProducts("Visa Platinum")
 //    			);
     	
-    	request.setPartnersRequest(PartnersRequest.newBuilder().setLastUpdateTime(0l));
+//    	request.setPartnersRequest(PartnersRequest.newBuilder().setLastUpdateTime(0l));
     	
     	post.setEntity(new ByteArrayEntity(request.build().toByteArray()));
     	    	

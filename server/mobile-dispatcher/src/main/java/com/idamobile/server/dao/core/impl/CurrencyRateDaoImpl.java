@@ -2,6 +2,7 @@ package com.idamobile.server.dao.core.impl;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Date;
 import java.util.List;
 
 import org.apache.log4j.Logger;
@@ -16,13 +17,16 @@ import com.idamobile.server.dao.core.CurrencyRateDao;
 import com.idamobile.server.model.CurrencyRate;
 
 @Repository
-public class CurrencyRateDaoImpl implements CurrencyRateDao{
+public class CurrencyRateDaoImpl implements CurrencyRateDao {
 
 	private Logger log = Logger.getLogger(CurrencyRateDaoImpl.class);
 	
 	private static final String SQL_SELECT_RATES = 
 		"SELECT operation, currency_code, price, amount, delta " +
 		"FROM " + TableNames.CURRENCY_RATES;
+	
+	private static final String SQL_RATES_LAST_UPDATE = 
+			"SELECT max(cur_date) FROM " + TableNames.CURRENCY_RATES;
 	
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
@@ -43,6 +47,13 @@ public class CurrencyRateDaoImpl implements CurrencyRateDao{
 			}
 			
 		});
+	}
+	
+	@Transactional(readOnly = true)
+	@Override
+	public long getLastUpdateTime() {
+		long res = jdbcTemplate.queryForLong(SQL_RATES_LAST_UPDATE);
+		return res != 0 ? res : new Date().getTime();
 	}
 
 }

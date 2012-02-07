@@ -1,8 +1,5 @@
 package com.idamobile.server.service;
 
-import java.util.Calendar;
-import java.util.Date;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -34,18 +31,23 @@ public class CurrencyRateResponseService extends AbstractMessageService<Currency
 	protected void processMessage(CurrencyRateRequest request, Builder responseBuilder) {
 		CurrencyRateResponse.Builder builder = CurrencyRateResponse.newBuilder();
 		
-		for (CurrencyRate rate: currencyDao.all()) {
-			builder.addCurrency(rate.createMessage());
+		long storedLastUpdate = currencyDao.getLastUpdateTime();
+		
+		if (request.getLastUpdateTime() < storedLastUpdate) {
+			for (CurrencyRate rate: currencyDao.all()) {
+				builder.addCurrency(rate.createMessage());
+			}
+			
+	//		Calendar c = Calendar.getInstance();
+	//		c.set(Calendar.MILLISECOND, 0);
+	//		c.set(Calendar.SECOND, 0);
+	//		c.set(Calendar.MINUTE, 0);
+	//		c.set(Calendar.HOUR_OF_DAY, 0);
+	//		
+	//		builder.setLastUpdateTime(c.getTimeInMillis());
 		}
-		
-		Calendar c = Calendar.getInstance();
-		c.set(Calendar.MILLISECOND, 0);
-		c.set(Calendar.SECOND, 0);
-		c.set(Calendar.MINUTE, 0);
-		c.set(Calendar.HOUR_OF_DAY, 0);
-		
-		builder.setLastUpdateTime(c.getTimeInMillis());
-		
+
+		builder.setLastUpdateTime(storedLastUpdate);
 		responseBuilder.setCurrencyResponse(builder.build());		
 	}
 
