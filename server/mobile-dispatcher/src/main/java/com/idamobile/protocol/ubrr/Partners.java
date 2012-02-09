@@ -3572,6 +3572,895 @@ public final class Partners {
     // @@protoc_insertion_point(class_scope:messaging.PartnersResponse)
   }
   
+  public interface ProductRequestOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+    
+    // repeated string existing = 1;
+    java.util.List<String> getExistingList();
+    int getExistingCount();
+    String getExisting(int index);
+  }
+  public static final class ProductRequest extends
+      com.google.protobuf.GeneratedMessage
+      implements ProductRequestOrBuilder {
+    // Use ProductRequest.newBuilder() to construct.
+    private ProductRequest(Builder builder) {
+      super(builder);
+    }
+    private ProductRequest(boolean noInit) {}
+    
+    private static final ProductRequest defaultInstance;
+    public static ProductRequest getDefaultInstance() {
+      return defaultInstance;
+    }
+    
+    public ProductRequest getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+    
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.idamobile.protocol.ubrr.Partners.internal_static_messaging_ProductRequest_descriptor;
+    }
+    
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.idamobile.protocol.ubrr.Partners.internal_static_messaging_ProductRequest_fieldAccessorTable;
+    }
+    
+    // repeated string existing = 1;
+    public static final int EXISTING_FIELD_NUMBER = 1;
+    private com.google.protobuf.LazyStringList existing_;
+    public java.util.List<String>
+        getExistingList() {
+      return existing_;
+    }
+    public int getExistingCount() {
+      return existing_.size();
+    }
+    public String getExisting(int index) {
+      return existing_.get(index);
+    }
+    
+    private void initFields() {
+      existing_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+      
+      memoizedIsInitialized = 1;
+      return true;
+    }
+    
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      for (int i = 0; i < existing_.size(); i++) {
+        output.writeBytes(1, existing_.getByteString(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+    
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+    
+      size = 0;
+      {
+        int dataSize = 0;
+        for (int i = 0; i < existing_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeBytesSizeNoTag(existing_.getByteString(i));
+        }
+        size += dataSize;
+        size += 1 * getExistingList().size();
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+    
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+    
+    public static com.idamobile.protocol.ubrr.Partners.ProductRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static com.idamobile.protocol.ubrr.Partners.ProductRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.idamobile.protocol.ubrr.Partners.ProductRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static com.idamobile.protocol.ubrr.Partners.ProductRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.idamobile.protocol.ubrr.Partners.ProductRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static com.idamobile.protocol.ubrr.Partners.ProductRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.idamobile.protocol.ubrr.Partners.ProductRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static com.idamobile.protocol.ubrr.Partners.ProductRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static com.idamobile.protocol.ubrr.Partners.ProductRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static com.idamobile.protocol.ubrr.Partners.ProductRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.idamobile.protocol.ubrr.Partners.ProductRequest prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+    
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements com.idamobile.protocol.ubrr.Partners.ProductRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.idamobile.protocol.ubrr.Partners.internal_static_messaging_ProductRequest_descriptor;
+      }
+      
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.idamobile.protocol.ubrr.Partners.internal_static_messaging_ProductRequest_fieldAccessorTable;
+      }
+      
+      // Construct using com.idamobile.protocol.ubrr.Partners.ProductRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+      
+      private Builder(BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+      
+      public Builder clear() {
+        super.clear();
+        existing_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+      
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+      
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.idamobile.protocol.ubrr.Partners.ProductRequest.getDescriptor();
+      }
+      
+      public com.idamobile.protocol.ubrr.Partners.ProductRequest getDefaultInstanceForType() {
+        return com.idamobile.protocol.ubrr.Partners.ProductRequest.getDefaultInstance();
+      }
+      
+      public com.idamobile.protocol.ubrr.Partners.ProductRequest build() {
+        com.idamobile.protocol.ubrr.Partners.ProductRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+      
+      private com.idamobile.protocol.ubrr.Partners.ProductRequest buildParsed()
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        com.idamobile.protocol.ubrr.Partners.ProductRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(
+            result).asInvalidProtocolBufferException();
+        }
+        return result;
+      }
+      
+      public com.idamobile.protocol.ubrr.Partners.ProductRequest buildPartial() {
+        com.idamobile.protocol.ubrr.Partners.ProductRequest result = new com.idamobile.protocol.ubrr.Partners.ProductRequest(this);
+        int from_bitField0_ = bitField0_;
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          existing_ = new com.google.protobuf.UnmodifiableLazyStringList(
+              existing_);
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.existing_ = existing_;
+        onBuilt();
+        return result;
+      }
+      
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.idamobile.protocol.ubrr.Partners.ProductRequest) {
+          return mergeFrom((com.idamobile.protocol.ubrr.Partners.ProductRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+      
+      public Builder mergeFrom(com.idamobile.protocol.ubrr.Partners.ProductRequest other) {
+        if (other == com.idamobile.protocol.ubrr.Partners.ProductRequest.getDefaultInstance()) return this;
+        if (!other.existing_.isEmpty()) {
+          if (existing_.isEmpty()) {
+            existing_ = other.existing_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureExistingIsMutable();
+            existing_.addAll(other.existing_);
+          }
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+      
+      public final boolean isInitialized() {
+        return true;
+      }
+      
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder(
+            this.getUnknownFields());
+        while (true) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              this.setUnknownFields(unknownFields.build());
+              onChanged();
+              return this;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                this.setUnknownFields(unknownFields.build());
+                onChanged();
+                return this;
+              }
+              break;
+            }
+            case 10: {
+              ensureExistingIsMutable();
+              existing_.add(input.readBytes());
+              break;
+            }
+          }
+        }
+      }
+      
+      private int bitField0_;
+      
+      // repeated string existing = 1;
+      private com.google.protobuf.LazyStringList existing_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureExistingIsMutable() {
+        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+          existing_ = new com.google.protobuf.LazyStringArrayList(existing_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+      public java.util.List<String>
+          getExistingList() {
+        return java.util.Collections.unmodifiableList(existing_);
+      }
+      public int getExistingCount() {
+        return existing_.size();
+      }
+      public String getExisting(int index) {
+        return existing_.get(index);
+      }
+      public Builder setExisting(
+          int index, String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureExistingIsMutable();
+        existing_.set(index, value);
+        onChanged();
+        return this;
+      }
+      public Builder addExisting(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureExistingIsMutable();
+        existing_.add(value);
+        onChanged();
+        return this;
+      }
+      public Builder addAllExisting(
+          java.lang.Iterable<String> values) {
+        ensureExistingIsMutable();
+        super.addAll(values, existing_);
+        onChanged();
+        return this;
+      }
+      public Builder clearExisting() {
+        existing_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      void addExisting(com.google.protobuf.ByteString value) {
+        ensureExistingIsMutable();
+        existing_.add(value);
+        onChanged();
+      }
+      
+      // @@protoc_insertion_point(builder_scope:messaging.ProductRequest)
+    }
+    
+    static {
+      defaultInstance = new ProductRequest(true);
+      defaultInstance.initFields();
+    }
+    
+    // @@protoc_insertion_point(class_scope:messaging.ProductRequest)
+  }
+  
+  public interface ProductResponseOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+    
+    // repeated string products = 1;
+    java.util.List<String> getProductsList();
+    int getProductsCount();
+    String getProducts(int index);
+    
+    // repeated string deleted = 2;
+    java.util.List<String> getDeletedList();
+    int getDeletedCount();
+    String getDeleted(int index);
+  }
+  public static final class ProductResponse extends
+      com.google.protobuf.GeneratedMessage
+      implements ProductResponseOrBuilder {
+    // Use ProductResponse.newBuilder() to construct.
+    private ProductResponse(Builder builder) {
+      super(builder);
+    }
+    private ProductResponse(boolean noInit) {}
+    
+    private static final ProductResponse defaultInstance;
+    public static ProductResponse getDefaultInstance() {
+      return defaultInstance;
+    }
+    
+    public ProductResponse getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+    
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.idamobile.protocol.ubrr.Partners.internal_static_messaging_ProductResponse_descriptor;
+    }
+    
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.idamobile.protocol.ubrr.Partners.internal_static_messaging_ProductResponse_fieldAccessorTable;
+    }
+    
+    // repeated string products = 1;
+    public static final int PRODUCTS_FIELD_NUMBER = 1;
+    private com.google.protobuf.LazyStringList products_;
+    public java.util.List<String>
+        getProductsList() {
+      return products_;
+    }
+    public int getProductsCount() {
+      return products_.size();
+    }
+    public String getProducts(int index) {
+      return products_.get(index);
+    }
+    
+    // repeated string deleted = 2;
+    public static final int DELETED_FIELD_NUMBER = 2;
+    private com.google.protobuf.LazyStringList deleted_;
+    public java.util.List<String>
+        getDeletedList() {
+      return deleted_;
+    }
+    public int getDeletedCount() {
+      return deleted_.size();
+    }
+    public String getDeleted(int index) {
+      return deleted_.get(index);
+    }
+    
+    private void initFields() {
+      products_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      deleted_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+      
+      memoizedIsInitialized = 1;
+      return true;
+    }
+    
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      for (int i = 0; i < products_.size(); i++) {
+        output.writeBytes(1, products_.getByteString(i));
+      }
+      for (int i = 0; i < deleted_.size(); i++) {
+        output.writeBytes(2, deleted_.getByteString(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+    
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+    
+      size = 0;
+      {
+        int dataSize = 0;
+        for (int i = 0; i < products_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeBytesSizeNoTag(products_.getByteString(i));
+        }
+        size += dataSize;
+        size += 1 * getProductsList().size();
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < deleted_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeBytesSizeNoTag(deleted_.getByteString(i));
+        }
+        size += dataSize;
+        size += 1 * getDeletedList().size();
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+    
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+    
+    public static com.idamobile.protocol.ubrr.Partners.ProductResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static com.idamobile.protocol.ubrr.Partners.ProductResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.idamobile.protocol.ubrr.Partners.ProductResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static com.idamobile.protocol.ubrr.Partners.ProductResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.idamobile.protocol.ubrr.Partners.ProductResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static com.idamobile.protocol.ubrr.Partners.ProductResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.idamobile.protocol.ubrr.Partners.ProductResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static com.idamobile.protocol.ubrr.Partners.ProductResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static com.idamobile.protocol.ubrr.Partners.ProductResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static com.idamobile.protocol.ubrr.Partners.ProductResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.idamobile.protocol.ubrr.Partners.ProductResponse prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+    
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements com.idamobile.protocol.ubrr.Partners.ProductResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.idamobile.protocol.ubrr.Partners.internal_static_messaging_ProductResponse_descriptor;
+      }
+      
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.idamobile.protocol.ubrr.Partners.internal_static_messaging_ProductResponse_fieldAccessorTable;
+      }
+      
+      // Construct using com.idamobile.protocol.ubrr.Partners.ProductResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+      
+      private Builder(BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+      
+      public Builder clear() {
+        super.clear();
+        products_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        deleted_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        return this;
+      }
+      
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+      
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.idamobile.protocol.ubrr.Partners.ProductResponse.getDescriptor();
+      }
+      
+      public com.idamobile.protocol.ubrr.Partners.ProductResponse getDefaultInstanceForType() {
+        return com.idamobile.protocol.ubrr.Partners.ProductResponse.getDefaultInstance();
+      }
+      
+      public com.idamobile.protocol.ubrr.Partners.ProductResponse build() {
+        com.idamobile.protocol.ubrr.Partners.ProductResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+      
+      private com.idamobile.protocol.ubrr.Partners.ProductResponse buildParsed()
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        com.idamobile.protocol.ubrr.Partners.ProductResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(
+            result).asInvalidProtocolBufferException();
+        }
+        return result;
+      }
+      
+      public com.idamobile.protocol.ubrr.Partners.ProductResponse buildPartial() {
+        com.idamobile.protocol.ubrr.Partners.ProductResponse result = new com.idamobile.protocol.ubrr.Partners.ProductResponse(this);
+        int from_bitField0_ = bitField0_;
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          products_ = new com.google.protobuf.UnmodifiableLazyStringList(
+              products_);
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.products_ = products_;
+        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+          deleted_ = new com.google.protobuf.UnmodifiableLazyStringList(
+              deleted_);
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.deleted_ = deleted_;
+        onBuilt();
+        return result;
+      }
+      
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.idamobile.protocol.ubrr.Partners.ProductResponse) {
+          return mergeFrom((com.idamobile.protocol.ubrr.Partners.ProductResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+      
+      public Builder mergeFrom(com.idamobile.protocol.ubrr.Partners.ProductResponse other) {
+        if (other == com.idamobile.protocol.ubrr.Partners.ProductResponse.getDefaultInstance()) return this;
+        if (!other.products_.isEmpty()) {
+          if (products_.isEmpty()) {
+            products_ = other.products_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureProductsIsMutable();
+            products_.addAll(other.products_);
+          }
+          onChanged();
+        }
+        if (!other.deleted_.isEmpty()) {
+          if (deleted_.isEmpty()) {
+            deleted_ = other.deleted_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureDeletedIsMutable();
+            deleted_.addAll(other.deleted_);
+          }
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+      
+      public final boolean isInitialized() {
+        return true;
+      }
+      
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder(
+            this.getUnknownFields());
+        while (true) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              this.setUnknownFields(unknownFields.build());
+              onChanged();
+              return this;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                this.setUnknownFields(unknownFields.build());
+                onChanged();
+                return this;
+              }
+              break;
+            }
+            case 10: {
+              ensureProductsIsMutable();
+              products_.add(input.readBytes());
+              break;
+            }
+            case 18: {
+              ensureDeletedIsMutable();
+              deleted_.add(input.readBytes());
+              break;
+            }
+          }
+        }
+      }
+      
+      private int bitField0_;
+      
+      // repeated string products = 1;
+      private com.google.protobuf.LazyStringList products_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureProductsIsMutable() {
+        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+          products_ = new com.google.protobuf.LazyStringArrayList(products_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+      public java.util.List<String>
+          getProductsList() {
+        return java.util.Collections.unmodifiableList(products_);
+      }
+      public int getProductsCount() {
+        return products_.size();
+      }
+      public String getProducts(int index) {
+        return products_.get(index);
+      }
+      public Builder setProducts(
+          int index, String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureProductsIsMutable();
+        products_.set(index, value);
+        onChanged();
+        return this;
+      }
+      public Builder addProducts(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureProductsIsMutable();
+        products_.add(value);
+        onChanged();
+        return this;
+      }
+      public Builder addAllProducts(
+          java.lang.Iterable<String> values) {
+        ensureProductsIsMutable();
+        super.addAll(values, products_);
+        onChanged();
+        return this;
+      }
+      public Builder clearProducts() {
+        products_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      void addProducts(com.google.protobuf.ByteString value) {
+        ensureProductsIsMutable();
+        products_.add(value);
+        onChanged();
+      }
+      
+      // repeated string deleted = 2;
+      private com.google.protobuf.LazyStringList deleted_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureDeletedIsMutable() {
+        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+          deleted_ = new com.google.protobuf.LazyStringArrayList(deleted_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+      public java.util.List<String>
+          getDeletedList() {
+        return java.util.Collections.unmodifiableList(deleted_);
+      }
+      public int getDeletedCount() {
+        return deleted_.size();
+      }
+      public String getDeleted(int index) {
+        return deleted_.get(index);
+      }
+      public Builder setDeleted(
+          int index, String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureDeletedIsMutable();
+        deleted_.set(index, value);
+        onChanged();
+        return this;
+      }
+      public Builder addDeleted(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureDeletedIsMutable();
+        deleted_.add(value);
+        onChanged();
+        return this;
+      }
+      public Builder addAllDeleted(
+          java.lang.Iterable<String> values) {
+        ensureDeletedIsMutable();
+        super.addAll(values, deleted_);
+        onChanged();
+        return this;
+      }
+      public Builder clearDeleted() {
+        deleted_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      void addDeleted(com.google.protobuf.ByteString value) {
+        ensureDeletedIsMutable();
+        deleted_.add(value);
+        onChanged();
+      }
+      
+      // @@protoc_insertion_point(builder_scope:messaging.ProductResponse)
+    }
+    
+    static {
+      defaultInstance = new ProductResponse(true);
+      defaultInstance.initFields();
+    }
+    
+    // @@protoc_insertion_point(class_scope:messaging.ProductResponse)
+  }
+  
   private static com.google.protobuf.Descriptors.Descriptor
     internal_static_messaging_PartnerMessage_descriptor;
   private static
@@ -3597,6 +4486,16 @@ public final class Partners {
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_messaging_PartnersResponse_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_messaging_ProductRequest_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_messaging_ProductRequest_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_messaging_ProductResponse_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_messaging_ProductResponse_fieldAccessorTable;
   
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -3622,8 +4521,10 @@ public final class Partners {
       "ongitude\030\004 \001(\001\"y\n\020PartnersResponse\022\026\n\016la" +
       "stUpdateTime\030\001 \002(\003\022\022\n\ntotalPages\030\002 \001(\005\022\014" +
       "\n\004page\030\003 \001(\005\022+\n\010partners\030\004 \003(\0132\031.messagi" +
-      "ng.PartnerMessageB\035\n\033com.idamobile.proto" +
-      "col.ubrr"
+      "ng.PartnerMessage\"\"\n\016ProductRequest\022\020\n\010e" +
+      "xisting\030\001 \003(\t\"4\n\017ProductResponse\022\020\n\010prod" +
+      "ucts\030\001 \003(\t\022\017\n\007deleted\030\002 \003(\tB\035\n\033com.idamo" +
+      "bile.protocol.ubrr"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
       new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -3670,6 +4571,22 @@ public final class Partners {
               new java.lang.String[] { "LastUpdateTime", "TotalPages", "Page", "Partners", },
               com.idamobile.protocol.ubrr.Partners.PartnersResponse.class,
               com.idamobile.protocol.ubrr.Partners.PartnersResponse.Builder.class);
+          internal_static_messaging_ProductRequest_descriptor =
+            getDescriptor().getMessageTypes().get(5);
+          internal_static_messaging_ProductRequest_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_messaging_ProductRequest_descriptor,
+              new java.lang.String[] { "Existing", },
+              com.idamobile.protocol.ubrr.Partners.ProductRequest.class,
+              com.idamobile.protocol.ubrr.Partners.ProductRequest.Builder.class);
+          internal_static_messaging_ProductResponse_descriptor =
+            getDescriptor().getMessageTypes().get(6);
+          internal_static_messaging_ProductResponse_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_messaging_ProductResponse_descriptor,
+              new java.lang.String[] { "Products", "Deleted", },
+              com.idamobile.protocol.ubrr.Partners.ProductResponse.class,
+              com.idamobile.protocol.ubrr.Partners.ProductResponse.Builder.class);
           return null;
         }
       };

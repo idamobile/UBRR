@@ -83,6 +83,7 @@ message MBSRequest {
 	optional CreditPointsRequest creditPointsRequest            	= 10;
 	optional NearestPartnerRequest nearestPartnerRequest		   	= 11;
 	optional PartnersRequest partnersRequest						= 12;
+	optional ProductRequest productsRequest							= 13;
 }
 
 message MBSResponse {
@@ -98,4 +99,5 @@ message MBSResponse {
 	optional CreditPointsResponse creditPointsResponse              = 10;
 	optional NearestPartnerResponse nearestPartnerResponse		   	= 11;
 	optional PartnersResponse partnersResponse						= 12;
+	optional ProductResponse productsResponse						= 13;
 }

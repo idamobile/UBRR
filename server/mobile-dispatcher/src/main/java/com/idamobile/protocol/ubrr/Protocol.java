@@ -4373,6 +4373,11 @@ public final class Protocol {
     boolean hasPartnersRequest();
     com.idamobile.protocol.ubrr.Partners.PartnersRequest getPartnersRequest();
     com.idamobile.protocol.ubrr.Partners.PartnersRequestOrBuilder getPartnersRequestOrBuilder();
+    
+    // optional .messaging.ProductRequest productsRequest = 13;
+    boolean hasProductsRequest();
+    com.idamobile.protocol.ubrr.Partners.ProductRequest getProductsRequest();
+    com.idamobile.protocol.ubrr.Partners.ProductRequestOrBuilder getProductsRequestOrBuilder();
   }
   public static final class MBSRequest extends
       com.google.protobuf.GeneratedMessage
@@ -4559,6 +4564,19 @@ public final class Protocol {
       return partnersRequest_;
     }
     
+    // optional .messaging.ProductRequest productsRequest = 13;
+    public static final int PRODUCTSREQUEST_FIELD_NUMBER = 13;
+    private com.idamobile.protocol.ubrr.Partners.ProductRequest productsRequest_;
+    public boolean hasProductsRequest() {
+      return ((bitField0_ & 0x00001000) == 0x00001000);
+    }
+    public com.idamobile.protocol.ubrr.Partners.ProductRequest getProductsRequest() {
+      return productsRequest_;
+    }
+    public com.idamobile.protocol.ubrr.Partners.ProductRequestOrBuilder getProductsRequestOrBuilder() {
+      return productsRequest_;
+    }
+    
     private void initFields() {
       bankContactsRequest_ = com.idamobile.protocol.ubrr.Protocol.BankContactsRequest.getDefaultInstance();
       bannersRequest_ = com.idamobile.protocol.ubrr.Banners.BannersRequest.getDefaultInstance();
@@ -4572,6 +4590,7 @@ public final class Protocol {
       creditPointsRequest_ = com.idamobile.protocol.ubrr.Locations.CreditPointsRequest.getDefaultInstance();
       nearestPartnerRequest_ = com.idamobile.protocol.ubrr.Partners.NearestPartnerRequest.getDefaultInstance();
       partnersRequest_ = com.idamobile.protocol.ubrr.Partners.PartnersRequest.getDefaultInstance();
+      productsRequest_ = com.idamobile.protocol.ubrr.Partners.ProductRequest.getDefaultInstance();
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -4639,6 +4658,9 @@ public final class Protocol {
       if (((bitField0_ & 0x00000800) == 0x00000800)) {
         output.writeMessage(12, partnersRequest_);
       }
+      if (((bitField0_ & 0x00001000) == 0x00001000)) {
+        output.writeMessage(13, productsRequest_);
+      }
       getUnknownFields().writeTo(output);
     }
     
@@ -4695,6 +4717,10 @@ public final class Protocol {
       if (((bitField0_ & 0x00000800) == 0x00000800)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(12, partnersRequest_);
+      }
+      if (((bitField0_ & 0x00001000) == 0x00001000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(13, productsRequest_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -4824,6 +4850,7 @@ public final class Protocol {
           getCreditPointsRequestFieldBuilder();
           getNearestPartnerRequestFieldBuilder();
           getPartnersRequestFieldBuilder();
+          getProductsRequestFieldBuilder();
         }
       }
       private static Builder create() {
@@ -4904,6 +4931,12 @@ public final class Protocol {
           partnersRequestBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000800);
+        if (productsRequestBuilder_ == null) {
+          productsRequest_ = com.idamobile.protocol.ubrr.Partners.ProductRequest.getDefaultInstance();
+        } else {
+          productsRequestBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00001000);
         return this;
       }
       
@@ -5038,6 +5071,14 @@ public final class Protocol {
         } else {
           result.partnersRequest_ = partnersRequestBuilder_.build();
         }
+        if (((from_bitField0_ & 0x00001000) == 0x00001000)) {
+          to_bitField0_ |= 0x00001000;
+        }
+        if (productsRequestBuilder_ == null) {
+          result.productsRequest_ = productsRequest_;
+        } else {
+          result.productsRequest_ = productsRequestBuilder_.build();
+        }
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -5089,6 +5130,9 @@ public final class Protocol {
         }
         if (other.hasPartnersRequest()) {
           mergePartnersRequest(other.getPartnersRequest());
+        }
+        if (other.hasProductsRequest()) {
+          mergeProductsRequest(other.getProductsRequest());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
@@ -5245,6 +5289,15 @@ public final class Protocol {
               }
               input.readMessage(subBuilder, extensionRegistry);
               setPartnersRequest(subBuilder.buildPartial());
+              break;
+            }
+            case 106: {
+              com.idamobile.protocol.ubrr.Partners.ProductRequest.Builder subBuilder = com.idamobile.protocol.ubrr.Partners.ProductRequest.newBuilder();
+              if (hasProductsRequest()) {
+                subBuilder.mergeFrom(getProductsRequest());
+              }
+              input.readMessage(subBuilder, extensionRegistry);
+              setProductsRequest(subBuilder.buildPartial());
               break;
             }
           }
@@ -6333,6 +6386,96 @@ public final class Protocol {
         return partnersRequestBuilder_;
       }
       
+      // optional .messaging.ProductRequest productsRequest = 13;
+      private com.idamobile.protocol.ubrr.Partners.ProductRequest productsRequest_ = com.idamobile.protocol.ubrr.Partners.ProductRequest.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          com.idamobile.protocol.ubrr.Partners.ProductRequest, com.idamobile.protocol.ubrr.Partners.ProductRequest.Builder, com.idamobile.protocol.ubrr.Partners.ProductRequestOrBuilder> productsRequestBuilder_;
+      public boolean hasProductsRequest() {
+        return ((bitField0_ & 0x00001000) == 0x00001000);
+      }
+      public com.idamobile.protocol.ubrr.Partners.ProductRequest getProductsRequest() {
+        if (productsRequestBuilder_ == null) {
+          return productsRequest_;
+        } else {
+          return productsRequestBuilder_.getMessage();
+        }
+      }
+      public Builder setProductsRequest(com.idamobile.protocol.ubrr.Partners.ProductRequest value) {
+        if (productsRequestBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          productsRequest_ = value;
+          onChanged();
+        } else {
+          productsRequestBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00001000;
+        return this;
+      }
+      public Builder setProductsRequest(
+          com.idamobile.protocol.ubrr.Partners.ProductRequest.Builder builderForValue) {
+        if (productsRequestBuilder_ == null) {
+          productsRequest_ = builderForValue.build();
+          onChanged();
+        } else {
+          productsRequestBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00001000;
+        return this;
+      }
+      public Builder mergeProductsRequest(com.idamobile.protocol.ubrr.Partners.ProductRequest value) {
+        if (productsRequestBuilder_ == null) {
+          if (((bitField0_ & 0x00001000) == 0x00001000) &&
+              productsRequest_ != com.idamobile.protocol.ubrr.Partners.ProductRequest.getDefaultInstance()) {
+            productsRequest_ =
+              com.idamobile.protocol.ubrr.Partners.ProductRequest.newBuilder(productsRequest_).mergeFrom(value).buildPartial();
+          } else {
+            productsRequest_ = value;
+          }
+          onChanged();
+        } else {
+          productsRequestBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00001000;
+        return this;
+      }
+      public Builder clearProductsRequest() {
+        if (productsRequestBuilder_ == null) {
+          productsRequest_ = com.idamobile.protocol.ubrr.Partners.ProductRequest.getDefaultInstance();
+          onChanged();
+        } else {
+          productsRequestBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00001000);
+        return this;
+      }
+      public com.idamobile.protocol.ubrr.Partners.ProductRequest.Builder getProductsRequestBuilder() {
+        bitField0_ |= 0x00001000;
+        onChanged();
+        return getProductsRequestFieldBuilder().getBuilder();
+      }
+      public com.idamobile.protocol.ubrr.Partners.ProductRequestOrBuilder getProductsRequestOrBuilder() {
+        if (productsRequestBuilder_ != null) {
+          return productsRequestBuilder_.getMessageOrBuilder();
+        } else {
+          return productsRequest_;
+        }
+      }
+      private com.google.protobuf.SingleFieldBuilder<
+          com.idamobile.protocol.ubrr.Partners.ProductRequest, com.idamobile.protocol.ubrr.Partners.ProductRequest.Builder, com.idamobile.protocol.ubrr.Partners.ProductRequestOrBuilder> 
+          getProductsRequestFieldBuilder() {
+        if (productsRequestBuilder_ == null) {
+          productsRequestBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.idamobile.protocol.ubrr.Partners.ProductRequest, com.idamobile.protocol.ubrr.Partners.ProductRequest.Builder, com.idamobile.protocol.ubrr.Partners.ProductRequestOrBuilder>(
+                  productsRequest_,
+                  getParentForChildren(),
+                  isClean());
+          productsRequest_ = null;
+        }
+        return productsRequestBuilder_;
+      }
+      
       // @@protoc_insertion_point(builder_scope:messaging.MBSRequest)
     }
     
@@ -6406,6 +6549,11 @@ public final class Protocol {
     boolean hasPartnersResponse();
     com.idamobile.protocol.ubrr.Partners.PartnersResponse getPartnersResponse();
     com.idamobile.protocol.ubrr.Partners.PartnersResponseOrBuilder getPartnersResponseOrBuilder();
+    
+    // optional .messaging.ProductResponse productsResponse = 13;
+    boolean hasProductsResponse();
+    com.idamobile.protocol.ubrr.Partners.ProductResponse getProductsResponse();
+    com.idamobile.protocol.ubrr.Partners.ProductResponseOrBuilder getProductsResponseOrBuilder();
   }
   public static final class MBSResponse extends
       com.google.protobuf.GeneratedMessage
@@ -6592,6 +6740,19 @@ public final class Protocol {
       return partnersResponse_;
     }
     
+    // optional .messaging.ProductResponse productsResponse = 13;
+    public static final int PRODUCTSRESPONSE_FIELD_NUMBER = 13;
+    private com.idamobile.protocol.ubrr.Partners.ProductResponse productsResponse_;
+    public boolean hasProductsResponse() {
+      return ((bitField0_ & 0x00001000) == 0x00001000);
+    }
+    public com.idamobile.protocol.ubrr.Partners.ProductResponse getProductsResponse() {
+      return productsResponse_;
+    }
+    public com.idamobile.protocol.ubrr.Partners.ProductResponseOrBuilder getProductsResponseOrBuilder() {
+      return productsResponse_;
+    }
+    
     private void initFields() {
       bankContactsResponse_ = com.idamobile.protocol.ubrr.Protocol.BankContactsResponse.getDefaultInstance();
       bannersResponse_ = com.idamobile.protocol.ubrr.Banners.BannersResponse.getDefaultInstance();
@@ -6605,6 +6766,7 @@ public final class Protocol {
       creditPointsResponse_ = com.idamobile.protocol.ubrr.Locations.CreditPointsResponse.getDefaultInstance();
       nearestPartnerResponse_ = com.idamobile.protocol.ubrr.Partners.NearestPartnerResponse.getDefaultInstance();
       partnersResponse_ = com.idamobile.protocol.ubrr.Partners.PartnersResponse.getDefaultInstance();
+      productsResponse_ = com.idamobile.protocol.ubrr.Partners.ProductResponse.getDefaultInstance();
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -6726,6 +6888,9 @@ public final class Protocol {
       if (((bitField0_ & 0x00000800) == 0x00000800)) {
         output.writeMessage(12, partnersResponse_);
       }
+      if (((bitField0_ & 0x00001000) == 0x00001000)) {
+        output.writeMessage(13, productsResponse_);
+      }
       getUnknownFields().writeTo(output);
     }
     
@@ -6782,6 +6947,10 @@ public final class Protocol {
       if (((bitField0_ & 0x00000800) == 0x00000800)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(12, partnersResponse_);
+      }
+      if (((bitField0_ & 0x00001000) == 0x00001000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(13, productsResponse_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -6911,6 +7080,7 @@ public final class Protocol {
           getCreditPointsResponseFieldBuilder();
           getNearestPartnerResponseFieldBuilder();
           getPartnersResponseFieldBuilder();
+          getProductsResponseFieldBuilder();
         }
       }
       private static Builder create() {
@@ -6991,6 +7161,12 @@ public final class Protocol {
           partnersResponseBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000800);
+        if (productsResponseBuilder_ == null) {
+          productsResponse_ = com.idamobile.protocol.ubrr.Partners.ProductResponse.getDefaultInstance();
+        } else {
+          productsResponseBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00001000);
         return this;
       }
       
@@ -7125,6 +7301,14 @@ public final class Protocol {
         } else {
           result.partnersResponse_ = partnersResponseBuilder_.build();
         }
+        if (((from_bitField0_ & 0x00001000) == 0x00001000)) {
+          to_bitField0_ |= 0x00001000;
+        }
+        if (productsResponseBuilder_ == null) {
+          result.productsResponse_ = productsResponse_;
+        } else {
+          result.productsResponse_ = productsResponseBuilder_.build();
+        }
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -7176,6 +7360,9 @@ public final class Protocol {
         }
         if (other.hasPartnersResponse()) {
           mergePartnersResponse(other.getPartnersResponse());
+        }
+        if (other.hasProductsResponse()) {
+          mergeProductsResponse(other.getProductsResponse());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
@@ -7386,6 +7573,15 @@ public final class Protocol {
               }
               input.readMessage(subBuilder, extensionRegistry);
               setPartnersResponse(subBuilder.buildPartial());
+              break;
+            }
+            case 106: {
+              com.idamobile.protocol.ubrr.Partners.ProductResponse.Builder subBuilder = com.idamobile.protocol.ubrr.Partners.ProductResponse.newBuilder();
+              if (hasProductsResponse()) {
+                subBuilder.mergeFrom(getProductsResponse());
+              }
+              input.readMessage(subBuilder, extensionRegistry);
+              setProductsResponse(subBuilder.buildPartial());
               break;
             }
           }
@@ -8474,6 +8670,96 @@ public final class Protocol {
         return partnersResponseBuilder_;
       }
       
+      // optional .messaging.ProductResponse productsResponse = 13;
+      private com.idamobile.protocol.ubrr.Partners.ProductResponse productsResponse_ = com.idamobile.protocol.ubrr.Partners.ProductResponse.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          com.idamobile.protocol.ubrr.Partners.ProductResponse, com.idamobile.protocol.ubrr.Partners.ProductResponse.Builder, com.idamobile.protocol.ubrr.Partners.ProductResponseOrBuilder> productsResponseBuilder_;
+      public boolean hasProductsResponse() {
+        return ((bitField0_ & 0x00001000) == 0x00001000);
+      }
+      public com.idamobile.protocol.ubrr.Partners.ProductResponse getProductsResponse() {
+        if (productsResponseBuilder_ == null) {
+          return productsResponse_;
+        } else {
+          return productsResponseBuilder_.getMessage();
+        }
+      }
+      public Builder setProductsResponse(com.idamobile.protocol.ubrr.Partners.ProductResponse value) {
+        if (productsResponseBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          productsResponse_ = value;
+          onChanged();
+        } else {
+          productsResponseBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00001000;
+        return this;
+      }
+      public Builder setProductsResponse(
+          com.idamobile.protocol.ubrr.Partners.ProductResponse.Builder builderForValue) {
+        if (productsResponseBuilder_ == null) {
+          productsResponse_ = builderForValue.build();
+          onChanged();
+        } else {
+          productsResponseBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00001000;
+        return this;
+      }
+      public Builder mergeProductsResponse(com.idamobile.protocol.ubrr.Partners.ProductResponse value) {
+        if (productsResponseBuilder_ == null) {
+          if (((bitField0_ & 0x00001000) == 0x00001000) &&
+              productsResponse_ != com.idamobile.protocol.ubrr.Partners.ProductResponse.getDefaultInstance()) {
+            productsResponse_ =
+              com.idamobile.protocol.ubrr.Partners.ProductResponse.newBuilder(productsResponse_).mergeFrom(value).buildPartial();
+          } else {
+            productsResponse_ = value;
+          }
+          onChanged();
+        } else {
+          productsResponseBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00001000;
+        return this;
+      }
+      public Builder clearProductsResponse() {
+        if (productsResponseBuilder_ == null) {
+          productsResponse_ = com.idamobile.protocol.ubrr.Partners.ProductResponse.getDefaultInstance();
+          onChanged();
+        } else {
+          productsResponseBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00001000);
+        return this;
+      }
+      public com.idamobile.protocol.ubrr.Partners.ProductResponse.Builder getProductsResponseBuilder() {
+        bitField0_ |= 0x00001000;
+        onChanged();
+        return getProductsResponseFieldBuilder().getBuilder();
+      }
+      public com.idamobile.protocol.ubrr.Partners.ProductResponseOrBuilder getProductsResponseOrBuilder() {
+        if (productsResponseBuilder_ != null) {
+          return productsResponseBuilder_.getMessageOrBuilder();
+        } else {
+          return productsResponse_;
+        }
+      }
+      private com.google.protobuf.SingleFieldBuilder<
+          com.idamobile.protocol.ubrr.Partners.ProductResponse, com.idamobile.protocol.ubrr.Partners.ProductResponse.Builder, com.idamobile.protocol.ubrr.Partners.ProductResponseOrBuilder> 
+          getProductsResponseFieldBuilder() {
+        if (productsResponseBuilder_ == null) {
+          productsResponseBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.idamobile.protocol.ubrr.Partners.ProductResponse, com.idamobile.protocol.ubrr.Partners.ProductResponse.Builder, com.idamobile.protocol.ubrr.Partners.ProductResponseOrBuilder>(
+                  productsResponse_,
+                  getParentForChildren(),
+                  isClean());
+          productsResponse_ = null;
+        }
+        return productsResponseBuilder_;
+      }
+      
       // @@protoc_insertion_point(builder_scope:messaging.MBSResponse)
     }
     
@@ -8562,7 +8848,7 @@ public final class Protocol {
       "\002(\0162\024.messaging.EmailType\022%\n\005items\030\002 \003(\013" +
       "2\026.messaging.PairMessage\"N\n\021SendEmailRes" +
       "ponse\022#\n\004code\030\001 \002(\0162\025.messaging.ResultCo" +
-      "de\022\024\n\014errorMessage\030\002 \001(\t\"\236\005\n\nMBSRequest\022" +
+      "de\022\024\n\014errorMessage\030\002 \001(\t\"\322\005\n\nMBSRequest\022" +
       ";\n\023bankContactsRequest\030\001 \001(\0132\036.messaging",
       ".BankContactsRequest\0221\n\016bannersRequest\030\002" +
       " \001(\0132\031.messaging.BannersRequest\022-\n\014image" +
@@ -8579,29 +8865,32 @@ public final class Protocol {
       "CreditPointsRequest\022?\n\025nearestPartnerReq" +
       "uest\030\013 \001(\0132 .messaging.NearestPartnerReq" +
       "uest\0223\n\017partnersRequest\030\014 \001(\0132\032.messagin" +
-      "g.PartnersRequest\"\267\005\n\013MBSResponse\022=\n\024ban" +
-      "kContactsResponse\030\001 \001(\0132\037.messaging.Bank" +
-      "ContactsResponse\0223\n\017bannersResponse\030\002 \001(" +
-      "\0132\032.messaging.BannersResponse\022/\n\rimageRe" +
-      "sponse\030\003 \001(\0132\030.messaging.ImageResponse\0223",
-      "\n\017officesResponse\030\004 \001(\0132\032.messaging.Offi" +
-      "cesResponse\022-\n\014atmsResponse\030\005 \001(\0132\027.mess" +
-      "aging.AtmsResponse\022C\n\027nearestLocationRes" +
-      "ponse\030\006 \001(\0132\".messaging.NearestLocationR" +
-      "esponse\0227\n\021sendEmailResponse\030\007 \001(\0132\034.mes" +
-      "saging.SendEmailResponse\0229\n\020currencyResp" +
-      "onse\030\010 \001(\0132\037.messaging.CurrencyRateRespo" +
-      "nse\022-\n\014newsResponse\030\t \001(\0132\027.messaging.Ne" +
-      "wsResponse\022=\n\024creditPointsResponse\030\n \001(\013" +
-      "2\037.messaging.CreditPointsResponse\022A\n\026nea",
-      "restPartnerResponse\030\013 \001(\0132!.messaging.Ne" +
-      "arestPartnerResponse\0225\n\020partnersResponse" +
-      "\030\014 \001(\0132\033.messaging.PartnersResponse*B\n\013C" +
-      "ontactType\022\013\n\007UNKNOWN\020\000\022\t\n\005PHONE\020\001\022\t\n\005EM" +
-      "AIL\020\002\022\007\n\003URL\020\003\022\007\n\003LOB\020\004*b\n\tEmailType\022\014\n\010" +
-      "FEEDBACK\020\000\022\016\n\nORDER_CALL\020\001\022\021\n\rBECOME_CLI" +
-      "ENT\020\002\022\024\n\020MANAGE_DOCUMENTS\020\003\022\016\n\nGET_CREDI" +
-      "T\020\004B\035\n\033com.idamobile.protocol.ubrr"
+      "g.PartnersRequest\0222\n\017productsRequest\030\r \001" +
+      "(\0132\031.messaging.ProductRequest\"\355\005\n\013MBSRes" +
+      "ponse\022=\n\024bankContactsResponse\030\001 \001(\0132\037.me" +
+      "ssaging.BankContactsResponse\0223\n\017bannersR" +
+      "esponse\030\002 \001(\0132\032.messaging.BannersRespons",
+      "e\022/\n\rimageResponse\030\003 \001(\0132\030.messaging.Ima" +
+      "geResponse\0223\n\017officesResponse\030\004 \001(\0132\032.me" +
+      "ssaging.OfficesResponse\022-\n\014atmsResponse\030" +
+      "\005 \001(\0132\027.messaging.AtmsResponse\022C\n\027neares" +
+      "tLocationResponse\030\006 \001(\0132\".messaging.Near" +
+      "estLocationResponse\0227\n\021sendEmailResponse" +
+      "\030\007 \001(\0132\034.messaging.SendEmailResponse\0229\n\020" +
+      "currencyResponse\030\010 \001(\0132\037.messaging.Curre" +
+      "ncyRateResponse\022-\n\014newsResponse\030\t \001(\0132\027." +
+      "messaging.NewsResponse\022=\n\024creditPointsRe",
+      "sponse\030\n \001(\0132\037.messaging.CreditPointsRes" +
+      "ponse\022A\n\026nearestPartnerResponse\030\013 \001(\0132!." +
+      "messaging.NearestPartnerResponse\0225\n\020part" +
+      "nersResponse\030\014 \001(\0132\033.messaging.PartnersR" +
+      "esponse\0224\n\020productsResponse\030\r \001(\0132\032.mess" +
+      "aging.ProductResponse*B\n\013ContactType\022\013\n\007" +
+      "UNKNOWN\020\000\022\t\n\005PHONE\020\001\022\t\n\005EMAIL\020\002\022\007\n\003URL\020\003" +
+      "\022\007\n\003LOB\020\004*b\n\tEmailType\022\014\n\010FEEDBACK\020\000\022\016\n\n" +
+      "ORDER_CALL\020\001\022\021\n\rBECOME_CLIENT\020\002\022\024\n\020MANAG" +
+      "E_DOCUMENTS\020\003\022\016\n\nGET_CREDIT\020\004B\035\n\033com.ida",
+      "mobile.protocol.ubrr"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
       new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -8677,7 +8966,7 @@ public final class Protocol {
           internal_static_messaging_MBSRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_messaging_MBSRequest_descriptor,
-              new java.lang.String[] { "BankContactsRequest", "BannersRequest", "ImageRequest", "OfficesRequest", "AtmsRequest", "NearestLocationRequest", "SendEmailRequest", "CurrencyRequest", "NewsRequest", "CreditPointsRequest", "NearestPartnerRequest", "PartnersRequest", },
+              new java.lang.String[] { "BankContactsRequest", "BannersRequest", "ImageRequest", "OfficesRequest", "AtmsRequest", "NearestLocationRequest", "SendEmailRequest", "CurrencyRequest", "NewsRequest", "CreditPointsRequest", "NearestPartnerRequest", "PartnersRequest", "ProductsRequest", },
               com.idamobile.protocol.ubrr.Protocol.MBSRequest.class,
               com.idamobile.protocol.ubrr.Protocol.MBSRequest.Builder.class);
           internal_static_messaging_MBSResponse_descriptor =
@@ -8685,7 +8974,7 @@ public final class Protocol {
           internal_static_messaging_MBSResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_messaging_MBSResponse_descriptor,
-              new java.lang.String[] { "BankContactsResponse", "BannersResponse", "ImageResponse", "OfficesResponse", "AtmsResponse", "NearestLocationResponse", "SendEmailResponse", "CurrencyResponse", "NewsResponse", "CreditPointsResponse", "NearestPartnerResponse", "PartnersResponse", },
+              new java.lang.String[] { "BankContactsResponse", "BannersResponse", "ImageResponse", "OfficesResponse", "AtmsResponse", "NearestLocationResponse", "SendEmailResponse", "CurrencyResponse", "NewsResponse", "CreditPointsResponse", "NearestPartnerResponse", "PartnersResponse", "ProductsResponse", },
               com.idamobile.protocol.ubrr.Protocol.MBSResponse.class,
               com.idamobile.protocol.ubrr.Protocol.MBSResponse.Builder.class);
           return null;

@@ -42,3 +42,12 @@ message	PartnersResponse {
 	optional int32 page					= 3;
 	repeated PartnerMessage partners	= 4;
 }
+
+message ProductRequest {
+	repeated string existing		= 1;
+}
+
+message ProductResponse {
+	repeated string products		= 1;
+	repeated string deleted			= 2;
+}
