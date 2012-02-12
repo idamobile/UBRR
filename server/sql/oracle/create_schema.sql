@@ -107,14 +107,14 @@ CREATE TABLE ida_users (
 --
 -- Table structure for table `ida_job_statuses`
 --
-
+/*
 CREATE TABLE ida_job_statuses (
   job_id              VARCHAR(255) NOT NULL,
   status              VARCHAR(64) DEFAULT NULL,
   last_update_time    NUMBER(20) DEFAULT NULL,
   CONSTRAINT          pkida_js PRIMARY KEY (job_id)
 );
-
+*/
 --
 -- Table structure for table `ida_offices`
 --
@@ -170,7 +170,7 @@ CREATE TABLE  ida_email_conf (
 --
 -- Table structure for table `ida_tos_integrations`
 --
-
+/*
 DROP TABLE	ida_tos_integrations;
 
 CREATE TABLE	ida_tos_integrations (
@@ -181,7 +181,7 @@ CREATE TABLE	ida_tos_integrations (
 	CONSTRAINT	pkida_tos_int	PRIMARY KEY (id),
 	CONSTRAINT	entity_tos_int	UNIQUE (integration)
 );
-
+*/
 --
 -- Table structure for table `ida_currency_rates`
 --

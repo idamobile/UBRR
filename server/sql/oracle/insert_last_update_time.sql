@@ -14,3 +14,6 @@ SELECT 4, 'locations.atms',  current_millis() FROM dual;
 
 INSERT INTO ida_last_updates (id, entity_name, last_update_time) 
 SELECT 5, 'locations.credit.points',  current_millis() FROM dual;
+
+INSERT INTO ida_last_updates (id, entity_name, last_update_time) 
+SELECT 6, 'locations.partners',  current_millis() FROM dual;
