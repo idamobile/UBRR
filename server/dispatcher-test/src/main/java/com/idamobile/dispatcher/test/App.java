@@ -25,14 +25,18 @@ import org.apache.http.impl.client.DefaultHttpClient;
 
 import com.idamobile.dispatcher.ssl.TrustAllManager;
 import com.idamobile.protocol.ubrr.Currency.CurrencyRateRequest;
+import com.idamobile.protocol.ubrr.Locations.AtmsRequest;
+import com.idamobile.protocol.ubrr.Locations.CreditPointsRequest;
+import com.idamobile.protocol.ubrr.Locations.OfficesRequest;
 import com.idamobile.protocol.ubrr.Partners.PartnersRequest;
+import com.idamobile.protocol.ubrr.Partners.ProductRequest;
 import com.idamobile.protocol.ubrr.Protocol.MBSRequest;
 import com.idamobile.protocol.ubrr.Protocol.MBSResponse;
 
 public class App {
-//	public static final String IDA_SERVER_URL = "http://project.idamob.ru:8000/idaserver-UBRR/request/";
+	public static final String IDA_SERVER_URL = "http://project.idamob.ru:8000/idaserver-UBRR/request/";
 //	public static final String IDA_SERVER_URL = "http://91.208.121.19:8080/idaserver/request/";
-	public static final String IDA_SERVER_URL = "http://localhost:8000/idaserver-UBRR/request/";
+//	public static final String IDA_SERVER_URL = "http://localhost:8000/idaserver-UBRR/request/";
 //	public static final String IDA_SERVER_URL  = "http://localhost:8000/idaserver/request/";
 	 
     /**
@@ -47,10 +51,7 @@ public class App {
     	MBSRequest.Builder request = MBSRequest.newBuilder();    	
 
     	//request.setNewsRequest(NewsRequest.newBuilder().addNewsIds(1000).addNewsIds(2));
-    	request.setCurrencyRequest(CurrencyRateRequest.newBuilder().setLastUpdateTime(1326923611265l));
-    	
-    	//request.setAtmsRequest(AtmsRequest.newBuilder().setLastUpdateTime(0l));
-    	//request.setOfficesRequest(OfficesRequest.newBuilder().setLastUpdateTime(0l));
+//    	request.setCurrencyRequest(CurrencyRateRequest.newBuilder());//.setLastUpdateTime(1326923611265l));
     	
     	Iterable<String> products = Arrays.asList(
     			 "Maestro_Unembossed"
@@ -91,7 +92,10 @@ public class App {
 //    			.addProducts("Visa Platinum")
 //    			);
     	
-//    	request.setPartnersRequest(PartnersRequest.newBuilder().setLastUpdateTime(0l));
+    	request.setPartnersRequest(PartnersRequest.newBuilder().setLastUpdateTime(0));
+//    	request.setAtmsRequest(AtmsRequest.newBuilder().setLastUpdateTime(0));
+//    	request.setOfficesRequest(OfficesRequest.newBuilder().setLastUpdateTime(0));
+//    	request.setCreditPointsRequest(CreditPointsRequest.newBuilder().setLastUpdateTime(0));
     	
     	post.setEntity(new ByteArrayEntity(request.build().toByteArray()));
     	    	

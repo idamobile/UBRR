@@ -25,6 +25,10 @@ public class Partner extends AbstractBranch {
 		this.cards = cards;
 	}
 	
+	public List<String> getCards() {
+		return cards;
+	}
+	
 	public PartnerMessage createMessage() {
 		PartnerMessage.Builder builder = PartnerMessage.newBuilder();
 		
