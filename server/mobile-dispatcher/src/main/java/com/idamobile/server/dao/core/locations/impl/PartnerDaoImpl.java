@@ -76,7 +76,7 @@ public class PartnerDaoImpl implements PartnerDao {
 			);
 	}
 	
-	private Partner extractCore(ResultSet rs) {
+	private Partner extractCore(ResultSet rs) throws SQLException {
 		return new Partner(
 				rs.getInt(1),
 				rs.getString(5), // name
