@@ -115,7 +115,9 @@ public class PartnerDaoImpl implements PartnerDao {
 						item = extractCore(rs);
 						data.put(id, item);
 					}
-					item.getCards().add(rs.getString(13));
+					String card = rs.getString(13);
+					if (card != null)
+						item.getCards().add(card);
 				}
 				
 				return new ArrayList<Partner>(data.values());
