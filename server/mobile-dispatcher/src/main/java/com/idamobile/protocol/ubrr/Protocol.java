@@ -4374,7 +4374,7 @@ public final class Protocol {
     com.idamobile.protocol.ubrr.Partners.PartnersRequest getPartnersRequest();
     com.idamobile.protocol.ubrr.Partners.PartnersRequestOrBuilder getPartnersRequestOrBuilder();
     
-    // optional .messaging.ProductRequest productsRequest = 13;
+    // optional .messaging.ProductRequest productsRequest = 14;
     boolean hasProductsRequest();
     com.idamobile.protocol.ubrr.Partners.ProductRequest getProductsRequest();
     com.idamobile.protocol.ubrr.Partners.ProductRequestOrBuilder getProductsRequestOrBuilder();
@@ -4564,8 +4564,8 @@ public final class Protocol {
       return partnersRequest_;
     }
     
-    // optional .messaging.ProductRequest productsRequest = 13;
-    public static final int PRODUCTSREQUEST_FIELD_NUMBER = 13;
+    // optional .messaging.ProductRequest productsRequest = 14;
+    public static final int PRODUCTSREQUEST_FIELD_NUMBER = 14;
     private com.idamobile.protocol.ubrr.Partners.ProductRequest productsRequest_;
     public boolean hasProductsRequest() {
       return ((bitField0_ & 0x00001000) == 0x00001000);
@@ -4659,7 +4659,7 @@ public final class Protocol {
         output.writeMessage(12, partnersRequest_);
       }
       if (((bitField0_ & 0x00001000) == 0x00001000)) {
-        output.writeMessage(13, productsRequest_);
+        output.writeMessage(14, productsRequest_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -4720,7 +4720,7 @@ public final class Protocol {
       }
       if (((bitField0_ & 0x00001000) == 0x00001000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(13, productsRequest_);
+          .computeMessageSize(14, productsRequest_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -5291,7 +5291,7 @@ public final class Protocol {
               setPartnersRequest(subBuilder.buildPartial());
               break;
             }
-            case 106: {
+            case 114: {
               com.idamobile.protocol.ubrr.Partners.ProductRequest.Builder subBuilder = com.idamobile.protocol.ubrr.Partners.ProductRequest.newBuilder();
               if (hasProductsRequest()) {
                 subBuilder.mergeFrom(getProductsRequest());
@@ -6386,7 +6386,7 @@ public final class Protocol {
         return partnersRequestBuilder_;
       }
       
-      // optional .messaging.ProductRequest productsRequest = 13;
+      // optional .messaging.ProductRequest productsRequest = 14;
       private com.idamobile.protocol.ubrr.Partners.ProductRequest productsRequest_ = com.idamobile.protocol.ubrr.Partners.ProductRequest.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
           com.idamobile.protocol.ubrr.Partners.ProductRequest, com.idamobile.protocol.ubrr.Partners.ProductRequest.Builder, com.idamobile.protocol.ubrr.Partners.ProductRequestOrBuilder> productsRequestBuilder_;
@@ -6550,7 +6550,7 @@ public final class Protocol {
     com.idamobile.protocol.ubrr.Partners.PartnersResponse getPartnersResponse();
     com.idamobile.protocol.ubrr.Partners.PartnersResponseOrBuilder getPartnersResponseOrBuilder();
     
-    // optional .messaging.ProductResponse productsResponse = 13;
+    // optional .messaging.ProductResponse productsResponse = 14;
     boolean hasProductsResponse();
     com.idamobile.protocol.ubrr.Partners.ProductResponse getProductsResponse();
     com.idamobile.protocol.ubrr.Partners.ProductResponseOrBuilder getProductsResponseOrBuilder();
@@ -6740,8 +6740,8 @@ public final class Protocol {
       return partnersResponse_;
     }
     
-    // optional .messaging.ProductResponse productsResponse = 13;
-    public static final int PRODUCTSRESPONSE_FIELD_NUMBER = 13;
+    // optional .messaging.ProductResponse productsResponse = 14;
+    public static final int PRODUCTSRESPONSE_FIELD_NUMBER = 14;
     private com.idamobile.protocol.ubrr.Partners.ProductResponse productsResponse_;
     public boolean hasProductsResponse() {
       return ((bitField0_ & 0x00001000) == 0x00001000);
@@ -6889,7 +6889,7 @@ public final class Protocol {
         output.writeMessage(12, partnersResponse_);
       }
       if (((bitField0_ & 0x00001000) == 0x00001000)) {
-        output.writeMessage(13, productsResponse_);
+        output.writeMessage(14, productsResponse_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -6950,7 +6950,7 @@ public final class Protocol {
       }
       if (((bitField0_ & 0x00001000) == 0x00001000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(13, productsResponse_);
+          .computeMessageSize(14, productsResponse_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -7575,7 +7575,7 @@ public final class Protocol {
               setPartnersResponse(subBuilder.buildPartial());
               break;
             }
-            case 106: {
+            case 114: {
               com.idamobile.protocol.ubrr.Partners.ProductResponse.Builder subBuilder = com.idamobile.protocol.ubrr.Partners.ProductResponse.newBuilder();
               if (hasProductsResponse()) {
                 subBuilder.mergeFrom(getProductsResponse());
@@ -8670,7 +8670,7 @@ public final class Protocol {
         return partnersResponseBuilder_;
       }
       
-      // optional .messaging.ProductResponse productsResponse = 13;
+      // optional .messaging.ProductResponse productsResponse = 14;
       private com.idamobile.protocol.ubrr.Partners.ProductResponse productsResponse_ = com.idamobile.protocol.ubrr.Partners.ProductResponse.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
           com.idamobile.protocol.ubrr.Partners.ProductResponse, com.idamobile.protocol.ubrr.Partners.ProductResponse.Builder, com.idamobile.protocol.ubrr.Partners.ProductResponseOrBuilder> productsResponseBuilder_;
@@ -8865,7 +8865,7 @@ public final class Protocol {
       "CreditPointsRequest\022?\n\025nearestPartnerReq" +
       "uest\030\013 \001(\0132 .messaging.NearestPartnerReq" +
       "uest\0223\n\017partnersRequest\030\014 \001(\0132\032.messagin" +
-      "g.PartnersRequest\0222\n\017productsRequest\030\r \001" +
+      "g.PartnersRequest\0222\n\017productsRequest\030\016 \001" +
       "(\0132\031.messaging.ProductRequest\"\355\005\n\013MBSRes" +
       "ponse\022=\n\024bankContactsResponse\030\001 \001(\0132\037.me" +
       "ssaging.BankContactsResponse\0223\n\017bannersR" +
@@ -8884,7 +8884,7 @@ public final class Protocol {
       "ponse\022A\n\026nearestPartnerResponse\030\013 \001(\0132!." +
       "messaging.NearestPartnerResponse\0225\n\020part" +
       "nersResponse\030\014 \001(\0132\033.messaging.PartnersR" +
-      "esponse\0224\n\020productsResponse\030\r \001(\0132\032.mess" +
+      "esponse\0224\n\020productsResponse\030\016 \001(\0132\032.mess" +
       "aging.ProductResponse*B\n\013ContactType\022\013\n\007" +
       "UNKNOWN\020\000\022\t\n\005PHONE\020\001\022\t\n\005EMAIL\020\002\022\007\n\003URL\020\003" +
       "\022\007\n\003LOB\020\004*b\n\tEmailType\022\014\n\010FEEDBACK\020\000\022\016\n\n" +
