@@ -1,5 +1,8 @@
 select * from IDA_PARTNER where partner_id in (SELECT partner_id FROM ida_partner_card WHERE card in ('Card 66')) and city = 'Казань' and subway_station = 'Казань' order by order_num;
 
+select * from ida_partner where name = 'Partner #3' and partner_id != 88889451;
+
+
 select * from ida_news;
 
 select * from IDA_BANNERS;
