@@ -8,6 +8,9 @@ import play.exceptions.TemplateNotFoundException;
 import controllers.CRUD;
 import controllers.CRUD.ObjectType;
 
+import play.mvc.With;
+
+@With(Secure.class)
 @CRUD.For(models.core.Contact.class)
 public class AdminContacts extends CRUD{
 
