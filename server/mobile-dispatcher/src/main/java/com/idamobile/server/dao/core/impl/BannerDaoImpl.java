@@ -14,23 +14,22 @@ import com.idamobile.protocol.ubrr.Commons.Platform;
 import com.idamobile.protocol.ubrr.Commons.Resolution;
 import com.idamobile.server.dao.core.BannerDao;
 import com.idamobile.server.model.Banner;
-import com.idamobile.server.util.ImageLoader;
 
 @Repository
 public class BannerDaoImpl implements BannerDao{
-	
-	private static final String SQL_SELECT_BANNERS = 
-		"SELECT " +
-		"	order_number, title, url, image_id, text " +
-		"FROM " +
-		"	ida_banners b ";
-	
-	private static final String SQL_COUNT_BANNERS = 
-		"SELECT count(*) FROM ida_banners";
-	
+
+	private static final String SQL_SELECT_BANNERS =
+			"SELECT " +
+					"	order_number, title, url, image_id, text " +
+					"FROM " +
+					"	ida_banners b ";
+
+	private static final String SQL_COUNT_BANNERS =
+			"SELECT count(*) FROM ida_banners";
+
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
-			
+
 	@Transactional(readOnly = true)
 	@Override
 	public List<Banner> get() {
@@ -42,19 +41,21 @@ public class BannerDaoImpl implements BannerDao{
 				Banner b = new Banner(rs.getString(2), rs.getString(3), rs.getString(5), rs.getInt(1), rs.getString(4));
 				return b;
 			}
-			
+
 		});
 	}
 
 	public static String convertPlatform(Platform platform) {
 		switch (platform) {
-		case iOS:			
+		case iOS:
 			return "iOS";
+		case iPad:
+			return "iPad";
 		default:
 			return "Android";
 		}
 	}
-	
+
 	public static String convertResolution(Resolution resolution) {
 		switch (resolution) {
 		case HDPI:
@@ -69,6 +70,6 @@ public class BannerDaoImpl implements BannerDao{
 	public int count() {
 		return jdbcTemplate.queryForInt(SQL_COUNT_BANNERS);
 	}
-	
-	
+
+
 }

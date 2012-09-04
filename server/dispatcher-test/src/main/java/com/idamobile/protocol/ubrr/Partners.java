@@ -106,12 +106,12 @@ public final class Partners {
     
     // optional string city = 2;
     public static final int CITY_FIELD_NUMBER = 2;
-    private java.lang.Object city_;
+    private Object city_;
     public boolean hasCity() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     public String getCity() {
-      java.lang.Object ref = city_;
+      Object ref = city_;
       if (ref instanceof String) {
         return (String) ref;
       } else {
@@ -125,7 +125,7 @@ public final class Partners {
       }
     }
     private com.google.protobuf.ByteString getCityBytes() {
-      java.lang.Object ref = city_;
+      Object ref = city_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8((String) ref);
@@ -138,12 +138,12 @@ public final class Partners {
     
     // optional string subwayStation = 3;
     public static final int SUBWAYSTATION_FIELD_NUMBER = 3;
-    private java.lang.Object subwayStation_;
+    private Object subwayStation_;
     public boolean hasSubwayStation() {
       return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     public String getSubwayStation() {
-      java.lang.Object ref = subwayStation_;
+      Object ref = subwayStation_;
       if (ref instanceof String) {
         return (String) ref;
       } else {
@@ -157,7 +157,7 @@ public final class Partners {
       }
     }
     private com.google.protobuf.ByteString getSubwayStationBytes() {
-      java.lang.Object ref = subwayStation_;
+      Object ref = subwayStation_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8((String) ref);
@@ -170,12 +170,12 @@ public final class Partners {
     
     // optional string address = 4;
     public static final int ADDRESS_FIELD_NUMBER = 4;
-    private java.lang.Object address_;
+    private Object address_;
     public boolean hasAddress() {
       return ((bitField0_ & 0x00000008) == 0x00000008);
     }
     public String getAddress() {
-      java.lang.Object ref = address_;
+      Object ref = address_;
       if (ref instanceof String) {
         return (String) ref;
       } else {
@@ -189,7 +189,7 @@ public final class Partners {
       }
     }
     private com.google.protobuf.ByteString getAddressBytes() {
-      java.lang.Object ref = address_;
+      Object ref = address_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8((String) ref);
@@ -222,12 +222,12 @@ public final class Partners {
     
     // optional string operationTime = 7;
     public static final int OPERATIONTIME_FIELD_NUMBER = 7;
-    private java.lang.Object operationTime_;
+    private Object operationTime_;
     public boolean hasOperationTime() {
       return ((bitField0_ & 0x00000040) == 0x00000040);
     }
     public String getOperationTime() {
-      java.lang.Object ref = operationTime_;
+      Object ref = operationTime_;
       if (ref instanceof String) {
         return (String) ref;
       } else {
@@ -241,7 +241,7 @@ public final class Partners {
       }
     }
     private com.google.protobuf.ByteString getOperationTimeBytes() {
-      java.lang.Object ref = operationTime_;
+      Object ref = operationTime_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8((String) ref);
@@ -254,12 +254,12 @@ public final class Partners {
     
     // optional string name = 8;
     public static final int NAME_FIELD_NUMBER = 8;
-    private java.lang.Object name_;
+    private Object name_;
     public boolean hasName() {
       return ((bitField0_ & 0x00000080) == 0x00000080);
     }
     public String getName() {
-      java.lang.Object ref = name_;
+      Object ref = name_;
       if (ref instanceof String) {
         return (String) ref;
       } else {
@@ -273,7 +273,7 @@ public final class Partners {
       }
     }
     private com.google.protobuf.ByteString getNameBytes() {
-      java.lang.Object ref = name_;
+      Object ref = name_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8((String) ref);
@@ -286,12 +286,12 @@ public final class Partners {
     
     // optional string zipCode = 9;
     public static final int ZIPCODE_FIELD_NUMBER = 9;
-    private java.lang.Object zipCode_;
+    private Object zipCode_;
     public boolean hasZipCode() {
       return ((bitField0_ & 0x00000100) == 0x00000100);
     }
     public String getZipCode() {
-      java.lang.Object ref = zipCode_;
+      Object ref = zipCode_;
       if (ref instanceof String) {
         return (String) ref;
       } else {
@@ -305,7 +305,7 @@ public final class Partners {
       }
     }
     private com.google.protobuf.ByteString getZipCodeBytes() {
-      java.lang.Object ref = zipCode_;
+      Object ref = zipCode_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8((String) ref);
@@ -318,12 +318,12 @@ public final class Partners {
     
     // optional string phone = 10;
     public static final int PHONE_FIELD_NUMBER = 10;
-    private java.lang.Object phone_;
+    private Object phone_;
     public boolean hasPhone() {
       return ((bitField0_ & 0x00000200) == 0x00000200);
     }
     public String getPhone() {
-      java.lang.Object ref = phone_;
+      Object ref = phone_;
       if (ref instanceof String) {
         return (String) ref;
       } else {
@@ -337,7 +337,7 @@ public final class Partners {
       }
     }
     private com.google.protobuf.ByteString getPhoneBytes() {
-      java.lang.Object ref = phone_;
+      Object ref = phone_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8((String) ref);
@@ -364,12 +364,12 @@ public final class Partners {
     
     // optional string shortServices = 12;
     public static final int SHORTSERVICES_FIELD_NUMBER = 12;
-    private java.lang.Object shortServices_;
+    private Object shortServices_;
     public boolean hasShortServices() {
       return ((bitField0_ & 0x00000400) == 0x00000400);
     }
     public String getShortServices() {
-      java.lang.Object ref = shortServices_;
+      Object ref = shortServices_;
       if (ref instanceof String) {
         return (String) ref;
       } else {
@@ -383,7 +383,7 @@ public final class Partners {
       }
     }
     private com.google.protobuf.ByteString getShortServicesBytes() {
-      java.lang.Object ref = shortServices_;
+      Object ref = shortServices_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8((String) ref);
@@ -554,10 +554,8 @@ public final class Partners {
       return size;
     }
     
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
-    protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
+    protected Object writeReplace() throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
     
@@ -990,12 +988,12 @@ public final class Partners {
       }
       
       // optional string city = 2;
-      private java.lang.Object city_ = "";
+      private Object city_ = "";
       public boolean hasCity() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       public String getCity() {
-        java.lang.Object ref = city_;
+        Object ref = city_;
         if (!(ref instanceof String)) {
           String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
           city_ = s;
@@ -1026,12 +1024,12 @@ public final class Partners {
       }
       
       // optional string subwayStation = 3;
-      private java.lang.Object subwayStation_ = "";
+      private Object subwayStation_ = "";
       public boolean hasSubwayStation() {
         return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       public String getSubwayStation() {
-        java.lang.Object ref = subwayStation_;
+        Object ref = subwayStation_;
         if (!(ref instanceof String)) {
           String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
           subwayStation_ = s;
@@ -1062,12 +1060,12 @@ public final class Partners {
       }
       
       // optional string address = 4;
-      private java.lang.Object address_ = "";
+      private Object address_ = "";
       public boolean hasAddress() {
         return ((bitField0_ & 0x00000008) == 0x00000008);
       }
       public String getAddress() {
-        java.lang.Object ref = address_;
+        Object ref = address_;
         if (!(ref instanceof String)) {
           String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
           address_ = s;
@@ -1140,12 +1138,12 @@ public final class Partners {
       }
       
       // optional string operationTime = 7;
-      private java.lang.Object operationTime_ = "";
+      private Object operationTime_ = "";
       public boolean hasOperationTime() {
         return ((bitField0_ & 0x00000040) == 0x00000040);
       }
       public String getOperationTime() {
-        java.lang.Object ref = operationTime_;
+        Object ref = operationTime_;
         if (!(ref instanceof String)) {
           String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
           operationTime_ = s;
@@ -1176,12 +1174,12 @@ public final class Partners {
       }
       
       // optional string name = 8;
-      private java.lang.Object name_ = "";
+      private Object name_ = "";
       public boolean hasName() {
         return ((bitField0_ & 0x00000080) == 0x00000080);
       }
       public String getName() {
-        java.lang.Object ref = name_;
+        Object ref = name_;
         if (!(ref instanceof String)) {
           String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
           name_ = s;
@@ -1212,12 +1210,12 @@ public final class Partners {
       }
       
       // optional string zipCode = 9;
-      private java.lang.Object zipCode_ = "";
+      private Object zipCode_ = "";
       public boolean hasZipCode() {
         return ((bitField0_ & 0x00000100) == 0x00000100);
       }
       public String getZipCode() {
-        java.lang.Object ref = zipCode_;
+        Object ref = zipCode_;
         if (!(ref instanceof String)) {
           String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
           zipCode_ = s;
@@ -1248,12 +1246,12 @@ public final class Partners {
       }
       
       // optional string phone = 10;
-      private java.lang.Object phone_ = "";
+      private Object phone_ = "";
       public boolean hasPhone() {
         return ((bitField0_ & 0x00000200) == 0x00000200);
       }
       public String getPhone() {
-        java.lang.Object ref = phone_;
+        Object ref = phone_;
         if (!(ref instanceof String)) {
           String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
           phone_ = s;
@@ -1340,12 +1338,12 @@ public final class Partners {
       }
       
       // optional string shortServices = 12;
-      private java.lang.Object shortServices_ = "";
+      private Object shortServices_ = "";
       public boolean hasShortServices() {
         return ((bitField0_ & 0x00000800) == 0x00000800);
       }
       public String getShortServices() {
-        java.lang.Object ref = shortServices_;
+        Object ref = shortServices_;
         if (!(ref instanceof String)) {
           String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
           shortServices_ = s;
@@ -1536,10 +1534,8 @@ public final class Partners {
       return size;
     }
     
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
-    protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
+    protected Object writeReplace() throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
     
@@ -1974,10 +1970,8 @@ public final class Partners {
       return size;
     }
     
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
-    protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
+    protected Object writeReplace() throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
     
@@ -2466,10 +2460,8 @@ public final class Partners {
       return size;
     }
     
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
-    protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
+    protected Object writeReplace() throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
     
@@ -3002,10 +2994,8 @@ public final class Partners {
       return size;
     }
     
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
-    protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
+    protected Object writeReplace() throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
     
@@ -3663,10 +3653,8 @@ public final class Partners {
       return size;
     }
     
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
-    protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
+    protected Object writeReplace() throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
     
@@ -4084,10 +4072,8 @@ public final class Partners {
       return size;
     }
     
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
-    protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
+    protected Object writeReplace() throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
     

@@ -31,6 +31,14 @@
 		#{dialogs.image-field title: 'MDPI Image', field_name: 'iosMdpi'}
 			@{Banners.getImage(banner, models.core.Image.Platform.iOS, models.core.Image.Resolution.mdpi)}
 		#{/ dialogs.image-field}
+
+		#{dialogs.image-field title: '[iPad] MDPI Image', field_name: 'ipadMdpi'}
+			@{Banners.getImage(banner, models.core.Image.Platform.iPad, models.core.Image.Resolution.mdpi)}
+		#{/ dialogs.image-field}
+
+		#{dialogs.image-field title: '[iPad] HDPI Image', field_name: 'ipadHdpi'}
+			@{Banners.getImage(banner, models.core.Image.Platform.iPad, models.core.Image.Resolution.hdpi)}
+		#{/ dialogs.image-field}
 		
 	</ul>
 

@@ -1,8 +1,8 @@
 #!/bin/bash
 set -x
 
-MAIN_PROJECT_PATH=../mobile-dispatcher/src/main/java/
-TEST_PROJECT_PATH=../dispatcher-test/src/main/java/
+MAIN_PROJECT_PATH=../server/mobile-dispatcher/src/main/java/
+TEST_PROJECT_PATH=../server/dispatcher-test/src/main/java/
 
 protoc --java_out=$MAIN_PROJECT_PATH news.proto
 protoc --java_out=$MAIN_PROJECT_PATH commons.proto

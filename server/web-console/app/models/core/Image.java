@@ -15,7 +15,7 @@ import play.db.jpa.Model;
 public class Image extends Model{
 	
 	public enum Platform {
-		iOS, Android
+		iOS, Android, iPad
 	}
 	
 	public enum Resolution {

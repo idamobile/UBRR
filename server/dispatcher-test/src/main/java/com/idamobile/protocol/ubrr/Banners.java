@@ -72,12 +72,12 @@ public final class Banners {
     
     // optional string imageId = 2;
     public static final int IMAGEID_FIELD_NUMBER = 2;
-    private java.lang.Object imageId_;
+    private Object imageId_;
     public boolean hasImageId() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     public String getImageId() {
-      java.lang.Object ref = imageId_;
+      Object ref = imageId_;
       if (ref instanceof String) {
         return (String) ref;
       } else {
@@ -91,7 +91,7 @@ public final class Banners {
       }
     }
     private com.google.protobuf.ByteString getImageIdBytes() {
-      java.lang.Object ref = imageId_;
+      Object ref = imageId_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8((String) ref);
@@ -104,12 +104,12 @@ public final class Banners {
     
     // optional string title = 3;
     public static final int TITLE_FIELD_NUMBER = 3;
-    private java.lang.Object title_;
+    private Object title_;
     public boolean hasTitle() {
       return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     public String getTitle() {
-      java.lang.Object ref = title_;
+      Object ref = title_;
       if (ref instanceof String) {
         return (String) ref;
       } else {
@@ -123,7 +123,7 @@ public final class Banners {
       }
     }
     private com.google.protobuf.ByteString getTitleBytes() {
-      java.lang.Object ref = title_;
+      Object ref = title_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8((String) ref);
@@ -136,12 +136,12 @@ public final class Banners {
     
     // optional string text = 4;
     public static final int TEXT_FIELD_NUMBER = 4;
-    private java.lang.Object text_;
+    private Object text_;
     public boolean hasText() {
       return ((bitField0_ & 0x00000008) == 0x00000008);
     }
     public String getText() {
-      java.lang.Object ref = text_;
+      Object ref = text_;
       if (ref instanceof String) {
         return (String) ref;
       } else {
@@ -155,7 +155,7 @@ public final class Banners {
       }
     }
     private com.google.protobuf.ByteString getTextBytes() {
-      java.lang.Object ref = text_;
+      Object ref = text_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8((String) ref);
@@ -168,12 +168,12 @@ public final class Banners {
     
     // optional string url = 5;
     public static final int URL_FIELD_NUMBER = 5;
-    private java.lang.Object url_;
+    private Object url_;
     public boolean hasUrl() {
       return ((bitField0_ & 0x00000010) == 0x00000010);
     }
     public String getUrl() {
-      java.lang.Object ref = url_;
+      Object ref = url_;
       if (ref instanceof String) {
         return (String) ref;
       } else {
@@ -187,7 +187,7 @@ public final class Banners {
       }
     }
     private com.google.protobuf.ByteString getUrlBytes() {
-      java.lang.Object ref = url_;
+      Object ref = url_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8((String) ref);
@@ -270,10 +270,8 @@ public final class Banners {
       return size;
     }
     
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
-    protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
+    protected Object writeReplace() throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
     
@@ -576,12 +574,12 @@ public final class Banners {
       }
       
       // optional string imageId = 2;
-      private java.lang.Object imageId_ = "";
+      private Object imageId_ = "";
       public boolean hasImageId() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       public String getImageId() {
-        java.lang.Object ref = imageId_;
+        Object ref = imageId_;
         if (!(ref instanceof String)) {
           String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
           imageId_ = s;
@@ -612,12 +610,12 @@ public final class Banners {
       }
       
       // optional string title = 3;
-      private java.lang.Object title_ = "";
+      private Object title_ = "";
       public boolean hasTitle() {
         return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       public String getTitle() {
-        java.lang.Object ref = title_;
+        Object ref = title_;
         if (!(ref instanceof String)) {
           String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
           title_ = s;
@@ -648,12 +646,12 @@ public final class Banners {
       }
       
       // optional string text = 4;
-      private java.lang.Object text_ = "";
+      private Object text_ = "";
       public boolean hasText() {
         return ((bitField0_ & 0x00000008) == 0x00000008);
       }
       public String getText() {
-        java.lang.Object ref = text_;
+        Object ref = text_;
         if (!(ref instanceof String)) {
           String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
           text_ = s;
@@ -684,12 +682,12 @@ public final class Banners {
       }
       
       // optional string url = 5;
-      private java.lang.Object url_ = "";
+      private Object url_ = "";
       public boolean hasUrl() {
         return ((bitField0_ & 0x00000010) == 0x00000010);
       }
       public String getUrl() {
-        java.lang.Object ref = url_;
+        Object ref = url_;
         if (!(ref instanceof String)) {
           String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
           url_ = s;
@@ -812,10 +810,8 @@ public final class Banners {
       return size;
     }
     
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
-    protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
+    protected Object writeReplace() throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
     
@@ -1199,10 +1195,8 @@ public final class Banners {
       return size;
     }
     
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
-    protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
+    protected Object writeReplace() throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
     

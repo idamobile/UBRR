@@ -81,10 +81,12 @@ public final class Commons {
       implements com.google.protobuf.ProtocolMessageEnum {
     iOS(0, 0),
     Android(1, 1),
+    iPad(2, 2),
     ;
     
     public static final int iOS_VALUE = 0;
     public static final int Android_VALUE = 1;
+    public static final int iPad_VALUE = 2;
     
     
     public final int getNumber() { return value; }
@@ -93,6 +95,7 @@ public final class Commons {
       switch (value) {
         case 0: return iOS;
         case 1: return Android;
+        case 2: return iPad;
         default: return null;
       }
     }
@@ -123,7 +126,7 @@ public final class Commons {
     }
     
     private static final Platform[] VALUES = {
-      iOS, Android, 
+      iOS, Android, iPad, 
     };
     
     public static Platform valueOf(
@@ -327,12 +330,12 @@ public final class Commons {
     private int bitField0_;
     // required string key = 1;
     public static final int KEY_FIELD_NUMBER = 1;
-    private java.lang.Object key_;
+    private Object key_;
     public boolean hasKey() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     public String getKey() {
-      java.lang.Object ref = key_;
+      Object ref = key_;
       if (ref instanceof String) {
         return (String) ref;
       } else {
@@ -346,7 +349,7 @@ public final class Commons {
       }
     }
     private com.google.protobuf.ByteString getKeyBytes() {
-      java.lang.Object ref = key_;
+      Object ref = key_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8((String) ref);
@@ -424,10 +427,8 @@ public final class Commons {
       return size;
     }
     
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
-    protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
+    protected Object writeReplace() throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
     
@@ -676,12 +677,12 @@ public final class Commons {
       private int bitField0_;
       
       // required string key = 1;
-      private java.lang.Object key_ = "";
+      private Object key_ = "";
       public boolean hasKey() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       public String getKey() {
-        java.lang.Object ref = key_;
+        Object ref = key_;
         if (!(ref instanceof String)) {
           String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
           key_ = s;
@@ -890,10 +891,8 @@ public final class Commons {
       return size;
     }
     
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
-    protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
+    protected Object writeReplace() throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
     
@@ -1212,10 +1211,10 @@ public final class Commons {
       "e\022\013\n\003key\030\001 \002(\t\022\016\n\006values\030\002 \003(\t\"6\n\017GeoPoi" +
       "ntMessage\022\020\n\010latitude\030\001 \002(\001\022\021\n\tlongitude" +
       "\030\002 \002(\001*&\n\nResultCode\022\013\n\007SUCCESS\020\000\022\013\n\007FAI" +
-      "LURE\020\001* \n\010Platform\022\007\n\003iOS\020\000\022\013\n\007Android\020\001" +
-      "* \n\nResolution\022\010\n\004MDPI\020\000\022\010\n\004HDPI\020\001*\036\n\006Lo" +
-      "cale\022\t\n\005en_EN\020\000\022\t\n\005ru_RU\020\001B\035\n\033com.idamob" +
-      "ile.protocol.ubrr"
+      "LURE\020\001**\n\010Platform\022\007\n\003iOS\020\000\022\013\n\007Android\020\001" +
+      "\022\010\n\004iPad\020\002* \n\nResolution\022\010\n\004MDPI\020\000\022\010\n\004HD" +
+      "PI\020\001*\036\n\006Locale\022\t\n\005en_EN\020\000\022\t\n\005ru_RU\020\001B\035\n\033" +
+      "com.idamobile.protocol.ubrr"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
       new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {

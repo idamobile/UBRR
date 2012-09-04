@@ -11,6 +11,7 @@ enum	ResultCode {
 enum	Platform {
 	iOS	= 0;
 	Android	= 1;
+	iPad	= 2;
 }
 
 enum	Resolution {

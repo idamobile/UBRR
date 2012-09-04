@@ -210,12 +210,12 @@ public final class Protocol {
     private int bitField0_;
     // required string key = 1;
     public static final int KEY_FIELD_NUMBER = 1;
-    private java.lang.Object key_;
+    private Object key_;
     public boolean hasKey() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     public String getKey() {
-      java.lang.Object ref = key_;
+      Object ref = key_;
       if (ref instanceof String) {
         return (String) ref;
       } else {
@@ -229,7 +229,7 @@ public final class Protocol {
       }
     }
     private com.google.protobuf.ByteString getKeyBytes() {
-      java.lang.Object ref = key_;
+      Object ref = key_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8((String) ref);
@@ -252,12 +252,12 @@ public final class Protocol {
     
     // required string value = 3;
     public static final int VALUE_FIELD_NUMBER = 3;
-    private java.lang.Object value_;
+    private Object value_;
     public boolean hasValue() {
       return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     public String getValue() {
-      java.lang.Object ref = value_;
+      Object ref = value_;
       if (ref instanceof String) {
         return (String) ref;
       } else {
@@ -271,7 +271,7 @@ public final class Protocol {
       }
     }
     private com.google.protobuf.ByteString getValueBytes() {
-      java.lang.Object ref = value_;
+      Object ref = value_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8((String) ref);
@@ -346,10 +346,8 @@ public final class Protocol {
       return size;
     }
     
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
-    protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
+    protected Object writeReplace() throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
     
@@ -617,12 +615,12 @@ public final class Protocol {
       private int bitField0_;
       
       // required string key = 1;
-      private java.lang.Object key_ = "";
+      private Object key_ = "";
       public boolean hasKey() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       public String getKey() {
-        java.lang.Object ref = key_;
+        Object ref = key_;
         if (!(ref instanceof String)) {
           String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
           key_ = s;
@@ -677,12 +675,12 @@ public final class Protocol {
       }
       
       // required string value = 3;
-      private java.lang.Object value_ = "";
+      private Object value_ = "";
       public boolean hasValue() {
         return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       public String getValue() {
-        java.lang.Object ref = value_;
+        Object ref = value_;
         if (!(ref instanceof String)) {
           String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
           value_ = s;
@@ -805,10 +803,8 @@ public final class Protocol {
       return size;
     }
     
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
-    protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
+    protected Object writeReplace() throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
     
@@ -1188,10 +1184,8 @@ public final class Protocol {
       return size;
     }
     
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
-    protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
+    protected Object writeReplace() throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
     
@@ -1726,12 +1720,12 @@ public final class Protocol {
     private int bitField0_;
     // required string imageId = 1;
     public static final int IMAGEID_FIELD_NUMBER = 1;
-    private java.lang.Object imageId_;
+    private Object imageId_;
     public boolean hasImageId() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     public String getImageId() {
-      java.lang.Object ref = imageId_;
+      Object ref = imageId_;
       if (ref instanceof String) {
         return (String) ref;
       } else {
@@ -1745,7 +1739,7 @@ public final class Protocol {
       }
     }
     private com.google.protobuf.ByteString getImageIdBytes() {
-      java.lang.Object ref = imageId_;
+      Object ref = imageId_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8((String) ref);
@@ -1818,10 +1812,8 @@ public final class Protocol {
       return size;
     }
     
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
-    protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
+    protected Object writeReplace() throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
     
@@ -2065,12 +2057,12 @@ public final class Protocol {
       private int bitField0_;
       
       // required string imageId = 1;
-      private java.lang.Object imageId_ = "";
+      private Object imageId_ = "";
       public boolean hasImageId() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       public String getImageId() {
-        java.lang.Object ref = imageId_;
+        Object ref = imageId_;
         if (!(ref instanceof String)) {
           String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
           imageId_ = s;
@@ -2271,10 +2263,8 @@ public final class Protocol {
       return size;
     }
     
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
-    protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
+    protected Object writeReplace() throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
     
@@ -2763,10 +2753,8 @@ public final class Protocol {
       return size;
     }
     
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
-    protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
+    protected Object writeReplace() throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
     
@@ -3353,10 +3341,8 @@ public final class Protocol {
       return size;
     }
     
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
-    protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
+    protected Object writeReplace() throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
     
@@ -3914,12 +3900,12 @@ public final class Protocol {
     
     // optional string errorMessage = 2;
     public static final int ERRORMESSAGE_FIELD_NUMBER = 2;
-    private java.lang.Object errorMessage_;
+    private Object errorMessage_;
     public boolean hasErrorMessage() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     public String getErrorMessage() {
-      java.lang.Object ref = errorMessage_;
+      Object ref = errorMessage_;
       if (ref instanceof String) {
         return (String) ref;
       } else {
@@ -3933,7 +3919,7 @@ public final class Protocol {
       }
     }
     private com.google.protobuf.ByteString getErrorMessageBytes() {
-      java.lang.Object ref = errorMessage_;
+      Object ref = errorMessage_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8((String) ref);
@@ -3992,10 +3978,8 @@ public final class Protocol {
       return size;
     }
     
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
-    protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
+    protected Object writeReplace() throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
     
@@ -4265,12 +4249,12 @@ public final class Protocol {
       }
       
       // optional string errorMessage = 2;
-      private java.lang.Object errorMessage_ = "";
+      private Object errorMessage_ = "";
       public boolean hasErrorMessage() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       public String getErrorMessage() {
-        java.lang.Object ref = errorMessage_;
+        Object ref = errorMessage_;
         if (!(ref instanceof String)) {
           String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
           errorMessage_ = s;
@@ -4727,10 +4711,8 @@ public final class Protocol {
       return size;
     }
     
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
-    protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
+    protected Object writeReplace() throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
     
@@ -6957,10 +6939,8 @@ public final class Protocol {
       return size;
     }
     
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
-    protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
+    protected Object writeReplace() throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
     
