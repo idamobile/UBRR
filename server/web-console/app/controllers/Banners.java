@@ -62,8 +62,8 @@ public class Banners extends Controller{
     public static void save(Banner banner, Blob iosHdpi, Blob iosMdpi, Blob ipadMdpi, Blob ipadHdpi) {
         if (banner.id != null) {
             banner = Banner.findById(banner.id);
-        }else {
-            banner.order = Banner.count();
+        } else {
+            banner.order = Banner.getLastOrderNumber() + 1;
         }
 
         String imageId = banner.imageId;
